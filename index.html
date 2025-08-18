@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Language Learner</title>
+    <link rel="manifest" href="manifest.json">
+    <link rel="stylesheet" href="style.css">
+    <script src="libs/marked.js" type="module"></script>
+</head>
+<body>
+
+    <header class="glass-header">
+        <span id="menu-toggle" class="menu-toggle">☰</span>
+        <h1>Language Learner</h1>
+    </header>
+
+    <div id="nav-drawer" class="nav-drawer glass-panel">
+        <h2>Lessons</h2>
+        <ul id="lesson-list"></ul>
+    </div>
+
+    <div id="drawer-overlay" class="drawer-overlay"></div>
+
+    <main class="main-container">
+        <div class="media-container glass-panel">
+            <video id="media-player" controls></video> 
+        </div>
+        <div id="transcript-container" class="transcript-container glass-panel"></div>
+    </main>
+
+    <script src="app.js"></script>
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('sw.js')
+                    .then(reg => console.log('SW registered:', reg.scope))
+                    .catch(err => console.log('SW registration failed:', err));
+            });
+        }
+    </script>
+</body>
+</html>
