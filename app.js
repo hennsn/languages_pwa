@@ -1,4 +1,7 @@
-import { initDB, getSentenceStat, updateSentenceStat } from './db.js'; 
+// app.js
+
+// 1. UPDATE IMPORT: Add 'getAllLessonProgress' to the list.
+import { initDB, getSentenceStat, updateSentenceStat, getAllLessonProgress } from './db.js';
 
 document.addEventListener('DOMContentLoaded', () => {
     const player = document.getElementById('media-player');
@@ -12,20 +15,18 @@ document.addEventListener('DOMContentLoaded', () => {
     let currentLessonId = null;
     let isChangingLesson = false; 
 
-    // --- VARIABLES FOR STATS ---
-    let currentLessonContent = []; // Holds the full data for the current lesson
-    let explainedCuesThisSession = new Set(); // Tracks which explanations were opened
-    // --------------------------------
+    let currentLessonContent = [];
+    let explainedCuesThisSession = new Set();
 
     async function init() {
         try {
-
-            // Initialize the database
             await initDB(); 
-
+            
             const response = await fetch('data/lessons.json');
             lessonsData = await response.json();
-            renderLessonList(lessonsData);
+            
+            // 2. UPDATE THIS LINE: Add 'await' because renderLessonList is now async
+            await renderLessonList(lessonsData);
 
             const lessonIdFromUrl = window.location.hash.substring(1);
             if (lessonIdFromUrl && lessonsData.some(l => l.id === lessonIdFromUrl)) {
@@ -39,12 +40,29 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    function renderLessonList(lessons) {
+    // 3. ENTIRELY REPLACE the old renderLessonList function with this new async version.
+    async function renderLessonList(lessons) {
+        // Fetch all calculated lesson difficulties from the DB
+        const allProgress = await getAllLessonProgress();
+        // Convert the array into a Map for fast lookups (lessonId -> 'easy'/'medium'/'hard')
+        const progressMap = new Map(allProgress.map(p => [p.lessonId, p.difficulty]));
+    
         lessonList.innerHTML = '';
         lessons.forEach(lesson => {
             const li = document.createElement('li');
             li.textContent = lesson.title;
             li.dataset.lessonId = lesson.id;
+    
+            // Check our map for this lesson's difficulty
+            const difficulty = progressMap.get(lesson.id);
+            if (difficulty) {
+                // If found, create the indicator dot and add it to the list item
+                const indicator = document.createElement('span');
+                indicator.classList.add('difficulty-indicator', difficulty);
+                // Prepend adds the dot before the text, which looks nice.
+                li.prepend(indicator);
+            }
+            
             li.addEventListener('click', () => {
                 loadLesson(lesson.id);
                 closeDrawer();
@@ -53,11 +71,13 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    // --- No changes to the functions below this line ---
+
     async function loadLesson(lessonId) {
         if (currentLessonId === lessonId || isChangingLesson) return; 
 
         isChangingLesson = true; 
-        transcriptContainer.innerHTML = `<p style='padding:20px'>Loading...</p>`; // Loading indicator
+        transcriptContainer.innerHTML = `<p style='padding:20px'>Loading...</p>`;
 
         try {
             const lesson = lessonsData.find(l => l.id === lessonId);
@@ -69,10 +89,8 @@ document.addEventListener('DOMContentLoaded', () => {
             const response = await fetch(lessonJsonPath);
             const lessonContent = await response.json();
 
-            // --- RESET STATS ---
-            currentLessonContent = lessonContent; // Save the lesson data for later
-            explainedCuesThisSession.clear();   // Reset the explanation tracker
-            // ---------------------------
+            currentLessonContent = lessonContent;
+            explainedCuesThisSession.clear();
 
             player.src = audioPath;
             player.load();
@@ -115,9 +133,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             const cueExplanation = document.createElement('div');
             cueExplanation.classList.add('cue-explanation');
-            //cueExplanation.textContent = item.explanation;
             
-            // render markdown 
             const renderedExplanation = marked.parse(item.explanation);
             cueExplanation.innerHTML = renderedExplanation 
 
@@ -131,11 +147,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             cueToggle.addEventListener('click', (event) => {
                 event.stopPropagation();
-
-                // --- UPDATE STATS ---
                 explainedCuesThisSession.add(item.id); 
-                // ---------------------
-
                 const isVisible = cueExplanation.classList.contains('visible');
                 document.querySelectorAll('.cue-explanation.visible').forEach(panel => {
                     panel.classList.remove('visible');
@@ -181,117 +193,62 @@ document.addEventListener('DOMContentLoaded', () => {
     menuToggle.addEventListener('click', openDrawer);
     drawerOverlay.addEventListener('click', closeDrawer);
 
-    player.addEventListener('play', () => {
-        navigator.mediaSession.playbackState = 'playing';
-    });
-    player.addEventListener('pause', () => {
-        navigator.mediaSession.playbackState = 'paused';
-    });
-
+    player.addEventListener('play', () => { navigator.mediaSession.playbackState = 'playing'; });
+    player.addEventListener('pause', () => { navigator.mediaSession.playbackState = 'paused'; });
     player.addEventListener('ended', collectAndSaveStats);
 
-    // Media Session API
     function updateMediaSession(lesson) {
-        if (!('mediaSession' in navigator)) {
-            console.log("Media Session API is not supported.");
-            return;
-        }
-    
-        console.log(`Updating media session for: ${lesson.title}`);
-    
+        if (!('mediaSession' in navigator)) return;
         navigator.mediaSession.metadata = new MediaMetadata({
             title: lesson.title,
-            artist: 'Language Learner', // Your app's name or author
-            album: 'Beginner Course', // A course or series name
+            artist: 'Language Learner',
+            album: 'Beginner Course',
             artwork: [
-                // Use a default icon if lesson-specific art isn't available
                 { src: lesson.artwork || 'images/icon-192x192.png', sizes: '192x192', type: 'image/png' },
                 { src: lesson.artwork || 'images/icon-512x512.png', sizes: '512x512', type: 'image/png' },
             ]
         });
     }
 
-    function getLessonIndex(lessonId) {
-    return lessonsData.findIndex(l => l.id === lessonId);
-    }
+    function getLessonIndex(lessonId) { return lessonsData.findIndex(l => l.id === lessonId); }
 
     function playNextLesson() {
         const currentIndex = getLessonIndex(currentLessonId);
         if (currentIndex < lessonsData.length - 1) {
-            const nextLesson = lessonsData[currentIndex + 1];
-            console.log('Playing next lesson:', nextLesson.title);
-            loadLesson(nextLesson.id);
-        } else {
-            console.log('Already at the last lesson.');
+            loadLesson(lessonsData[currentIndex + 1].id);
         }
     }
 
     function playPreviousLesson() {
         const currentIndex = getLessonIndex(currentLessonId);
         if (currentIndex > 0) {
-            const prevLesson = lessonsData[currentIndex - 1];
-            console.log('Playing previous lesson:', prevLesson.title);
-            loadLesson(prevLesson.id);
-        } else {
-            console.log('Already at the first lesson.');
+            loadLesson(lessonsData[currentIndex - 1].id);
         }
     }
 
     function setupMediaSessionHandlers() {
-        if (!('mediaSession' in navigator)) {
-            return; 
-        }
-    
-        // The player variable must be accessible here
-        const player = document.getElementById('media-player');
-    
-        navigator.mediaSession.setActionHandler('play', () => {
-            player.play();
-        });
-    
-        navigator.mediaSession.setActionHandler('pause', () => {
-            player.pause();
-        });
-    
-        // Optional but highly recommended:
+        if (!('mediaSession' in navigator)) return; 
+        navigator.mediaSession.setActionHandler('play', () => { player.play(); });
+        navigator.mediaSession.setActionHandler('pause', () => { player.pause(); });
         navigator.mediaSession.setActionHandler('nexttrack', playNextLesson);
         navigator.mediaSession.setActionHandler('previoustrack', playPreviousLesson);
-    
-        // You can also handle seeking
-        navigator.mediaSession.setActionHandler('seekbackward', (details) => {
-            player.currentTime = Math.max(player.currentTime - (details.seekOffset || 10), 0);
-        });
-        
-        navigator.mediaSession.setActionHandler('seekforward', (details) => {
-            player.currentTime = Math.min(player.currentTime + (details.seekOffset || 10), player.duration);
-        });
+        navigator.mediaSession.setActionHandler('seekbackward', (details) => { player.currentTime = Math.max(player.currentTime - (details.seekOffset || 10), 0); });
+        navigator.mediaSession.setActionHandler('seekforward', (details) => { player.currentTime = Math.min(player.currentTime + (details.seekOffset || 10), player.duration); });
     }
 
     async function collectAndSaveStats() {
         console.log('Lesson finished. Collecting and saving stats...');
+        if (!currentLessonContent || currentLessonContent.length === 0) return;
 
-        if (!currentLessonContent || currentLessonContent.length === 0) {
-            console.log('No lesson content to process.');
-            return;
-        }
-
-        // Use Promise.all to handle all database updates concurrently
         const updatePromises = currentLessonContent.map(async (sentence) => {
             const sentenceId = sentence.id;
             const wasExplained = explainedCuesThisSession.has(sentenceId);
-
-            // 1. Get the existing stat record, if any
             const existingStat = await getSentenceStat(sentenceId);
-
             if (existingStat) {
-                // 2. If it exists, update it
                 existingStat.times_listened += 1;
-                if (wasExplained) {
-                    existingStat.times_explained += 1;
-                }
+                if (wasExplained) { existingStat.times_explained += 1; }
                 await updateSentenceStat(existingStat);
             } else {
-                // 3. If it doesn't exist, create a new record
                 const newStat = {
                     sentence_id: sentenceId,
                     times_listened: 1,
@@ -300,7 +257,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 await updateSentenceStat(newStat);
             }
         });
-
         try {
             await Promise.all(updatePromises);
             console.log('All stats saved successfully!');
@@ -310,7 +266,5 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     setupMediaSessionHandlers();
-
     init();
 });
-

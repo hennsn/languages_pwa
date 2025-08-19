@@ -20,6 +20,7 @@ body {
     background-color: var(--bg-dark);
     color: var(--text-primary);
     display: flex;
+    flex-direction: column; /* This is the key change */
     justify-content: center;
     align-items: center;
     min-height: calc(100vh - 40px);
@@ -202,4 +203,20 @@ body {
     to {
         transform: rotate(360deg);
     }
+}
+
+/* Style for the 'Back to Lessons' link */
+.back-link {
+    display: block;
+    max-width: 800px;
+    margin: 0 auto 20px auto; /* Center it with the dashboard */
+    padding: 10px 0;
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.2s;
+}
+
+.back-link:hover {
+    color: var(--text-primary);
 }

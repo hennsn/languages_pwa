@@ -24,6 +24,34 @@ body {
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
     border-radius: var(--radius);
+    /* Lesson Difficulty Indicator in Drawer */
+    #lesson-list li {
+        display: flex; /* Use flexbox to align dot and text */
+        align-items: center;
+        gap: 12px; /* Space between dot and text */
+    }
+    
+    .difficulty-indicator {
+        display: inline-block;
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        /* Prevents the dot from shrinking if the text is long */
+        flex-shrink: 0; 
+    }
+    
+    /* Colors to match the dashboard */
+    .difficulty-indicator.easy {
+        background-color: #00c7be; 
+    }
+    
+    .difficulty-indicator.medium {
+        background-color: #f8c822;
+    }
+    
+    .difficulty-indicator.hard {
+        background-color: #e94f43;
+    }
     box-shadow: var(--shadow);
 }
 
@@ -39,6 +67,34 @@ body {
     position: sticky;
     top: 0;
     z-index: 1100;
+    /* Lesson Difficulty Indicator in Drawer */
+    #lesson-list li {
+        display: flex; /* Use flexbox to align dot and text */
+        align-items: center;
+        gap: 12px; /* Space between dot and text */
+    }
+    
+    .difficulty-indicator {
+        display: inline-block;
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        /* Prevents the dot from shrinking if the text is long */
+        flex-shrink: 0; 
+    }
+    
+    /* Colors to match the dashboard */
+    .difficulty-indicator.easy {
+        background-color: #00c7be; 
+    }
+    
+    .difficulty-indicator.medium {
+        background-color: #f8c822;
+    }
+    
+    .difficulty-indicator.hard {
+        background-color: #e94f43;
+    }
 }
 
 header h1 {
@@ -69,7 +125,37 @@ header h1 {
     transform: translateX(-100%);
     transition: transform 0.4s ease;
     z-index: 1000;
-    padding: 20px;
+    /* We add 60px of top padding and keep 20px on the other sides */
+    padding: 60px 20px 20px 20px; 
+    box-sizing: border-box; /* Good practice when adding padding */
+    /* Lesson Difficulty Indicator in Drawer */
+    #lesson-list li {
+        display: flex; /* Use flexbox to align dot and text */
+        align-items: center;
+        gap: 12px; /* Space between dot and text */
+    }
+    
+    .difficulty-indicator {
+        display: inline-block;
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        /* Prevents the dot from shrinking if the text is long */
+        flex-shrink: 0; 
+    }
+    
+    /* Colors to match the dashboard */
+    .difficulty-indicator.easy {
+        background-color: #00c7be; 
+    }
+    
+    .difficulty-indicator.medium {
+        background-color: #f8c822;
+    }
+    
+    .difficulty-indicator.hard {
+        background-color: #e94f43;
+    }
 }
 .nav-drawer.is-open {
     transform: translateX(0);
@@ -92,6 +178,34 @@ header h1 {
 }
 #lesson-list li:hover {
     background-color: rgba(255,255,255,0.05);
+    /* Lesson Difficulty Indicator in Drawer */
+    #lesson-list li {
+        display: flex; /* Use flexbox to align dot and text */
+        align-items: center;
+        gap: 12px; /* Space between dot and text */
+    }
+    
+    .difficulty-indicator {
+        display: inline-block;
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        /* Prevents the dot from shrinking if the text is long */
+        flex-shrink: 0; 
+    }
+    
+    /* Colors to match the dashboard */
+    .difficulty-indicator.easy {
+        background-color: #00c7be; 
+    }
+    
+    .difficulty-indicator.medium {
+        background-color: #f8c822;
+    }
+    
+    .difficulty-indicator.hard {
+        background-color: #e94f43;
+    }
 }
 #lesson-list li.active {
     background-color: rgba(10,132,255,0.15);
@@ -102,6 +216,62 @@ header h1 {
 /* Overlay */
 .drawer-overlay {
     position: fixed;
+    /* Lesson Difficulty Indicator in Drawer */
+    #lesson-list li {
+        display: flex; /* Use flexbox to align dot and text */
+        align-items: center;
+        gap: 12px; /* Space between dot and text */
+    }
+    
+    .difficulty-indicator {
+        display: inline-block;
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        /* Prevents the dot from shrinking if the text is long */
+        flex-shrink: 0; 
+    }
+    
+    /* Colors to match the dashboard */
+    .difficulty-indicator.easy {
+        background-color: #00c7be; 
+    }
+    
+    .difficulty-indicator.medium {
+        background-color: #f8c822;
+    }
+    /* Lesson Difficulty Indicator in Drawer */
+    #lesson-list li {
+        display: flex; /* Use flexbox to align dot and text */
+        align-items: center;
+        gap: 12px; /* Space between dot and text */
+    }
+    
+    .difficulty-indicator {
+        display: inline-block;
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        /* Prevents the dot from shrinking if the text is long */
+        flex-shrink: 0; 
+    }
+    
+    /* Colors to match the dashboard */
+    .difficulty-indicator.easy {
+        background-color: #00c7be; 
+    }
+    
+    .difficulty-indicator.medium {
+        background-color: #f8c822;
+    }
+    
+    .difficulty-indicator.hard {
+        background-color: #e94f43;
+    }
+    
+    .difficulty-indicator.hard {
+        background-color: #e94f43;
+    }
     top: 0;
     left: 0;
     width: 100%;
@@ -219,4 +389,62 @@ audio {
 @keyframes fadeIn {
     from {opacity: 0;}
     to {opacity: 1;}
+}
+
+
+/* Lesson Difficulty Indicator in Drawer */
+#lesson-list li {
+    display: flex; /* Use flexbox to align dot and text */
+    align-items: center;
+    gap: 12px; /* Space between dot and text */
+}
+
+.difficulty-indicator {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    /* Prevents the dot from shrinking if the text is long */
+    flex-shrink: 0; 
+}
+
+/* Colors to match the dashboard */
+.difficulty-indicator.easy {
+    background-color: #00c7be; 
+}
+
+.difficulty-indicator.medium {
+    background-color: #f8c822;
+}
+
+.difficulty-indicator.hard {
+    background-color: #e94f43;
+}
+
+/* Styling for the new nav list in the drawer */
+#main-nav-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 15px 0;
+}
+
+#main-nav-list li a {
+    display: block; /* Makes the entire area clickable */
+    padding: 14px 12px;
+    border-radius: var(--radius);
+    text-decoration: none;
+    color: var(--text-primary);
+    font-weight: 500;
+    transition: background-color 0.2s;
+}
+
+#main-nav-list li a:hover {
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+.nav-divider {
+    border: none;
+    height: 1px;
+    background-color: rgba(255, 255, 255, 0.1);
+    margin: 20px 0;
 }

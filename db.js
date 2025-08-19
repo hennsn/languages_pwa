@@ -1,8 +1,12 @@
 // db.js
 
 const DB_NAME = 'languageLearnerStats';
-const DB_VERSION = 1;
+// 1. UPDATE VERSION: Increment the version number from 1 to 2.
+// This is the essential trigger for the 'onupgradeneeded' event to run.
+const DB_VERSION = 2;
 const STORE_NAME = 'sentenceStats';
+// 2. NEW CONSTANT: Define the name for our new object store.
+const LESSON_PROGRESS_STORE = 'lessonProgress';
 
 let db; // This variable will hold the database connection.
 
@@ -13,7 +17,6 @@ let db; // This variable will hold the database connection.
  */
 function initDB() {
     return new Promise((resolve, reject) => {
-        // Prevent re-initialization
         if (db) {
             return resolve(db);
         }
@@ -21,14 +24,20 @@ function initDB() {
 
         const request = indexedDB.open(DB_NAME, DB_VERSION);
 
-        // This event runs only when the DB version changes or is first created.
         request.onupgradeneeded = (event) => {
             const dbInstance = event.target.result;
-            console.log('[DB] Upgrade needed. Creating object store...');
-            // The object store is like a table. We'll store sentence stats here.
-            // We use 'sentence_id' as the unique key for each record.
+            console.log('[DB] Upgrade needed. Creating/updating object stores...');
+
+            // Keep the existing logic for the sentenceStats store
             if (!dbInstance.objectStoreNames.contains(STORE_NAME)) {
                 dbInstance.createObjectStore(STORE_NAME, { keyPath: 'sentence_id' });
+            }
+            
+            // 3. NEW LOGIC: Add the new object store for lesson progress.
+            // This code only runs because we incremented DB_VERSION.
+            if (!dbInstance.objectStoreNames.contains(LESSON_PROGRESS_STORE)) {
+                // We use 'lessonId' as the unique key for this store.
+                dbInstance.createObjectStore(LESSON_PROGRESS_STORE, { keyPath: 'lessonId' });
             }
         };
 
@@ -45,83 +54,83 @@ function initDB() {
     });
 }
 
-/**
- * Retrieves a single sentence's statistics from the database.
- * @param {string} sentenceId The unique ID of the sentence.
- * @returns {Promise<object|undefined>} A promise that resolves with the stat object or undefined if not found.
- */
+// --- No changes to getSentenceStat or updateSentenceStat ---
+
 function getSentenceStat(sentenceId) {
     return new Promise((resolve, reject) => {
-        if (!db) {
-            return reject('Database not initialized. Call initDB() first.');
-        }
+        if (!db) return reject('Database not initialized. Call initDB() first.');
         const transaction = db.transaction([STORE_NAME], 'readonly');
         const store = transaction.objectStore(STORE_NAME);
         const request = store.get(sentenceId);
-
-        request.onsuccess = () => {
-            resolve(request.result); // request.result will be the object or undefined
-        };
-
-        request.onerror = (event) => {
-            console.error('[DB] Error fetching stat:', event.target.error);
-            reject('Error fetching stat');
-        };
+        request.onsuccess = () => resolve(request.result);
+        request.onerror = (event) => reject('Error fetching stat: ' + event.target.error);
     });
 }
 
-/**
- * Creates or updates a sentence's statistics in the database.
- * @param {object} statObject The object to save (e.g., { sentence_id: 'l1-s1', ... }).
- * @returns {Promise<string>} A promise that resolves with the key of the saved record.
- */
 function updateSentenceStat(statObject) {
     return new Promise((resolve, reject) => {
-        if (!db) {
-            return reject('Database not initialized. Call initDB() first.');
-        }
-        // Use a 'readwrite' transaction to allow changes.
+        if (!db) return reject('Database not initialized. Call initDB() first.');
         const transaction = db.transaction([STORE_NAME], 'readwrite');
         const store = transaction.objectStore(STORE_NAME);
-        // .put() is very convenient: it creates a new record or updates an existing one.
         const request = store.put(statObject);
+        request.onsuccess = () => resolve(request.result);
+        request.onerror = (event) => reject('Error updating stat: ' + event.target.error);
+    });
+}
 
-        request.onsuccess = () => {
-            resolve(request.result); // request.result is the key of the record
-        };
+// --- No changes to getAllStats ---
 
-        request.onerror = (event) => {
-            console.error('[DB] Error updating stat:', event.target.error);
-            reject('Error updating stat');
-        };
+function getAllStats() {
+    return new Promise((resolve, reject) => {
+        if (!db) return reject('Database not initialized. Call initDB() first.');
+        const transaction = db.transaction([STORE_NAME], 'readonly');
+        const store = transaction.objectStore(STORE_NAME);
+        const request = store.getAll();
+        request.onsuccess = () => resolve(request.result);
+        request.onerror = (event) => reject('Error fetching all stats: ' + event.target.error);
+    });
+}
+
+
+// 4. NEW FUNCTIONS: Add two new helper functions to interact with our new store.
+
+/**
+ * Creates or updates a lesson's progress/difficulty data.
+ * @param {object} progressObject The object to save (e.g., { lessonId: 'l1', difficulty: 'hard' }).
+ * @returns {Promise<string>}
+ */
+function updateLessonProgress(progressObject) {
+    return new Promise((resolve, reject) => {
+        if (!db) return reject('Database not initialized. Call initDB() first.');
+        const transaction = db.transaction([LESSON_PROGRESS_STORE], 'readwrite');
+        const store = transaction.objectStore(LESSON_PROGRESS_STORE);
+        const request = store.put(progressObject);
+        request.onsuccess = () => resolve(request.result);
+        request.onerror = (event) => reject('Error updating lesson progress: ' + event.target.error);
     });
 }
 
 /**
- * Retrieves all sentence statistics from the database.
- * @returns {Promise<Array<object>>} A promise that resolves with an array of all stat objects.
+ * Retrieves all lesson progress records.
+ * @returns {Promise<Array<object>>}
  */
-function getAllStats() {
+function getAllLessonProgress() {
     return new Promise((resolve, reject) => {
-        if (!db) {
-            return reject('Database not initialized. Call initDB() first.');
-        }
-        const transaction = db.transaction([STORE_NAME], 'readonly');
-        const store = transaction.objectStore(STORE_NAME);
-        // getAll() is a convenient modern method to get all records.
+        if (!db) return reject('Database not initialized. Call initDB() first.');
+        const transaction = db.transaction([LESSON_PROGRESS_STORE], 'readonly');
+        const store = transaction.objectStore(LESSON_PROGRESS_STORE);
         const request = store.getAll();
-
-        request.onsuccess = () => {
-            resolve(request.result); // request.result will be an array of all objects
-        };
-
-        request.onerror = (event) => {
-            console.error('[DB] Error fetching all stats:', event.target.error);
-            reject('Error fetching all stats');
-        };
+        request.onsuccess = () => resolve(request.result);
+        request.onerror = (event) => reject('Error fetching all lesson progress: ' + event.target.error);
     });
 }
 
-
-// IMPORTANT: Add the new function to the export list at the bottom of the file.
-export { initDB, getSentenceStat, updateSentenceStat, getAllStats }; // <-- UPDATE THIS LINE
+// 5. UPDATE EXPORTS: Add the new functions to the export list.
+export {
+    initDB,
+    getSentenceStat,
+    updateSentenceStat,
+    getAllStats,
+    updateLessonProgress,
+    getAllLessonProgress
+};
