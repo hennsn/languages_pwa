@@ -1,3 +1,5 @@
+import { initDB, getSentenceStat, updateSentenceStat } from './db.js'; 
+
 document.addEventListener('DOMContentLoaded', () => {
     const player = document.getElementById('media-player');
     const transcriptContainer = document.getElementById('transcript-container');
@@ -10,8 +12,17 @@ document.addEventListener('DOMContentLoaded', () => {
     let currentLessonId = null;
     let isChangingLesson = false; 
 
+    // --- VARIABLES FOR STATS ---
+    let currentLessonContent = []; // Holds the full data for the current lesson
+    let explainedCuesThisSession = new Set(); // Tracks which explanations were opened
+    // --------------------------------
+
     async function init() {
         try {
+
+            // Initialize the database
+            await initDB(); 
+
             const response = await fetch('data/lessons.json');
             lessonsData = await response.json();
             renderLessonList(lessonsData);
@@ -57,6 +68,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
             const response = await fetch(lessonJsonPath);
             const lessonContent = await response.json();
+
+            // --- RESET STATS ---
+            currentLessonContent = lessonContent; // Save the lesson data for later
+            explainedCuesThisSession.clear();   // Reset the explanation tracker
+            // ---------------------------
 
             player.src = audioPath;
             player.load();
@@ -115,6 +131,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
             cueToggle.addEventListener('click', (event) => {
                 event.stopPropagation();
+
+                // --- UPDATE STATS ---
+                explainedCuesThisSession.add(item.id); 
+                // ---------------------
+
                 const isVisible = cueExplanation.classList.contains('visible');
                 document.querySelectorAll('.cue-explanation.visible').forEach(panel => {
                     panel.classList.remove('visible');
@@ -166,6 +187,8 @@ document.addEventListener('DOMContentLoaded', () => {
     player.addEventListener('pause', () => {
         navigator.mediaSession.playbackState = 'paused';
     });
+
+    player.addEventListener('ended', collectAndSaveStats);
 
     // Media Session API
     function updateMediaSession(lesson) {
@@ -242,6 +265,48 @@ document.addEventListener('DOMContentLoaded', () => {
         navigator.mediaSession.setActionHandler('seekforward', (details) => {
             player.currentTime = Math.min(player.currentTime + (details.seekOffset || 10), player.duration);
         });
+    }
+
+    async function collectAndSaveStats() {
+        console.log('Lesson finished. Collecting and saving stats...');
+
+        if (!currentLessonContent || currentLessonContent.length === 0) {
+            console.log('No lesson content to process.');
+            return;
+        }
+
+        // Use Promise.all to handle all database updates concurrently
+        const updatePromises = currentLessonContent.map(async (sentence) => {
+            const sentenceId = sentence.id;
+            const wasExplained = explainedCuesThisSession.has(sentenceId);
+
+            // 1. Get the existing stat record, if any
+            const existingStat = await getSentenceStat(sentenceId);
+
+            if (existingStat) {
+                // 2. If it exists, update it
+                existingStat.times_listened += 1;
+                if (wasExplained) {
+                    existingStat.times_explained += 1;
+                }
+                await updateSentenceStat(existingStat);
+            } else {
+                // 3. If it doesn't exist, create a new record
+                const newStat = {
+                    sentence_id: sentenceId,
+                    times_listened: 1,
+                    times_explained: wasExplained ? 1 : 0
+                };
+                await updateSentenceStat(newStat);
+            }
+        });
+
+        try {
+            await Promise.all(updatePromises);
+            console.log('All stats saved successfully!');
+        } catch (error) {
+            console.error('An error occurred while saving stats:', error);
+        }
     }
 
     setupMediaSessionHandlers();

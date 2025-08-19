@@ -1,86 +1,141 @@
-document.addEventListener('DOMContentLoaded', () => {
+// dashboard.js
 
-    // --- STATISTICS --- //
+import { initDB, getAllStats } from './db.js';
 
-    const totalListened = listeningData.length;
-    document.getElementById('total-listened').textContent = totalListened;
+// --- DOM Element Selection ---
+const understoodCountEl = document.getElementById('understood-count');
+const totalCountEl = document.getElementById('total-count');
+const easyLessonsEl = document.getElementById('easy-lessons');
+const mediumLessonsEl = document.getElementById('medium-lessons');
+const hardLessonsEl = document.getElementById('hard-lessons');
+const progressCircleBar = document.querySelector('.progress-circle-bar');
+const loadingSpinner = document.getElementById('loading-spinner');
 
-    const distinctListened = new Set(listeningData.map(e => e.sentenceId)).size;
-    document.getElementById('distinct-listened').textContent = distinctListened;
+/**
+ * Main function to initialize and populate the dashboard.
+ */
+async function initializeDashboard() {
+    try {
+        await initDB();
+        const processedData = await fetchAndProcessStats();
+        renderDashboard(processedData);
+    } catch (error) {
+        console.error("Failed to initialize dashboard:", error);
+        // Display an error message to the user
+        document.querySelector('.dashboard-container').innerHTML = 
+            `<p style="color: var(--accent-hard); padding: 20px;">Could not load dashboard data. Please try again later.</p>`;
+    } finally {
+        // Hide the loading spinner
+        loadingSpinner.classList.add('hidden');
+    }
+}
 
-    const weeklyAvg = (totalListened / 52).toFixed(1);
-    document.getElementById('avg-week').textContent = weeklyAvg;
+/**
+ * Fetches all necessary data and calculates statistics.
+ * @returns {Promise<object>} A promise that resolves with the calculated stats.
+ */
+async function fetchAndProcessStats() {
+    console.log("Fetching and processing stats...");
 
-    const monthlyAvg = (totalListened / 12).toFixed(1);
-    document.getElementById('avg-month').textContent = monthlyAvg;
+    // 1. Create a map of sentence IDs to lesson IDs
+    const lessonsResponse = await fetch('data/lessons.json');
+    const lessons = await lessonsResponse.json();
+    const sentenceToLessonMap = new Map();
 
-    const yearlyAvg = totalListened;
-    document.getElementById('avg-year').textContent = yearlyAvg;
+    const lessonFilePromises = lessons.map(lesson => 
+        fetch(`data/${lesson.path}${lesson.lessonFile}`).then(res => res.json())
+    );
+    const allLessonContents = await Promise.all(lessonFilePromises);
 
-    // --- CALENDAR HEATMAP --- //
+    allLessonContents.forEach((content, index) => {
+        const lessonId = lessons[index].id;
+        content.forEach(sentence => {
+            sentenceToLessonMap.set(sentence.id, lessonId);
+        });
+    });
 
-    const heatmapContainer = document.querySelector('.heatmap-container');
-    const listeningByDay = {};
-    for (const event of listeningData) {
-        const date = event.timestamp.toISOString().split('T')[0];
-        listeningByDay[date] = (listeningByDay[date] || 0) + 1;
+    // 2. Get all sentence stats from IndexedDB
+    const allStats = await getAllStats();
+    if (allStats.length === 0) {
+        return { // Return default empty state
+            globalStats: { totalSentences: 0, understoodSentences: 0 },
+            lessonCategories: { easy: 0, medium: 0, hard: 0 },
+            totalLessons: lessons.length
+        };
     }
 
-    const today = new Date();
-    const oneYearAgo = new Date();
-    oneYearAgo.setFullYear(today.getFullYear() - 1);
+    // 3. Aggregate and calculate stats
+    const globalStats = {
+        totalSentences: allStats.length,
+        understoodSentences: 0,
+    };
 
-    for (let d = new Date(oneYearAgo); d <= today; d.setDate(d.getDate() + 1)) {
-        const dateString = d.toISOString().split('T')[0];
-        const count = listeningByDay[dateString] || 0;
-        const cell = document.createElement('div');
-        cell.classList.add('heatmap-cell');
-        const intensity = Math.min(count / 10, 1);
-        cell.style.backgroundColor = `rgba(0, 122, 255, ${intensity})`;
-        heatmapContainer.appendChild(cell);
-    }
+    const lessonData = {}; // { "lesson-1": { ratios: [0.1, 0.5], ... } }
 
-    // --- UNCOVERING RATE HISTOGRAM --- //
+    allStats.forEach(stat => {
+        const ratio = stat.times_listened > 0 ? stat.times_explained / stat.times_listened : 0;
+        
+        // Calculate global stats
+        if (ratio < 0.3) {
+            globalStats.understoodSentences++;
+        }
 
-    const uncoveringRateBySentence = {};
-    const listenedCount = {};
+        // Aggregate lesson stats
+        const lessonId = sentenceToLessonMap.get(stat.sentence_id);
+        if (lessonId) {
+            if (!lessonData[lessonId]) {
+                lessonData[lessonId] = { ratios: [] };
+            }
+            lessonData[lessonId].ratios.push(ratio);
+        }
+    });
 
-    for (const event of listeningData) {
-        listenedCount[event.sentenceId] = (listenedCount[event.sentenceId] || 0) + 1;
-    }
+    // 4. Categorize lessons
+    const lessonCategories = { easy: 0, medium: 0, hard: 0 };
+    Object.values(lessonData).forEach(data => {
+        const avgRatio = data.ratios.reduce((a, b) => a + b, 0) / data.ratios.length;
+        if (avgRatio < 0.33) {
+            lessonCategories.easy++;
+        } else if (avgRatio >= 0.33 && avgRatio < 0.66) {
+            lessonCategories.medium++;
+        } else {
+            lessonCategories.hard++;
+        }
+    });
 
-    for (const event of uncoveringData) {
-        uncoveringRateBySentence[event.sentenceId] = (uncoveringRateBySentence[event.sentenceId] || 0) + 1;
-    }
+    console.log("Processing complete.");
+    return {
+        globalStats,
+        lessonCategories,
+        totalLessons: lessons.length
+    };
+}
 
-    const uncoveringRates = [];
-    for (const sentenceId in listenedCount) {
-        const uncovered = uncoveringRateBySentence[sentenceId] || 0;
-        const listened = listenedCount[sentenceId];
-        uncoveringRates.push(uncovered / listened);
-    }
+/**
+ * Renders the processed data onto the dashboard UI.
+ * @param {object} data The processed statistics object.
+ */
+function renderDashboard(data) {
+    const { globalStats, lessonCategories, totalLessons } = data;
 
-    const histogramContainer = document.querySelector('.histogram-container');
-    const bins = new Array(10).fill(0);
+    // Render global stats text
+    understoodCountEl.textContent = `${globalStats.understoodSentences} / ${globalStats.totalSentences}`;
+    totalCountEl.textContent = globalStats.totalSentences;
 
-    for (const rate of uncoveringRates) {
-        const binIndex = Math.min(Math.floor(rate * 10), 9);
-        bins[binIndex]++;
-    }
+    // Render lesson category stats
+    easyLessonsEl.textContent = `${lessonCategories.easy} / ${totalLessons}`;
+    mediumLessonsEl.textContent = `${lessonCategories.medium} / ${totalLessons}`;
+    hardLessonsEl.textContent = `${lessonCategories.hard} / ${totalLessons}`;
 
-    const maxBinCount = Math.max(...bins);
+    // Render the SVG progress circle
+    const radius = progressCircleBar.r.baseVal.value;
+    const circumference = 2 * Math.PI * radius;
+    const progressPercentage = globalStats.totalSentences > 0 ? globalStats.understoodSentences / globalStats.totalSentences : 0;
+    const offset = circumference - (progressPercentage * circumference);
 
-    for (let i = 0; i < bins.length; i++) {
-        const bar = document.createElement('div');
-        bar.classList.add('histogram-bar');
-        const height = (bins[i] / maxBinCount) * 100;
-        bar.style.height = `${height}%`;
+    progressCircleBar.style.strokeDasharray = circumference;
+    progressCircleBar.style.strokeDashoffset = offset;
+}
 
-        const barLabel = document.createElement('div');
-        barLabel.classList.add('bar-label');
-        barLabel.textContent = `${(i * 0.1).toFixed(1)}-${((i + 1) * 0.1).toFixed(1)}`;
-        bar.appendChild(barLabel);
-
-        histogramContainer.appendChild(bar);
-    }
-});
+// --- Start the process when the script loads ---
+initializeDashboard();

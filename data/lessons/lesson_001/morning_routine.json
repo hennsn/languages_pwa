@@ -1,119 +1,139 @@
 [
   {
+    "id": "s_001",
     "startTime": 0.2,
     "endTime": 0.9,
     "text": "\u6211\u7684\u65e9\u4e0a\u3002",
     "explanation": "### English Translation\n\n**My morning.**\n\n---\n\n### Word-by-Word Breakdown\n\n*   **\u6211 (w\u01d2)**: I / me\n*   **\u7684 (de)**: a particle indicating possession, similar to 's in English\n*   **\u65e9\u4e0a (z\u01ceoshang)**: morning\n\n---\n\n### Grammar Notes\n\n*   **\u7684 (de)**: This particle is placed after a noun or pronoun to show possession. For example, `\u6211 (w\u01d2)` means \"I,\" and `\u6211\u7684 (w\u01d2 de)` means \"my.\""
   },
   {
+    "id": "s_002",
     "startTime": 1.34,
     "endTime": 3.28,
     "text": "\u5927\u5bb6\u597d\uff0c\u6211\u53eb\u738b\u78ca\u3002",
     "explanation": "### English Translation\n\n**Hello everyone, my name is Wang Lei.**\n\n---\n\n### Word-by-Word Breakdown\n\n*   **\u5927\u5bb6 (d\u00e0ji\u0101)**: everyone\n*   **\u597d (h\u01ceo)**: good / well\n*   **\u6211 (w\u01d2)**: I / me\n*   **\u53eb (ji\u00e0o)**: to be called / to call\n*   **\u738b\u78ca (W\u00e1ng L\u011bi)**: a proper name (Wang Lei)\n\n---\n\n### Grammar Notes\n\n*   **\u5927\u5bb6\u597d (d\u00e0ji\u0101 h\u01ceo)** is a standard greeting used to address a group of people, meaning \"hello everyone.\"\n*   **\u6211\u53eb (w\u01d2 ji\u00e0o) ...** is the most common way to introduce your name, literally meaning \"I am called...\""
   },
   {
+    "id": "s_003",
     "startTime": 3.53,
     "endTime": 7.27,
     "text": "\u6211\u662f\u4e00\u540dUI\u8bbe\u8ba1\u5e08\uff0c\u5728\u4e00\u5bb6\u79d1\u6280\u516c\u53f8\u5de5\u4f5c\u3002",
     "explanation": "### English Translation\n\n**I am a UI designer, and I work at a tech company.**\n\n---\n\n### Word-by-Word Breakdown\n\n*   **\u6211 (w\u01d2)**: I / me\n*   **\u662f (sh\u00ec)**: to be (am, is, are)\n*   **\u4e00\u540d (y\u012b m\u00edng)**: one / a (m\u00edng is a measure word for people, often used for professions)\n*   **UI\u8bbe\u8ba1\u5e08 (UI sh\u00e8j\u00ecsh\u012b)**: UI designer\n*   **\u5728 (z\u00e0i)**: at / in\n*   **\u4e00\u5bb6 (y\u012b ji\u0101)**: one / a (ji\u0101 is a measure word for businesses like companies or shops)\n*   **\u79d1\u6280 (k\u0113j\u00ec)**: technology\n*   **\u516c\u53f8 (g\u014dngs\u012b)**: company\n*   **\u5de5\u4f5c (g\u014dngzu\u00f2)**: to work / job\n\n---\n\n### Grammar Notes\n\n*   The structure **\u5728 (z\u00e0i) + [Place] + [Verb]** is used to say you are doing something at a specific location. Here, `\u5728\u4e00\u5bb6\u79d1\u6280\u516c\u53f8\u5de5\u4f5c` means \"to work at a tech company.\""
   },
   {
+    "id": "s_004",
     "startTime": 7.74,
     "endTime": 10.89,
     "text": "\u6bcf\u5929\u65e9\u4e0a7\u70b9\uff0c\u6211\u7684\u95f9\u949f\u90fd\u4f1a\u51c6\u65f6\u54cd\u8d77\u3002",
     "explanation": "### English Translation\n\n**Every morning at 7 o'clock, my alarm clock always rings on time.**\n\n---\n\n### Word-by-Word Breakdown\n\n*   **\u6bcf\u5929 (m\u011biti\u0101n)**: every day\n*   **\u65e9\u4e0a (z\u01ceoshang)**: morning\n*   **7\u70b9 (q\u012b di\u01cen)**: 7 o'clock\n*   **\u6211\u7684 (w\u01d2 de)**: my\n*   **\u95f9\u949f (n\u00e0ozh\u014dng)**: alarm clock\n*   **\u90fd (d\u014du)**: all / always (in this context)\n*   **\u4f1a (hu\u00ec)**: will (indicates a recurring, predictable event)\n*   **\u51c6\u65f6 (zh\u01d4nsh\u00ed)**: on time / punctual\n*   **\u54cd\u8d77 (xi\u01cengq\u01d0)**: to ring / to sound\n\n---\n\n### Grammar Notes\n\n*   **\u90fd (d\u014du)** is used here with `\u6bcf\u5929` (every day) to emphasize that this event happens every single time without exception.\n*   **\u4f1a (hu\u00ec)** can indicate a future action, but here it describes a habitual or predictable action that happens regularly."
   },
   {
+    "id": "s_005",
     "startTime": 11.25,
     "endTime": 15.5,
     "text": "\u6211\u4e0d\u662f\u4e00\u4e2a\u559c\u6b22\u65e9\u4e0a\u7684\u4eba\uff0c\u4f46\u662f\u4e3a\u4e86\u5de5\u4f5c\uff0c\u6211\u5fc5\u987b\u8d77\u5e8a\u3002",
     "explanation": "### English Translation\n\n**I am not a morning person, but for the sake of work, I must get up.**\n\n---\n\n### Word-by-Word Breakdown\n\n*   **\u6211 (w\u01d2)**: I / me\n*   **\u4e0d\u662f (b\u00fa sh\u00ec)**: am not / is not\n*   **\u4e00\u4e2a (y\u012b ge)**: a / one (general measure word)\n*   **\u559c\u6b22 (x\u01d0hu\u0101n)**: to like\n*   **\u65e9\u4e0a (z\u01ceoshang)**: morning\n*   **\u7684 (de)**: a particle that connects a description to a noun\n*   **\u4eba (r\u00e9n)**: person\n*   **\u4f46\u662f (d\u00e0nsh\u00ec)**: but / however\n*   **\u4e3a\u4e86 (w\u00e8ile)**: for / in order to\n*   **\u5de5\u4f5c (g\u014dngzu\u00f2)**: work / job\n*   **\u6211 (w\u01d2)**: I / me\n*   **\u5fc5\u987b (b\u00ecx\u016b)**: must / have to\n*   **\u8d77\u5e8a (q\u01d0chu\u00e1ng)**: to get up from bed\n\n---\n\n### Grammar Notes\n\n*   The phrase **\u559c\u6b22\u65e9\u4e0a\u7684\u4eba (x\u01d0hu\u0101n z\u01ceoshang de r\u00e9n)** literally means \"a person who likes the morning.\" This is a common structure ([verb phrase] + \u7684 + [noun]) to describe someone or something."
   },
   {
+    "id": "s_006",
     "startTime": 16.13,
     "endTime": 19.03,
     "text": "\u6211\u5148\u62ff\u8d77\u6211\u7684\u624b\u673a\uff0c\u770b\u770b\u6709\u6ca1\u6709\u91cd\u8981\u7684\u6d88\u606f\u3002",
     "explanation": "### English Translation\n\n**First, I pick up my phone to see if there are any important messages.**\n\n---\n\n### Word-by-Word Breakdown\n\n*   **\u6211 (w\u01d2)**: I / me\n*   **\u5148 (xi\u0101n)**: first\n*   **\u62ff\u8d77 (n\u00e1q\u01d0)**: to pick up\n*   **\u6211\u7684 (w\u01d2 de)**: my\n*   **\u624b\u673a (sh\u01d2uj\u012b)**: mobile phone\n*   **\u770b\u770b (k\u00e0nkan)**: to have a look / to check\n*   **\u6709\u6ca1\u6709 (y\u01d2u m\u00e9iy\u01d2u)**: to have or not have (used to ask a yes/no question)\n*   **\u91cd\u8981 (zh\u00f2ngy\u00e0o)**: important\n*   **\u7684 (de)**: a particle linking an adjective to a noun\n*   **\u6d88\u606f (xi\u0101oxi)**: message / news\n\n---\n\n### Grammar Notes\n\n*   **\u770b\u770b (k\u00e0nkan)**: This is a form of verb reduplication. It softens the tone and implies that the action is brief or casual, like \"take a quick look.\"\n*   **\u6709\u6ca1\u6709 (y\u01d2u m\u00e9iy\u01d2u)** is a common way to form a yes-no question, meaning \"is there...?\" or \"are there...?\""
   },
   {
+    "id": "s_007",
     "startTime": 19.64,
     "endTime": 24.17,
     "text": "\u6211\u7684\u540c\u4e8b\u5f20\u654f\u5e38\u5e38\u5f88\u65e9\u7ed9\u6211\u53d1\u6d88\u606f\uff0c\u6211\u4eec\u8ba8\u8bba\u5de5\u4f5c\u4e0a\u7684\u4e8b\u60c5\u3002",
     "explanation": "### English Translation\n\n**My colleague, Zhang Min, often sends me messages very early, and we discuss work-related matters.**\n\n---\n\n### Word-by-Word Breakdown\n\n*   **\u6211\u7684 (w\u01d2 de)**: my\n*   **\u540c\u4e8b (t\u00f3ngsh\u00ec)**: colleague\n*   **\u5f20\u654f (Zh\u0101ng M\u01d0n)**: a proper name (Zhang Min)\n*   **\u5e38\u5e38 (ch\u00e1ngch\u00e1ng)**: often\n*   **\u5f88\u65e9 (h\u011bn z\u01ceo)**: very early\n*   **\u7ed9 (g\u011bi)**: for / to\n*   **\u6211 (w\u01d2)**: me\n*   **\u53d1\u6d88\u606f (f\u0101 xi\u0101oxi)**: to send a message\n*   **\u6211\u4eec (w\u01d2men)**: we / us\n*   **\u8ba8\u8bba (t\u01ceol\u00f9n)**: to discuss\n*   **\u5de5\u4f5c\u4e0a (g\u014dngzu\u00f2 sh\u00e0ng)**: regarding work / on the job\n*   **\u7684 (de)**: a particle linking a description to a noun\n*   **\u4e8b\u60c5 (sh\u00ecqing)**: matter / affair / thing\n\n---\n\n### Grammar Notes\n\n*   The structure **\u7ed9 (g\u011bi) + [someone] + [verb]** means \"to do [verb] for/to [someone].\" Here, `\u7ed9\u6211\u53d1\u6d88\u606f` means \"send a message to me.\""
   },
   {
+    "id": "s_008",
     "startTime": 24.67,
     "endTime": 26.04,
     "text": "\u4eca\u5929\u4ed6\u4e5f\u53d1\u4e86\u6d88\u606f\u3002",
     "explanation": "### English Translation\n\n**Today he also sent a message.**\n\n---\n\n### Word-by-Word Breakdown\n\n*   **\u4eca\u5929 (j\u012bnti\u0101n)**: today\n*   **\u4ed6 (t\u0101)**: he / him\n*   **\u4e5f (y\u011b)**: also / too\n*   **\u53d1 (f\u0101)**: to send\n*   **\u4e86 (le)**: a particle indicating a completed action\n*   **\u6d88\u606f (xi\u0101oxi)**: message\n\n---\n\n### Grammar Notes\n\n*   **\u4e86 (le)** is placed after a verb to show that the action has been completed in the past. `\u53d1\u4e86 (f\u0101 le)` means \"(has) sent.\""
   },
   {
+    "id": "s_009",
     "startTime": 26.54,
     "endTime": 30.82,
     "text": "\u770b\u5b8c\u624b\u673a\uff0c\u6211\u6162\u6162\u5730\u4ece\u5e8a\u4e0a\u8d77\u6765\uff0c\u7136\u540e\u8d70\u8fdb\u6d17\u624b\u95f4\u3002",
     "explanation": "### English Translation\n\n**After finishing looking at my phone, I slowly get up from the bed, and then walk into the bathroom.**\n\n---\n\n### Word-by-Word Breakdown\n\n*   **\u770b\u5b8c (k\u00e0n w\u00e1n)**: to finish looking/reading/watching\n*   **\u624b\u673a (sh\u01d2uj\u012b)**: mobile phone\n*   **\u6211 (w\u01d2)**: I / me\n*   **\u6162\u6162\u5730 (m\u00e0nm\u00e0n de)**: slowly\n*   **\u4ece (c\u00f3ng)**: from\n*   **\u5e8a\u4e0a (chu\u00e1ng sh\u00e0ng)**: on the bed\n*   **\u8d77\u6765 (q\u01d0l\u00e1i)**: to get up\n*   **\u7136\u540e (r\u00e1nh\u00f2u)**: then / afterwards\n*   **\u8d70\u8fdb (z\u01d2uj\u00ecn)**: to walk into\n*   **\u6d17\u624b\u95f4 (x\u01d0sh\u01d2uji\u0101n)**: bathroom / restroom\n\n---\n\n### Grammar Notes\n\n*   **[Verb] + \u5b8c (w\u00e1n)** is a resultative complement that means \"to finish\" doing the action of the verb. `\u770b\u5b8c` means \"to finish looking.\"\n*   **\u5730 (de)** is used to connect an adverb (like `\u6162\u6162`, slowly) to the verb it modifies (`\u8d77\u6765`, get up)."
   },
   {
+    "id": "s_010",
     "startTime": 31.2,
     "endTime": 34.73,
     "text": "\u6211\u770b\u7740\u955c\u5b50\uff0c\u5148\u5237\u7259\uff0c\u7136\u540e\u7528\u51b7\u6c34\u6d17\u8138\u3002",
     "explanation": "### English Translation\n\n**Looking in the mirror, I first brush my teeth, and then wash my face with cold water.**\n\n---\n\n### Word-by-Word Breakdown\n\n*   **\u6211 (w\u01d2)**: I / me\n*   **\u770b (k\u00e0n)**: to look\n*   **\u7740 (zhe)**: a particle indicating a continuous action\n*   **\u955c\u5b50 (j\u00ecngzi)**: mirror\n*   **\u5148 (xi\u0101n)**: first\n*   **\u5237\u7259 (shu\u0101y\u00e1)**: to brush teeth\n*   **\u7136\u540e (r\u00e1nh\u00f2u)**: then\n*   **\u7528 (y\u00f2ng)**: to use\n*   **\u51b7\u6c34 (l\u011bngshu\u01d0)**: cold water\n*   **\u6d17\u8138 (x\u01d0li\u01cen)**: to wash one's face\n\n---\n\n### Grammar Notes\n\n*   **\u7740 (zhe)**: This particle is placed after a verb to show that an action is ongoing. `\u770b\u7740\u955c\u5b50` means \"(while) looking in the mirror.\"\n*   **\u7528 (y\u00f2ng) + [Object] + [Verb]** is a structure that means \"to use [Object] to do [Verb].\""
   },
   {
+    "id": "s_011",
     "startTime": 35.14,
     "endTime": 36.81,
     "text": "\u8fd9\u8ba9\u6211\u611f\u89c9\u6e05\u9192\u4e86\u5f88\u591a\u3002",
     "explanation": "### English Translation\n\n**This makes me feel much more awake.**\n\n---\n\n### Word-by-Word Breakdown\n\n*   **\u8fd9 (zh\u00e8)**: this\n*   **\u8ba9 (r\u00e0ng)**: to let / to make (someone do or feel something)\n*   **\u6211 (w\u01d2)**: me\n*   **\u611f\u89c9 (g\u01cenju\u00e9)**: to feel / feeling\n*   **\u6e05\u9192 (q\u012bngx\u01d0ng)**: awake / clear-headed\n*   **\u4e86 (le)**: a particle indicating a change of state\n*   **\u5f88\u591a (h\u011bn du\u014d)**: a lot / much\n\n---\n\n### Grammar Notes\n\n*   **\u8ba9 (r\u00e0ng)** is a causative verb. The structure **A \u8ba9 B + [Adjective/Verb]** means \"A makes B feel/do something.\"\n*   **\u4e86 (le)** here indicates a change of state, from feeling sleepy to feeling awake."
   },
   {
+    "id": "s_012",
     "startTime": 37.28,
     "endTime": 40.7,
     "text": "\u63a5\u4e0b\u6765\u662f\u4e00\u4e2a\u91cd\u8981\u7684\u4e8b\u60c5\uff0c\u9009\u62e9\u4eca\u5929\u7a7f\u4ec0\u4e48\u8863\u670d\u3002",
     "explanation": "### English Translation\n\n**Next is an important matter: choosing what clothes to wear today.**\n\n---\n\n### Word-by-Word Breakdown\n\n*   **\u63a5\u4e0b\u6765 (ji\u0113xi\u00e0l\u00e1i)**: next / following that\n*   **\u662f (sh\u00ec)**: is\n*   **\u4e00\u4e2a (y\u012b ge)**: a / an\n*   **\u91cd\u8981 (zh\u00f2ngy\u00e0o)**: important\n*   **\u7684 (de)**: a particle\n*   **\u4e8b\u60c5 (sh\u00ecqing)**: matter / thing\n*   **\u9009\u62e9 (xu\u01cenz\u00e9)**: to choose\n*   **\u4eca\u5929 (j\u012bnti\u0101n)**: today\n*   **\u7a7f (chu\u0101n)**: to wear\n*   **\u4ec0\u4e48 (sh\u00e9nme)**: what\n*   **\u8863\u670d (y\u012bfu)**: clothes"
   },
   {
+    "id": "s_013",
     "startTime": 41.24,
     "endTime": 44.33,
     "text": "\u4f5c\u4e3a\u4e00\u540d\u8bbe\u8ba1\u5e08\uff0c\u6211\u89c9\u5f97\u7a7f\u7684\u597d\u770b\u5f88\u91cd\u8981\u3002",
     "explanation": "### English Translation\n\n**As a designer, I feel that dressing well is very important.**\n\n---\n\n### Word-by-Word Breakdown\n\n*   **\u4f5c\u4e3a (zu\u00f2w\u00e9i)**: as / in the capacity of\n*   **\u4e00\u540d (y\u012b m\u00edng)**: one / a (measure word for people/professions)\n*   **\u8bbe\u8ba1\u5e08 (sh\u00e8j\u00ecsh\u012b)**: designer\n*   **\u6211 (w\u01d2)**: I / me\n*   **\u89c9\u5f97 (ju\u00e9de)**: to feel / to think\n*   **\u7a7f (chu\u0101n)**: to wear\n*   **\u5f97 (de)**: a structural particle used after a verb to introduce a complement\n*   **\u597d\u770b (h\u01ceok\u00e0n)**: good-looking / beautiful\n*   **\u5f88 (h\u011bn)**: very\n*   **\u91cd\u8981 (zh\u00f2ngy\u00e0o)**: important\n\n---\n\n### Grammar Notes\n\n*   The particle **\u5f97 (de)** follows a verb to describe *how* the action is performed. **\u7a7f\u5f97\u597d\u770b (chu\u0101n de h\u01ceok\u00e0n)** means \"to dress well\" or literally, \"to wear in a good-looking way.\""
   },
   {
+    "id": "s_014",
     "startTime": 44.98,
     "endTime": 45.89,
     "text": "\u6211\u6253\u5f00\u8863\u67dc\u3002",
     "explanation": "### English Translation\n\n**I open the wardrobe.**\n\n---\n\n### Word-by-Word Breakdown\n\n*   **\u6211 (w\u01d2)**: I / me\n*   **\u6253\u5f00 (d\u01cek\u0101i)**: to open\n*   **\u8863\u67dc (y\u012bgu\u00ec)**: wardrobe / closet"
   },
   {
+    "id": "s_015",
     "startTime": 46.66,
     "endTime": 49.23,
     "text": "\u6211\u7684\u8863\u670d\u4e0d\u591a\uff0c\u4f46\u662f\u90fd\u5f88\u7b80\u5355\u5e72\u51c0\u3002",
     "explanation": "### English Translation\n\n**I don't have many clothes, but they are all simple and clean.**\n\n---\n\n### Word-by-Word Breakdown\n\n*   **\u6211\u7684 (w\u01d2 de)**: my\n*   **\u8863\u670d (y\u012bfu)**: clothes\n*   **\u4e0d\u591a (b\u00f9 du\u014d)**: not many\n*   **\u4f46\u662f (d\u00e0nsh\u00ec)**: but / however\n*   **\u90fd (d\u014du)**: all\n*   **\u5f88 (h\u011bn)**: very\n*   **\u7b80\u5355 (ji\u01cend\u0101n)**: simple\n*   **\u5e72\u51c0 (g\u0101nj\u00ecng)**: clean\n\n---\n\n### Grammar Notes\n\n*   **\u90fd (d\u014du)** is used here to emphasize that the adjectives (`\u7b80\u5355`, `\u5e72\u51c0`) apply to *all* of the clothes mentioned."
   },
   {
+    "id": "s_016",
     "startTime": 49.59,
     "endTime": 54.12,
     "text": "\u4eca\u5929\u5929\u6c14\u5f88\u597d\uff0c\u6211\u9009\u4e86\u4e00\u4ef6\u767d\u8272\u7684T\u6064\u548c\u4e00\u6761\u84dd\u8272\u7684\u725b\u4ed4\u88e4\u3002",
     "explanation": "### English Translation\n\n**The weather is very good today; I chose a white T-shirt and a pair of blue jeans.**\n\n---\n\n### Word-by-Word Breakdown\n\n*   **\u4eca\u5929 (j\u012bnti\u0101n)**: today\n*   **\u5929\u6c14 (ti\u0101nq\u00ec)**: weather\n*   **\u5f88\u597d (h\u011bn h\u01ceo)**: very good\n*   **\u6211 (w\u01d2)**: I / me\n*   **\u9009 (xu\u01cen)**: to choose\n*   **\u4e86 (le)**: particle for a completed action\n*   **\u4e00\u4ef6 (y\u012b ji\u00e0n)**: one (measure word for upper body clothing)\n*   **\u767d\u8272 (b\u00e1is\u00e8)**: white (color)\n*   **\u7684 (de)**: particle\n*   **T\u6064 (T-x\u00f9)**: T-shirt\n*   **\u548c (h\u00e9)**: and\n*   **\u4e00\u6761 (y\u012b ti\u00e1o)**: one (measure word for long, thin items like pants or rivers)\n*   **\u84dd\u8272 (l\u00e1ns\u00e8)**: blue (color)\n*   **\u7684 (de)**: particle\n*   **\u725b\u4ed4\u88e4 (ni\u00faz\u01ceik\u00f9)**: jeans\n\n---\n\n### Grammar Notes\n\n*   **\u4e86 (le)** indicates that the action of choosing (`\u9009`) is complete.\n*   Chinese uses **measure words** with numbers. **\u4ef6 (ji\u00e0n)** is for shirts, and **\u6761 (ti\u00e1o)** is for pants."
   },
   {
+    "id": "s_017",
     "startTime": 54.67,
     "endTime": 58.07,
     "text": "\u6211\u89c9\u5f97\u8fd9\u6837\u7a7f\u5f88\u8212\u670d\uff0c\u4e5f\u9002\u5408\u5728\u516c\u53f8\u5de5\u4f5c\u3002",
     "explanation": "### English Translation\n\n**I think dressing this way is very comfortable and also suitable for working at the company.**\n\n---\n\n### Word-by-Word Breakdown\n\n*   **\u6211 (w\u01d2)**: I / me\n*   **\u89c9\u5f97 (ju\u00e9de)**: to feel / to think\n*   **\u8fd9\u6837 (zh\u00e8y\u00e0ng)**: this way / like this\n*   **\u7a7f (chu\u0101n)**: to wear\n*   **\u5f88 (h\u011bn)**: very\n*   **\u8212\u670d (sh\u016bfu)**: comfortable\n*   **\u4e5f (y\u011b)**: also / too\n*   **\u9002\u5408 (sh\u00ech\u00e9)**: to suit / to be suitable for\n*   **\u5728 (z\u00e0i)**: at / in\n*   **\u516c\u53f8 (g\u014dngs\u012b)**: company\n*   **\u5de5\u4f5c (g\u014dngzu\u00f2)**: to work"
   },
   {
+    "id": "s_018",
     "startTime": 58.58,
     "endTime": 61.54,
     "text": "\u7a7f\u597d\u8863\u670d\u540e\uff0c\u6211\u611f\u89c9\u65b0\u7684\u4e00\u5929\u771f\u7684\u5f00\u59cb\u4e86\u3002",
     "explanation": "### English Translation\n\n**After getting dressed, I feel that the new day has really begun.**\n\n---\n\n### Word-by-Word Breakdown\n\n*   **\u7a7f\u597d (chu\u0101nh\u01ceo)**: to finish getting dressed\n*   **\u8863\u670d (y\u012bfu)**: clothes\n*   **\u540e (h\u00f2u)**: after\n*   **\u6211 (w\u01d2)**: I / me\n*   **\u611f\u89c9 (g\u01cenju\u00e9)**: to feel\n*   **\u65b0 (x\u012bn)**: new\n*   **\u7684 (de)**: particle\n*   **\u4e00\u5929 (y\u012b ti\u0101n)**: one day / a day\n*   **\u771f\u7684 (zh\u0113nde)**: really / truly\n*   **\u5f00\u59cb (k\u0101ish\u01d0)**: to begin / to start\n*   **\u4e86 (le)**: particle indicating a new situation or completed action\n\n---\n\n### Grammar Notes\n\n*   **[Verb] + \u597d (h\u01ceo)** is a resultative complement indicating that an action has been completed successfully or properly. `\u7a7f\u597d` means \"to have finished dressing.\"\n*   **\u4e86 (le)** at the end of the sentence signifies that a new situation (`\u65b0\u7684\u4e00\u5929\u5f00\u59cb\u4e86`) has emerged."
   },
   {
+    "id": "s_019",
     "startTime": 62.06,
     "endTime": 67.14,
     "text": "\u73b0\u5728\uff0c\u6211\u8981\u53bb\u53a8\u623f\u7ed9\u81ea\u5df1\u505a\u4e00\u70b9\u7b80\u5355\u7684\u65e9\u996d\uff0c\u7136\u540e\u51c6\u5907\u51fa\u95e8\u4e0a\u73ed\u3002",
     "explanation": "### English Translation\n\n**Now, I am going to the kitchen to make myself a simple breakfast, and then prepare to leave for work.**\n\n---\n\n### Word-by-Word Breakdown\n\n*   **\u73b0\u5728 (xi\u00e0nz\u00e0i)**: now\n*   **\u6211 (w\u01d2)**: I / me\n*   **\u8981 (y\u00e0o)**: to be going to / to want to\n*   **\u53bb (q\u00f9)**: to go\n*   **\u53a8\u623f (ch\u00faf\u00e1ng)**: kitchen\n*   **\u7ed9 (g\u011bi)**: for\n*   **\u81ea\u5df1 (z\u00ecj\u01d0)**: oneself\n*   **\u505a (zu\u00f2)**: to make / to do\n*   **\u4e00\u70b9 (y\u00ecdi\u01cen)**: a little bit\n*   **\u7b80\u5355 (ji\u01cend\u0101n)**: simple\n*   **\u7684 (de)**: particle\n*   **\u65e9\u996d (z\u01ceof\u00e0n)**: breakfast\n*   **\u7136\u540e (r\u00e1nh\u00f2u)**: then\n*   **\u51c6\u5907 (zh\u01d4nb\u00e8i)**: to prepare\n*   **\u51fa\u95e8 (ch\u016bm\u00e9n)**: to go out / to leave the house\n*   **\u4e0a\u73ed (sh\u00e0ngb\u0101n)**: to go to work\n\n---\n\n### Grammar Notes\n\n*   **\u8981 (y\u00e0o)** is used here to express a future plan or intention.\n*   **\u7ed9\u81ea\u5df1\u505a (g\u011bi z\u00ecj\u01d0 zu\u00f2)** means \"to make for myself.\""
   },
   {
+    "id": "s_020",
     "startTime": 67.61,
     "endTime": 70.9,
     "text": "\u6211\u559c\u6b22\u6211\u7684\u5de5\u4f5c\uff0c\u5e0c\u671b\u4eca\u5929\u4e5f\u662f\u5145\u6ee1\u521b\u610f\u7684\u4e00\u5929\u3002",

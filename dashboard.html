@@ -3,59 +3,75 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Learning Progress</title>
+    <title>Learning Dashboard</title>
+    <!-- Link to the new CSS file -->
     <link rel="stylesheet" href="dashboard.css">
 </head>
 <body>
 
+    <!-- Main container for the dashboard layout -->
     <div class="dashboard-container">
-        <header class="dashboard-header">
-            <h1>Learning Progress</h1>
-        </header>
 
-        <section class="dashboard-section" id="stats-section">
-            <h2>Statistics</h2>
-            <div class="stats-grid">
-                <div class="stat-box">
-                    <h3>Total Sentences Listened</h3>
-                    <p id="total-listened">-</p>
-                </div>
-                <div class="stat-box">
-                    <h3>Distinct Sentences Listened</h3>
-                    <p id="distinct-listened">-</p>
-                </div>
-                <div class="stat-box">
-                    <h3>Avg. Sentences / Week</h3>
-                    <p id="avg-week">-</p>
-                </div>
-                <div class="stat-box">
-                    <h3>Avg. Sentences / Month</h3>
-                    <p id="avg-month">-</p>
-                </div>
-                <div class="stat-box">
-                    <h3>Avg. Sentences / Year</h3>
-                    <p id="avg-year">-</p>
+        <!-- Left Panel: Global statistics and the progress circle -->
+        <div class="panel global-stats-panel">
+            
+            <div class="progress-circle-container">
+                <!-- SVG element for the circular graph -->
+                <svg class="progress-circle-svg" viewBox="0 0 120 120">
+                    <!-- The grey background circle -->
+                    <circle class="progress-circle-bg" cx="60" cy="60" r="54"></circle>
+                    <!-- The colored progress arc. We will manipulate this with JS. -->
+                    <circle class="progress-circle-bar" cx="60" cy="60" r="54"></circle>
+                </svg>
+
+                <!-- The text overlay in the center of the circle -->
+                <div class="progress-text">
+                    <h2 id="understood-count">--</h2>
+                    <p>Understood</p>
                 </div>
             </div>
-        </section>
 
-        <section class="dashboard-section" id="heatmap-section">
-            <h2>Activity Heatmap</h2>
-            <div class="heatmap-container">
-                <!-- Calendar heatmap will be generated here by JS -->
+            <!-- Text below the circle for total sentence count -->
+            <div class="total-sentences-text">
+                <p>Total unique sentences: <span id="total-count">--</span></p>
             </div>
-        </section>
+            
+        </div>
 
-        <section class="dashboard-section" id="histogram-section">
-            <h2>"Uncovering Rate" Histogram</h2>
-            <div class="histogram-container">
-                <!-- Histogram will be generated here by JS -->
+        <!-- Right Panel: Lesson breakdown by difficulty -->
+        <div class="panel lesson-stats-panel">
+            
+            <!-- Box for "Easy" lessons -->
+            <div class="stat-box easy">
+                <h3>Easy</h3>
+                <p id="easy-lessons">-- / --</p>
             </div>
-        </section>
+
+            <!-- Box for "Medium" lessons -->
+            <div class="stat-box medium">
+                <h3>Medium</h3>
+                <p id="medium-lessons">-- / --</p>
+            </div>
+            
+            <!-- Box for "Hard" lessons -->
+            <div class="stat-box hard">
+                <h3>Hard</h3>
+                <p id="hard-lessons">-- / --</p>
+            </div>
+
+        </div>
+
     </div>
 
-    <script src="dashboard-data.js"></script>
-    <script src="dashboard.js"></script>
+    <!-- The spinner will be shown while data is loading -->
+    <div id="loading-spinner" class="spinner-overlay">
+        <div class="spinner"></div>
+    </div>
+
+
+    <!-- Important: Include db.js first, then dashboard.js. Both must be modules. -->
+    <script src="db.js" type="module"></script>
+    <script src="dashboard.js" type="module"></script>
 
 </body>
 </html>
