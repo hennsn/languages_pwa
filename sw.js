@@ -12,6 +12,9 @@ const APP_SHELL = [
   'index.html',
   'style.css',
   'app.js',
+  'dashboard.html',
+  'dashboard.js',
+  'dashboard.css',
   'manifest.json',
   'images/icon-192x192.png',
   'images/icon-512x512.png',
@@ -22,7 +25,7 @@ const APP_SHELL = [
 // Fallbacks
 const FALLBACK_HTML = 'offline.html'; // Make sure you have this file
 const FALLBACK_IMAGE = 'images/fallback.png'; // Make sure you have this file
-const FALLBACK_AUDIO = 'audio/offline.mp3';   // Make sure you have this file
+const FALLBACK_AUDIO = 'data/offline.mp3';   // Make sure you have this file
 
 
 // -------------------------------
