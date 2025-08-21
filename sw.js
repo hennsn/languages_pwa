@@ -9,17 +9,21 @@ const CACHE_NAME = 'audio-pwa-v1';
 // App shell files (core UI)
 const APP_SHELL = [
   '/',
+  // main page
   'index.html',
   'style.css',
   'app.js',
+  'db.js',
+  'favicon.ico',
+  'manifest.json',
+  'data/lessons.json',
+  // dashboard
   'dashboard.html',
   'dashboard.js',
   'dashboard.css',
-  'manifest.json',
+  // media 
   'images/icon-192x192.png',
   'images/icon-512x512.png',
-  'images/album-art.png',
-  'data/lessons.json'
 ];
 
 // Fallbacks
