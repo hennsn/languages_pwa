@@ -11,7 +11,9 @@ let currentLanguageCode = null;
 // --- DOM Element Selection (No changes here) ---
 const understoodCountEl = document.getElementById('understood-count');
 const totalCountEl = document.getElementById('total-count');
-// ... (all other element selectors remain the same) ...
+const easyLessonsEl = document.getElementById('easy-lessons');
+const mediumLessonsEl = document.getElementById('medium-lessons');
+const hardLessonsEl = document.getElementById('hard-lessons');
 const journeyTrackProgressEl = document.getElementById('journey-track-progress');
 const journeyProgressTextEl = document.getElementById('journey-progress-text');
 const milestoneElements = document.querySelectorAll('.milestone');

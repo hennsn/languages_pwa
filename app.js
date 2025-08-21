@@ -272,7 +272,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const li = document.createElement('li');
             const button = document.createElement('button');
             button.dataset.langCode = lang.code;
-            button.innerHTML = `<span>${lang.flag}</span> ${lang.name}`;
+            button.innerHTML = `<img src="${lang.image}" alt="" class="flag-icon"> ${lang.name}`;
             
             button.addEventListener('click', () => {
                 // When a language is chosen, load its data and hide the modal
@@ -300,7 +300,7 @@ document.addEventListener('DOMContentLoaded', () => {
     
         const currentLang = availableLanguages.find(lang => lang.code === currentLanguageCode);
         if (currentLang) {
-            currentLanguageIndicator.innerHTML = `${currentLang.flag} ${currentLang.name}`;
+            currentLanguageIndicator.innerHTML = `<img src="${currentLang.image}" alt="" class="flag-icon"> ${currentLang.name}`;
         }
     }
 

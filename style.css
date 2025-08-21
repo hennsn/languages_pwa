@@ -555,3 +555,19 @@ audio {
     gap: 10px; /* Space between flag and language name */
     font-weight: 500;
 }
+
+/* == Flag Icon Styling == */
+.flag-icon {
+    width: 24px;   /* Or your desired size */
+    height: 24px;
+    border-radius: 50%; /* Makes them circular and neat */
+    object-fit: cover;    /* Ensures the flag image fills the circle */
+    vertical-align: middle; /* Helps with inline alignment */
+    box-shadow: 0 1px 3px rgba(0,0,0,0.2); /* Optional: adds a nice depth */
+}
+
+/* Specific adjustment for the flag in the language modal buttons */
+#language-list-modal button .flag-icon {
+    width: 32px;
+    height: 32px;
+}

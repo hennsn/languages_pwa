@@ -2,6 +2,13 @@
     {
       "code": "zhn",
       "name": "Chinese",
-      "flag": "&#x1F1E8;&#x1F1F3;"
+      "image": "images/flags/zhn.svg"
+    },
+    {
+      "code": "de",
+      "name": "German",
+      "image": "images/flags/de.svg"
     }
   ]
+
+  

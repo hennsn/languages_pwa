@@ -34,7 +34,7 @@ const APP_SHELL = [
   `${basePath}manifest.json`,
   `${basePath}images/icon-192x192.png`,
   `${basePath}images/icon-512x512.png`,
-  `${basePath}data/lessons.json`
+  `${basePath}data/languages.json`
 ];
 
 //console.log('[SW] App shell files:', APP_SHELL);
