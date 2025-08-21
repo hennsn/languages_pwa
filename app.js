@@ -14,6 +14,8 @@ document.addEventListener('DOMContentLoaded', () => {
     let lessonsData = [];
     let currentLessonId = null;
     let isChangingLesson = false; 
+    let maxTimeReached = 0;
+    let sessionStatsSaved = false; 
 
     let currentLessonContent = [];
     let explainedCuesThisSession = new Set();
@@ -25,7 +27,6 @@ document.addEventListener('DOMContentLoaded', () => {
             const response = await fetch('data/lessons.json');
             lessonsData = await response.json();
             
-            // 2. UPDATE THIS LINE: Add 'await' because renderLessonList is now async
             await renderLessonList(lessonsData);
 
             const lessonIdFromUrl = window.location.hash.substring(1);
@@ -40,7 +41,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    // 3. ENTIRELY REPLACE the old renderLessonList function with this new async version.
     async function renderLessonList(lessons) {
         // Fetch all calculated lesson difficulties from the DB
         const allProgress = await getAllLessonProgress();
@@ -71,8 +71,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // --- No changes to the functions below this line ---
-
     async function loadLesson(lessonId) {
         if (currentLessonId === lessonId || isChangingLesson) return; 
 
@@ -90,7 +88,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const lessonContent = await response.json();
 
             currentLessonContent = lessonContent;
-            explainedCuesThisSession.clear();
+            resetSessionTrackers();
 
             player.src = audioPath;
             player.load();
@@ -169,6 +167,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function updateTranscriptHighlight() {
         const currentTime = player.currentTime;
+
+        if (currentTime > maxTimeReached) {
+            maxTimeReached = currentTime;
+        }
+
         const cues = transcriptContainer.querySelectorAll('.cue-main');
 
         cues.forEach(cue => {
@@ -193,9 +196,19 @@ document.addEventListener('DOMContentLoaded', () => {
     menuToggle.addEventListener('click', openDrawer);
     drawerOverlay.addEventListener('click', closeDrawer);
 
-    player.addEventListener('play', () => { navigator.mediaSession.playbackState = 'playing'; });
+    player.addEventListener('play', () => {
+        // A new listening session starts if the user presses play near the beginning.
+        // We use a small threshold (e.g., 1 second) to account for minor delays.
+        if (player.currentTime < 1) {
+            resetSessionTrackers();
+        }
+        
+        navigator.mediaSession.playbackState = 'playing';
+    });
+
     player.addEventListener('pause', () => { navigator.mediaSession.playbackState = 'paused'; });
     player.addEventListener('ended', collectAndSaveStats);
+    window.addEventListener('pagehide', collectAndSaveStats);
 
     function updateMediaSession(lesson) {
         if (!('mediaSession' in navigator)) return;
@@ -238,8 +251,21 @@ document.addEventListener('DOMContentLoaded', () => {
 
     async function collectAndSaveStats() {
         console.log('Lesson finished. Collecting and saving stats...');
-        if (!currentLessonContent || currentLessonContent.length === 0) return;
 
+        // Add these checks at the very top
+        if (sessionStatsSaved || !player.duration) return; // Don't save if already saved or duration is 0
+        
+        const listeningThreshold = 0.9; // 90%
+        if (maxTimeReached < player.duration * listeningThreshold) {
+            console.log(`Listen progress (${Math.round(maxTimeReached / player.duration * 100)}%) did not meet threshold of ${listeningThreshold*100}%. Stats not saved.`);
+            return;
+        }
+        
+        sessionStatsSaved = true; // Mark as saved for this session
+        console.log('Listen progress met threshold. Collecting and saving stats...');
+
+        if (!currentLessonContent || currentLessonContent.length === 0) return;
+        
         const updatePromises = currentLessonContent.map(async (sentence) => {
             const sentenceId = sentence.id;
             const wasExplained = explainedCuesThisSession.has(sentenceId);
@@ -263,6 +289,13 @@ document.addEventListener('DOMContentLoaded', () => {
         } catch (error) {
             console.error('An error occurred while saving stats:', error);
         }
+    }
+
+    function resetSessionTrackers() {
+        console.log("Resetting session trackers for a new listen.");
+        maxTimeReached = 0;
+        sessionStatsSaved = false;
+        explainedCuesThisSession.clear();
     }
 
     setupMediaSessionHandlers();

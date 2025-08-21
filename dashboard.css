@@ -23,7 +23,104 @@ body {
     flex-direction: column; /* This is the key change */
     justify-content: center;
     align-items: center;
-    min-height: calc(100vh - 40px);
+    min-height: calc(100vh - 40px);.journey-tracker {
+        margin-top: 25px;
+        padding-top: 20px;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    
+    .journey-tracker h4 {
+        margin: 0 0 15px 0;
+        font-size: 1.1rem;
+        font-weight: 500;
+        color: var(--text-secondary);
+        text-align: center;
+    }
+    
+    .journey-bar-container {
+        position: relative;
+        width: 100%;
+        height: 8px; /* The thickness of the main bar */
+        margin-top: 30px;
+    }
+    
+    .journey-track-bg, .journey-track-progress {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        border-radius: 4px;
+    }
+    
+    .journey-track-bg {
+        width: 100%;
+        background-color: rgba(255, 255, 255, 0.1);
+    }
+    
+    .journey-track-progress {
+        width: 0%; /* Will be set by JS */
+        background-color: var(--accent-easy);
+        transition: width 0.8s ease-out;
+    }
+    
+    .journey-milestones {
+        position: relative;
+        display: flex;
+        justify-content: space-between;
+        /* Vertically center the milestones on the track */
+        top: 50%;
+        transform: translateY(-50%);
+    }
+    
+    .milestone {
+        width: 18px;
+        height: 18px;
+        border-radius: 50%;
+        background-color: var(--bg-dark);
+        border: 2px solid rgba(255, 255, 255, 0.2);
+        transition: all 0.3s ease;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .milestone span {
+        position: absolute;
+        top: 25px;
+        font-size: 0.8em;
+        font-weight: 600;
+        color: rgba(255, 255, 255, 0.4);
+    }
+    
+    /* --- Milestone States --- */
+    .milestone.achieved {
+        background-color: var(--accent-easy);
+        border-color: var(--accent-easy);
+    }
+    .milestone.achieved span {
+        color: var(--text-primary);
+    }
+    
+    .milestone.in-progress {
+        border-color: var(--accent-medium);
+        transform: scale(1.3);
+        box-shadow: 0 0 10px var(--accent-medium);
+    }
+    .milestone.in-progress span {
+        color: var(--accent-medium);
+    }
+    
+    .journey-progress-text {
+        text-align: center;
+        margin-top: 40px;
+        color: var(--text-secondary);
+        font-size: 0.9em;
+    }
+    
+    .journey-progress-text span {
+        color: var(--text-primary);
+        font-weight: 600;
+    }
 }
 
 /* Main Dashboard Layout */
@@ -73,10 +170,883 @@ body {
     fill: none;
     stroke-width: 10;
 }
-
-.progress-circle-bg {
-    stroke: rgba(255, 255, 255, 0.1); /* The grey track */
+.journey-tracker {
+    margin-top: 25px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
+
+.journey-tracker h4 {
+    margin: 0 0 15px 0;
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: var(--text-secondary);
+    text-align: center;
+}
+
+.journey-bar-container {
+    position: relative;
+    width: 100%;
+    height: 8px; /* The thickness of the main bar */
+    margin-top: 30px;
+}
+
+.journey-track-bg, .journey-track-progress {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    border-radius: 4px;
+}
+
+.journey-track-bg {
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.journey-track-progress {
+    width: 0%; /* Will be set by JS */
+    background-color: var(--accent-easy);
+    transition: width 0.8s ease-out;
+}
+
+.journey-milestones {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    /* Vertically center the milestones on the track */
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.milestone {
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background-color: var(--bg-dark);
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    transition: all 0.3s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.milestone span {
+    position: absolute;
+    top: 25px;
+    font-size: 0.8em;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.4);
+}
+
+/* --- Milestone States --- */
+.milestone.achieved {
+    background-color: var(--accent-easy);
+    border-color: var(--accent-easy);
+}
+.milestone.achieved span {
+    color: var(--text-primary);
+}
+
+.milestone.in-progress {
+    border-color: var(--accent-medium);
+    transform: scale(1.3);
+    box-shadow: 0 0 10px var(--accent-medium);
+}
+.milestone.in-progress span {
+    color: var(--accent-medium);
+}
+
+.journey-progress-text {.journey-tracker {
+    margin-top: 25px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.journey-tracker h4 {
+    margin: 0 0 15px 0;
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: var(--text-secondary);
+    text-align: center;
+}
+
+.journey-bar-container {
+    position: relative;
+    width: 100%;
+    height: 8px; /* The thickness of the main bar */
+    margin-top: 30px;
+}
+
+.journey-track-bg, .journey-track-progress {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    border-radius: 4px;
+}
+
+.journey-track-bg {
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.journey-track-progress {
+    width: 0%; /* Will be set by JS */
+    background-color: var(--accent-easy);
+    transition: width 0.8s ease-out;
+}
+
+.journey-milestones {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    /* Vertically center the milestones on the track */
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.milestone {
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background-color: var(--bg-dark);
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    transition: all 0.3s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.milestone span {
+    position: absolute;
+    top: 25px;
+    font-size: 0.8em;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.4);
+}
+
+/* --- Milestone States --- */
+.milestone.achieved {
+    background-color: var(--accent-easy);
+    border-color: var(--accent-easy);
+}
+.milestone.achieved span {
+    color: var(--text-primary);
+}
+
+.milestone.in-progress {
+    border-color: var(--accent-medium);
+    transform: scale(1.3);
+    box-shadow: 0 0 10px var(--accent-medium);
+}
+.milestone.in-progress span {
+    color: var(--accent-medium);
+}
+
+.journey-progress-text {
+    text-align: center;
+    margin-top: 40px;
+    color: var(--text-secondary);
+    font-size: 0.9em;
+}
+
+.journey-progress-text span {
+    color: var(--text-primary);
+    font-weight: 600;
+}
+    text-align: center;
+    margin-top: 40px;
+    color: var(--text-secondary);
+    font-size: 0.9em;
+}
+
+.journey-progress-text span {
+    color: var(--text-primary);
+    font-weight: 600;
+}
+.progress-circle-bg {
+    stroke: rgba(255, 255, 255, 0.1); /* The grey .journey-tracker {
+        margin-top: 25px;
+        padding-top: 20px;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    
+    .journey-tracker h4 {
+        margin: 0 0 15px 0;
+        font-size: 1.1rem;
+        font-weight: 500;
+        color: var(--text-secondary);
+        text-align: center;
+    }
+    
+    .journey-bar-container {
+        position: relative;
+        width: 100%;
+        height: 8px; /* The thickness of the main bar */
+        margin-top: 30px;
+    }
+    
+    .journey-track-bg, .journey-track-progress {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        border-radius: 4px;
+    }
+    
+    .journey-track-bg {
+        width: 100%;
+        background-color: rgba(255, 255, 255, 0.1);
+    }
+    
+    .journey-track-progress {
+        width: 0%; /* Will be set by JS */
+        background-color: var(--accent-easy);
+        transition: width 0.8s ease-out;
+    }
+    
+    .journey-milestones {
+        position: relative;
+        display: flex;
+        justify-content: space-between;
+        /* Vertically center the milestones on the track */
+        top: 50%;
+        transform: translateY(-50%);
+    }
+    
+    .milestone {
+        width: 18px;
+        height: 18px;
+        border-radius: 50%;
+        background-color: var(--bg-dark);
+        border: 2px solid rgba(255, 255, 255, 0.2);
+        transition: all 0.3s ease;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .milestone span {
+        position: absolute;
+        top: 25px;
+        font-size: 0.8em;
+        font-weight: 600;
+        color: rgba(255, 255, 255, 0.4);
+    }
+    
+    /* --- Milestone States --- */
+    .milestone.achieved {
+        background-color: var(--accent-easy);
+        border-color: var(--accent-easy);
+    }
+    .milestone.achieved span {
+        color: var(--text-primary);
+    }
+    
+    .milestone.in-progress {
+        border-color: var(--accent-medium);
+        transform: scale(1.3);
+        box-shadow: 0 0 10px var(--accent-medium);
+    }
+    .milestone.in-progress span {
+        color: var(--accent-medium);
+    }
+    
+    .journey-progress-text {.journey-tracker {
+        margin-top: 25px;
+        padding-top: 20px;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    
+    .journey-tracker h4 {
+        margin: 0 0 15px 0;
+        font-size: 1.1rem;
+        font-weight: 500;
+        color: var(--text-secondary);
+        text-align: center;
+    }
+    
+    .journey-bar-container {
+        position: relative;
+        width: 100%;
+        height: 8px; /* The thickness of the main bar */
+        margin-top: 30px;
+    }
+    
+    .journey-track-bg, .journey-track-progress {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        border-radius: 4px;
+    }
+    
+    .journey-track-bg {
+        width: 100%;
+        background-color: rgba(255, 255, 255, 0.1);
+    }
+    
+    .journey-track-progress {
+        width: 0%; /* Will be set by JS */
+        background-color: var(--accent-easy);
+        transition: width 0.8s ease-out;
+    }
+    
+    .journey-milestones {
+        position: relative;
+        display: flex;
+        justify-content: space-between;
+        /* Vertically center the milestones on the track */
+        top: 50%;
+        transform: translateY(-50%);
+    }
+    
+    .milestone {
+        width: 18px;
+        height: 18px;
+        border-radius: 50%;
+        background-color: var(--bg-dark);
+        border: 2px solid rgba(255, 255, 255, 0.2);
+        transition: all 0.3s ease;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .milestone span {
+        position: absolute;
+        top: 25px;
+        font-size: 0.8em;
+        font-weight: 600;
+        color: rgba(255, 255, 255, 0.4);
+    }
+    
+    /* --- Milestone States --- */
+    .milestone.achieved {
+        background-color: var(--accent-easy);
+        border-color: var(--accent-easy);
+    }
+    .milestone.achieved span {
+        color: var(--text-primary);
+    }
+    
+    .milestone.in-progress {
+        border-color: var(--accent-medium);
+        transform: scale(1.3);
+        box-shadow: 0 0 10px var(--accent-medium);
+    }
+    .milestone.in-progress span {.journey-tracker {
+        margin-top: 25px;
+        padding-top: 20px;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    
+    .journey-tracker h4 {
+        margin: 0 0 15px 0;
+        font-size: 1.1rem;
+        font-weight: 500;
+        color: var(--text-secondary);
+        text-align: center;
+    }
+    
+    .journey-bar-container {
+        position: relative;
+        width: 100%;
+        height: 8px; /* The thickness of the main bar */
+        margin-top: 30px;
+    }
+    
+    .journey-track-bg, .journey-track-progress {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        border-radius: 4px;
+    }
+    
+    .journey-track-bg {
+        width: 100%;
+        background-color: rgba(255, 255, 255, 0.1);
+    }
+    
+    .journey-track-progress {
+        width: 0%; /* Will be set by JS */
+        background-color: var(--accent-easy);
+        transition: width 0.8s ease-out;
+    }
+    
+    .journey-milestones {
+        position: relative;
+        display: flex;
+        justify-content: space-between;
+        /* Vertically center the milestones on the track */
+        top: 50%;
+        transform: translateY(-50%);
+    }
+    
+    .milestone {
+        width: 18px;
+        height: 18px;
+        border-radius: 50%;
+        background-color: var(--bg-dark);
+        border: 2px solid rgba(255, 255, 255, 0.2);
+        transition: all 0.3s ease;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .milestone span {
+        position: absolute;
+        top: 25px;
+        font-size: 0.8em;
+        font-weight: 600;
+        color: rgba(255, 255, 255, 0.4);
+    }
+    
+    /* --- Milestone States --- */
+    .milestone.achieved {
+        background-color: var(--accent-easy);
+        border-color: var(--accent-easy);
+    }
+    .milestone.achieved span {
+        color: var(--text-primary);
+    }
+    
+    .milestone.in-progress {
+        border-color: var(--accent-medium);
+        transform: scale(1.3);
+        box-shadow: 0 0 10px var(--accent-medium);
+    }
+    .milestone.in-progress span {
+        color: var(--accent-medium);
+    }
+    
+    .journey-progress-text {
+        text-align: center;
+        margin-top: 40px;
+        color: var(--text-secondary);.journey-tracker {
+            margin-top: 25px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .journey-tracker h4 {
+            margin: 0 0 15px 0;
+            font-size: 1.1rem;
+            font-weight: 500;
+            color: var(--text-secondary);
+            text-align: center;
+        }
+        
+        .journey-bar-container {
+            position: relative;
+            width: 100%;
+            height: 8px; /* The thickness of the main bar */
+            margin-top: 30px;
+        }
+        
+        .journey-track-bg, .journey-track-progress {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            border-radius: 4px;
+        }
+        
+        .journey-track-bg {
+            width: 100%;
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+        
+        .journey-track-progress {
+            width: 0%; /* Will be set by JS */
+            background-color: var(--accent-easy);
+            transition: width 0.8s ease-out;
+        }
+        
+        .journey-milestones {
+            position: relative;
+            display: flex;
+            justify-content: space-between;
+            /* Vertically center the milestones on the track */
+            top: 50%;
+            transform: translateY(-50%);
+        }
+        
+        .milestone {
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            background-color: var(--bg-dark);
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            transition: all 0.3s ease;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .milestone span {
+            position: absolute;
+            top: 25px;
+            font-size: 0.8em;
+            font-weight: 600;
+            color: rgba(255, 255, 255, 0.4);
+        }
+        
+        /* --- Milestone States --- */
+        .milestone.achieved {
+            background-color: var(--accent-easy);
+            border-color: var(--accent-easy);
+        }
+        .milestone.achieved span {
+            color: var(--text-primary);
+        }
+        
+        .milestone.in-progress {
+            border-color: var(--accent-medium);
+            transform: scale(1.3);
+            box-shadow: 0 0 10px var(--accent-medium);
+        }
+        .milestone.in-progress span {
+            color: var(--accent-medium);
+        }
+        
+        .journey-progress-text {.journey-tracker {
+            margin-top: 25px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .journey-tracker h4 {
+            margin: 0 0 15px 0;
+            font-size: 1.1rem;
+            font-weight: 500;
+            color: var(--text-secondary);
+            text-align: center;
+        }
+        
+        .journey-bar-container {
+            position: relative;
+            width: 100%;
+            height: 8px; /* The thickness of the main bar */
+            margin-top: 30px;
+        }
+        
+        .journey-track-bg, .journey-track-progress {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            border-radius: 4px;
+        }
+        
+        .journey-track-bg {
+            width: 100%;
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+        
+        .journey-track-progress {
+            width: 0%; /* Will be set by JS */
+            background-color: var(--accent-easy);
+            transition: width 0.8s ease-out;
+        }
+        
+        .journey-milestones {
+            position: relative;
+            display: flex;
+            justify-content: space-between;
+            /* Vertically center the milestones on the track */
+            top: 50%;
+            transform: translateY(-50%);
+        }
+        
+        .milestone {
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            background-color: var(--bg-dark);
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            transition: all 0.3s ease;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .milestone span {
+            position: absolute;
+            top: 25px;
+            font-size: 0.8em;
+            font-weight: 600;
+            color: rgba(255, 255, 255, 0.4);
+        }
+        
+        /* --- Milestone States --- */
+        .milestone.achieved {
+            background-color: var(--accent-easy);
+            border-color: var(--accent-easy);
+        }
+        .milestone.achieved span {
+            color: var(--text-primary);
+        }
+        
+        .milestone.in-progress {
+            border-color: var(--accent-medium);
+            transform: scale(1.3);
+            box-shadow: 0 0 10px var(--accent-medium);
+        }
+        .milestone.in-progress span {
+            color: var(--accent-medium);
+        }
+        
+        .journey-progress-text {
+            text-align: center;
+            margin-top: 40px;
+            color: var(--text-secondary);
+            font-size: 0.9em;
+        }
+        
+        .journey-progress-text span {
+            color: var(--text-primary);
+            font-weight: 600;
+        }
+            text-align: center;
+            margin-top: 40px;
+            color: var(--text-secondary);
+            font-size: 0.9em;
+        }
+        
+        .journey-progress-text span {
+            color: var(--text-primary);
+            font-weight: 600;
+        }
+        font-size: 0.9em;
+    }
+    
+    .journey-progress-text span {
+        color: var(--text-primary);.journey-tracker {
+            margin-top: 25px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .journey-tracker h4 {
+            margin: 0 0 15px 0;
+            font-size: 1.1rem;
+            font-weight: 500;
+            color: var(--text-secondary);
+            text-align: center;
+        }
+        
+        .journey-bar-container {
+            position: relative;
+            width: 100%;
+            height: 8px; /* The thickness of the main bar */
+            margin-top: 30px;
+        }
+        
+        .journey-track-bg, .journey-track-progress {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            border-radius: 4px;
+        }
+        
+        .journey-track-bg {
+            width: 100%;
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+        
+        .journey-track-progress {
+            width: 0%; /* Will be set by JS */
+            background-color: var(--accent-easy);
+            transition: width 0.8s ease-out;
+        }
+        
+        .journey-milestones {
+            position: relative;
+            display: flex;
+            justify-content: space-between;
+            /* Vertically center the milestones on the track */
+            top: 50%;
+            transform: translateY(-50%);
+        }
+        
+        .milestone {
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            background-color: var(--bg-dark);
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            transition: all 0.3s ease;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .milestone span {
+            position: absolute;
+            top: 25px;
+            font-size: 0.8em;
+            font-weight: 600;
+            color: rgba(255, 255, 255, 0.4);
+        }
+        
+        /* --- Milestone States --- */
+        .milestone.achieved {
+            background-color: var(--accent-easy);
+            border-color: var(--accent-easy);
+        }
+        .milestone.achieved span {
+            color: var(--text-primary);
+        }
+        
+        .milestone.in-progress {
+            border-color: var(--accent-medium);
+            transform: scale(1.3);
+            box-shadow: 0 0 10px var(--accent-medium);
+        }
+        .milestone.in-progress span {
+            color: var(--accent-medium);
+        }
+        
+        .journey-progress-text {.journey-tracker {
+            margin-top: 25px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .journey-tracker h4 {
+            margin: 0 0 15px 0;
+            font-size: 1.1rem;
+            font-weight: 500;
+            color: var(--text-secondary);
+            text-align: center;
+        }
+        
+        .journey-bar-container {
+            position: relative;
+            width: 100%;
+            height: 8px; /* The thickness of the main bar */
+            margin-top: 30px;
+        }
+        
+        .journey-track-bg, .journey-track-progress {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            border-radius: 4px;
+        }
+        
+        .journey-track-bg {
+            width: 100%;
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+        
+        .journey-track-progress {
+            width: 0%; /* Will be set by JS */
+            background-color: var(--accent-easy);
+            transition: width 0.8s ease-out;
+        }
+        
+        .journey-milestones {
+            position: relative;
+            display: flex;
+            justify-content: space-between;
+            /* Vertically center the milestones on the track */
+            top: 50%;
+            transform: translateY(-50%);
+        }
+        
+        .milestone {
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            background-color: var(--bg-dark);
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            transition: all 0.3s ease;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .milestone span {
+            position: absolute;
+            top: 25px;
+            font-size: 0.8em;
+            font-weight: 600;
+            color: rgba(255, 255, 255, 0.4);
+        }
+        
+        /* --- Milestone States --- */
+        .milestone.achieved {
+            background-color: var(--accent-easy);
+            border-color: var(--accent-easy);
+        }
+        .milestone.achieved span {
+            color: var(--text-primary);
+        }
+        
+        .milestone.in-progress {
+            border-color: var(--accent-medium);
+            transform: scale(1.3);
+            box-shadow: 0 0 10px var(--accent-medium);
+        }
+        .milestone.in-progress span {
+            color: var(--accent-medium);
+        }
+        
+        .journey-progress-text {
+            text-align: center;
+            margin-top: 40px;
+            color: var(--text-secondary);
+            font-size: 0.9em;
+        }
+        
+        .journey-progress-text span {
+            color: var(--text-primary);
+            font-weight: 600;
+        }
+            text-align: center;
+            margin-top: 40px;
+            color: var(--text-secondary);
+            font-size: 0.9em;
+        }
+        
+        .journey-progress-text span {
+            color: var(--text-primary);
+            font-weight: 600;
+        }
+        font-weight: 600;
+    }
+        color: var(--accent-medium);
+    }
+    
+    .journey-progress-text {
+        text-align: center;
+        margin-top: 40px;
+        color: var(--text-secondary);
+        font-size: 0.9em;
+    }
+    
+    .journey-progress-text span {
+        color: var(--text-primary);
+        font-weight: 600;
+    }
+        text-align: center;
+        margin-top: 40px;
+        color: var(--text-secondary);
+        font-size: 0.9em;
+    }
+    
+    .journey-progress-text span {
+        color: var(--text-primary);
+        font-weight: 600;
+    }track */
+
 
 .progress-circle-bar {
     stroke: var(--accent-easy); /* The progress color */
@@ -120,7 +1090,104 @@ body {
 
 /* Right Panel: Lesson Stats */
 .lesson-stats-panel {
-    display: flex;
+    display: flex;.journey-tracker {
+        margin-top: 25px;
+        padding-top: 20px;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    
+    .journey-tracker h4 {
+        margin: 0 0 15px 0;
+        font-size: 1.1rem;
+        font-weight: 500;
+        color: var(--text-secondary);
+        text-align: center;
+    }
+    
+    .journey-bar-container {
+        position: relative;
+        width: 100%;
+        height: 8px; /* The thickness of the main bar */
+        margin-top: 30px;
+    }
+    
+    .journey-track-bg, .journey-track-progress {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        border-radius: 4px;
+    }
+    
+    .journey-track-bg {
+        width: 100%;
+        background-color: rgba(255, 255, 255, 0.1);
+    }
+    
+    .journey-track-progress {
+        width: 0%; /* Will be set by JS */
+        background-color: var(--accent-easy);
+        transition: width 0.8s ease-out;
+    }
+    
+    .journey-milestones {
+        position: relative;
+        display: flex;
+        justify-content: space-between;
+        /* Vertically center the milestones on the track */
+        top: 50%;
+        transform: translateY(-50%);
+    }
+    
+    .milestone {
+        width: 18px;
+        height: 18px;
+        border-radius: 50%;
+        background-color: var(--bg-dark);
+        border: 2px solid rgba(255, 255, 255, 0.2);
+        transition: all 0.3s ease;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .milestone span {
+        position: absolute;
+        top: 25px;
+        font-size: 0.8em;
+        font-weight: 600;
+        color: rgba(255, 255, 255, 0.4);
+    }
+    
+    /* --- Milestone States --- */
+    .milestone.achieved {
+        background-color: var(--accent-easy);
+        border-color: var(--accent-easy);
+    }
+    .milestone.achieved span {
+        color: var(--text-primary);
+    }
+    
+    .milestone.in-progress {
+        border-color: var(--accent-medium);
+        transform: scale(1.3);
+        box-shadow: 0 0 10px var(--accent-medium);
+    }
+    .milestone.in-progress span {
+        color: var(--accent-medium);
+    }
+    
+    .journey-progress-text {
+        text-align: center;
+        margin-top: 40px;
+        color: var(--text-secondary);
+        font-size: 0.9em;
+    }
+    
+    .journey-progress-text span {
+        color: var(--text-primary);
+        font-weight: 600;
+    }
     flex-direction: column;
     justify-content: center;
     gap: 15px;
@@ -138,7 +1205,104 @@ body {
     transform: scale(1.03);
 }
 
-.stat-box h3 {
+.stat-box h3 {.journey-tracker {
+    margin-top: 25px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.journey-tracker h4 {
+    margin: 0 0 15px 0;
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: var(--text-secondary);
+    text-align: center;
+}
+
+.journey-bar-container {
+    position: relative;
+    width: 100%;
+    height: 8px; /* The thickness of the main bar */
+    margin-top: 30px;
+}
+
+.journey-track-bg, .journey-track-progress {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    border-radius: 4px;
+}
+
+.journey-track-bg {
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.journey-track-progress {
+    width: 0%; /* Will be set by JS */
+    background-color: var(--accent-easy);
+    transition: width 0.8s ease-out;
+}
+
+.journey-milestones {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    /* Vertically center the milestones on the track */
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.milestone {
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background-color: var(--bg-dark);
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    transition: all 0.3s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.milestone span {
+    position: absolute;
+    top: 25px;
+    font-size: 0.8em;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.4);
+}
+
+/* --- Milestone States --- */
+.milestone.achieved {
+    background-color: var(--accent-easy);
+    border-color: var(--accent-easy);
+}
+.milestone.achieved span {
+    color: var(--text-primary);
+}
+
+.milestone.in-progress {
+    border-color: var(--accent-medium);
+    transform: scale(1.3);
+    box-shadow: 0 0 10px var(--accent-medium);
+}
+.milestone.in-progress span {
+    color: var(--accent-medium);
+}
+
+.journey-progress-text {
+    text-align: center;
+    margin-top: 40px;
+    color: var(--text-secondary);
+    font-size: 0.9em;
+}
+
+.journey-progress-text span {
+    color: var(--text-primary);
+    font-weight: 600;
+}
     margin: 0 0 5px 0;
     font-size: 1.1rem;
     font-weight: 500;
@@ -153,7 +1317,104 @@ body {
 
 /* Color coding for each difficulty */
 .stat-box.easy {
-    border-left-color: var(--accent-easy);
+    border-left-color: var(--accent-easy);.journey-tracker {
+        margin-top: 25px;
+        padding-top: 20px;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    
+    .journey-tracker h4 {
+        margin: 0 0 15px 0;
+        font-size: 1.1rem;
+        font-weight: 500;
+        color: var(--text-secondary);
+        text-align: center;
+    }
+    
+    .journey-bar-container {
+        position: relative;
+        width: 100%;
+        height: 8px; /* The thickness of the main bar */
+        margin-top: 30px;
+    }
+    
+    .journey-track-bg, .journey-track-progress {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        border-radius: 4px;
+    }
+    
+    .journey-track-bg {
+        width: 100%;
+        background-color: rgba(255, 255, 255, 0.1);
+    }
+    
+    .journey-track-progress {
+        width: 0%; /* Will be set by JS */
+        background-color: var(--accent-easy);
+        transition: width 0.8s ease-out;
+    }
+    
+    .journey-milestones {
+        position: relative;
+        display: flex;
+        justify-content: space-between;
+        /* Vertically center the milestones on the track */
+        top: 50%;
+        transform: translateY(-50%);
+    }
+    
+    .milestone {
+        width: 18px;
+        height: 18px;
+        border-radius: 50%;
+        background-color: var(--bg-dark);
+        border: 2px solid rgba(255, 255, 255, 0.2);
+        transition: all 0.3s ease;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .milestone span {
+        position: absolute;
+        top: 25px;
+        font-size: 0.8em;
+        font-weight: 600;
+        color: rgba(255, 255, 255, 0.4);
+    }
+    
+    /* --- Milestone States --- */
+    .milestone.achieved {
+        background-color: var(--accent-easy);
+        border-color: var(--accent-easy);
+    }
+    .milestone.achieved span {
+        color: var(--text-primary);
+    }
+    
+    .milestone.in-progress {
+        border-color: var(--accent-medium);
+        transform: scale(1.3);
+        box-shadow: 0 0 10px var(--accent-medium);
+    }
+    .milestone.in-progress span {
+        color: var(--accent-medium);
+    }
+    
+    .journey-progress-text {
+        text-align: center;
+        margin-top: 40px;
+        color: var(--text-secondary);
+        font-size: 0.9em;
+    }
+    
+    .journey-progress-text span {
+        color: var(--text-primary);
+        font-weight: 600;
+    }
 }
 .stat-box.easy h3 { color: var(--accent-easy); }
 
@@ -168,7 +1429,104 @@ body {
 .stat-box.hard h3 { color: var(--accent-hard); }
 
 
-/* Loading Spinner Styles */
+/* Loading Spinner Styles */.journey-tracker {
+    margin-top: 25px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.journey-tracker h4 {
+    margin: 0 0 15px 0;
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: var(--text-secondary);
+    text-align: center;
+}
+
+.journey-bar-container {
+    position: relative;
+    width: 100%;
+    height: 8px; /* The thickness of the main bar */
+    margin-top: 30px;
+}
+
+.journey-track-bg, .journey-track-progress {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    border-radius: 4px;
+}
+
+.journey-track-bg {
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.journey-track-progress {
+    width: 0%; /* Will be set by JS */
+    background-color: var(--accent-easy);
+    transition: width 0.8s ease-out;
+}
+
+.journey-milestones {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    /* Vertically center the milestones on the track */
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.milestone {
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background-color: var(--bg-dark);
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    transition: all 0.3s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.milestone span {
+    position: absolute;
+    top: 25px;
+    font-size: 0.8em;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.4);
+}
+
+/* --- Milestone States --- */
+.milestone.achieved {
+    background-color: var(--accent-easy);
+    border-color: var(--accent-easy);
+}
+.milestone.achieved span {
+    color: var(--text-primary);
+}
+
+.milestone.in-progress {
+    border-color: var(--accent-medium);
+    transform: scale(1.3);
+    box-shadow: 0 0 10px var(--accent-medium);
+}
+.milestone.in-progress span {
+    color: var(--accent-medium);
+}
+
+.journey-progress-text {
+    text-align: center;
+    margin-top: 40px;
+    color: var(--text-secondary);
+    font-size: 0.9em;
+}
+
+.journey-progress-text span {
+    color: var(--text-primary);
+    font-weight: 600;
+}
 .spinner-overlay {
     position: fixed;
     top: 0;
@@ -219,4 +1577,201 @@ body {
 
 .back-link:hover {
     color: var(--text-primary);
+}.journey-tracker {
+    margin-top: 25px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.journey-tracker h4 {
+    margin: 0 0 15px 0;
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: var(--text-secondary);
+    text-align: center;
+}
+
+.journey-bar-container {
+    position: relative;
+    width: 100%;
+    height: 8px; /* The thickness of the main bar */
+    margin-top: 30px;
+}
+
+.journey-track-bg, .journey-track-progress {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    border-radius: 4px;
+}
+
+.journey-track-bg {
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.journey-track-progress {
+    width: 0%; /* Will be set by JS */
+    background-color: var(--accent-easy);
+    transition: width 0.8s ease-out;
+}
+
+.journey-milestones {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    /* Vertically center the milestones on the track */
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.milestone {
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background-color: var(--bg-dark);
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    transition: all 0.3s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.milestone span {
+    position: absolute;
+    top: 25px;
+    font-size: 0.8em;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.4);
+}
+
+/* --- Milestone States --- */
+.milestone.achieved {
+    background-color: var(--accent-easy);
+    border-color: var(--accent-easy);
+}
+.milestone.achieved span {
+    color: var(--text-primary);
+}
+
+.milestone.in-progress {
+    border-color: var(--accent-medium);
+    transform: scale(1.3);
+    box-shadow: 0 0 10px var(--accent-medium);
+}
+.milestone.in-progress span {
+    color: var(--accent-medium);
+}
+
+.journey-progress-text {
+    text-align: center;
+    margin-top: 40px;
+    color: var(--text-secondary);
+    font-size: 0.9em;
+}
+
+.journey-progress-text span {
+    color: var(--text-primary);
+    font-weight: 600;
+}
+
+
+.journey-tracker {
+    margin-top: 25px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.journey-tracker h4 {
+    margin: 0 0 15px 0;
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: var(--text-secondary);
+    text-align: center;
+}
+
+.journey-bar-container {
+    position: relative;
+    width: 100%;
+    height: 8px; /* The thickness of the main bar */
+    margin-top: 30px;
+}
+
+.journey-track-bg, .journey-track-progress {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    border-radius: 4px;
+}
+
+.journey-track-bg {
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.journey-track-progress {
+    width: 0%; /* Will be set by JS */
+    background-color: var(--accent-easy);
+    transition: width 0.8s ease-out;
+}
+
+.journey-milestones {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    /* Vertically center the milestones on the track */
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.milestone {
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background-color: var(--bg-dark);
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    transition: all 0.3s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.milestone span {
+    position: absolute;
+    top: 25px;
+    font-size: 0.8em;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.4);
+}
+
+/* --- Milestone States --- */
+.milestone.achieved {
+    background-color: var(--accent-easy);
+    border-color: var(--accent-easy);
+}
+.milestone.achieved span {
+    color: var(--text-primary);
+}
+
+.milestone.in-progress {
+    border-color: var(--accent-medium);
+    transform: scale(1.3);
+    box-shadow: 0 0 10px var(--accent-medium);
+}
+.milestone.in-progress span {
+    color: var(--accent-medium);
+}
+
+.journey-progress-text {
+    text-align: center;
+    margin-top: 40px;
+    color: var(--text-secondary);
+    font-size: 0.9em;
+}
+
+.journey-progress-text span {
+    color: var(--text-primary);
+    font-weight: 600;
 }

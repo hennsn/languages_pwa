@@ -12,6 +12,19 @@ const hardLessonsEl = document.getElementById('hard-lessons');
 const progressCircleBar = document.querySelector('.progress-circle-bar');
 const loadingSpinner = document.getElementById('loading-spinner');
 
+const journeyTrackProgressEl = document.getElementById('journey-track-progress');
+const journeyProgressTextEl = document.getElementById('journey-progress-text');
+const milestoneElements = document.querySelectorAll('.milestone');
+
+const LANGUAGE_LEVELS = [
+    { level: 'A1', sentences: 500 },
+    { level: 'A2', sentences: 1000 },
+    { level: 'B1', sentences: 2000 },
+    { level: 'B2', sentences: 4000 },
+    { level: 'C1', sentences: 6000 },
+    { level: 'C2', sentences: 8000 },
+];
+
 // --- initializeDashboard function (No changes here) ---
 async function initializeDashboard() {
     try {
@@ -138,6 +151,41 @@ function renderDashboard(data) {
 
     progressCircleBar.style.strokeDasharray = circumference;
     progressCircleBar.style.strokeDashoffset = offset;
+
+    const understoodCount = data.globalStats.understoodSentences;
+    const finalGoal = LANGUAGE_LEVELS[LANGUAGE_LEVELS.length - 1].sentences;
+
+    // --- 1. Update the overall progress bar width ---
+    const overallProgressPercent = Math.min((understoodCount / finalGoal) * 100, 100);
+    journeyTrackProgressEl.style.width = `${overallProgressPercent}%`;
+
+    // --- 2. Determine current and next levels & update milestone states ---
+    let nextLevel = null;
+    let prevLevelSentences = 0;
+
+    LANGUAGE_LEVELS.forEach((levelInfo, index) => {
+        const milestoneEl = document.querySelector(`.milestone[data-level="${levelInfo.level}"]`);
+        milestoneEl.classList.remove('achieved', 'in-progress'); // Reset states
+
+        if (understoodCount >= levelInfo.sentences) {
+            milestoneEl.classList.add('achieved');
+            prevLevelSentences = levelInfo.sentences;
+        } else if (!nextLevel) {
+            // This is the first level not yet achieved
+            nextLevel = levelInfo;
+            milestoneEl.classList.add('in-progress');
+        }
+    });
+
+    // --- 3. Update the contextual progress text ---
+    if (nextLevel) {
+        journeyProgressTextEl.innerHTML = 
+            `Progress to <span>${nextLevel.level}</span>: <span>${understoodCount.toLocaleString()}</span> / ${nextLevel.sentences.toLocaleString()} sentences`;
+    } else {
+        // User has achieved the highest level
+        journeyProgressTextEl.innerHTML = 
+            `Congratulations! You've reached the <span>C2</span> level with <span>${understoodCount.toLocaleString()}</span> understood sentences.`;
+    }
 }
 
 // --- Start the process when the script loads (No changes here) ---
