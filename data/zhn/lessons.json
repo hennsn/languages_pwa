@@ -6,5 +6,13 @@
     "lessonFile": "morning_routine.json",
     "path": "lesson_001/",
     "thumbnail": "morning_routine_thumbnail.png"
+  },
+  {
+    "id": "lesson_002",
+    "title": "Lesson 002: Making Breakfast",
+    "audioFile": "making_breakfast.mp3",
+    "lessonFile": "making_breakfast.json",
+    "path": "lesson_002/",
+    "thumbnail": "making_breakfast_thumbnail.png"
   }
 ]
