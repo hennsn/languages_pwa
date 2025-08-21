@@ -16,7 +16,9 @@ const swPath = self.location.pathname;
 // Derive the base path by removing the filename.
 // e.g., '/my-repo/sw.js' becomes '/my-repo/'
 // e.g., '/sw.js' becomes '/'
-const basePath = swPath.substring(0, swPath.lastIndexOf('/') + 1);
+//const basePath = swPath.substring(0, swPath.lastIndexOf('/') + 1);
+
+const basePath = "hennsn.github.io/languages_pwa/"
 
 //console.log('[SW] Base path:', basePath);
 
