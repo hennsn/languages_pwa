@@ -448,3 +448,110 @@ audio {
     background-color: rgba(255, 255, 255, 0.1);
     margin: 20px 0;
 }
+
+/* == Language Selector Modal == */
+
+.language-selector-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    z-index: 1200; /* Higher than the header and drawer */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 1;
+    transition: opacity 0.3s ease-in-out;
+}
+
+/* The class that hides the modal */
+.language-selector-overlay.hidden {
+    opacity: 0;
+    pointer-events: none; /* Prevents interaction when hidden */
+}
+
+.language-selector-panel {
+    width: 90%;
+    max-width: 400px;
+    padding: 30px;
+    text-align: center;
+}
+
+.language-selector-panel h2 {
+    margin-top: 0;
+    margin-bottom: 25px;
+    color: var(--text-secondary);
+}
+
+#language-list-modal {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Space between language buttons */
+}
+
+#language-list-modal button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    width: 100%;
+    padding: 15px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: var(--radius);
+    cursor: pointer;
+    transition: background-color 0.2s, transform 0.1s;
+}
+
+#language-list-modal button:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    transform: scale(1.02);
+}
+
+#language-list-modal button span {
+    font-size: 1.5rem; /* Makes the flag emoji larger */
+}
+
+/* == Language Switcher Button in Nav Drawer == */
+
+/* Reset default button styles to make it look like our nav links */
+#switch-language-btn {
+    /* Resetting */
+    background: none;
+    border: none;
+    padding: 0;
+    margin: 0;
+    font: inherit;
+    color: inherit;
+    cursor: pointer;
+
+    /* Styling */
+    display: flex; /* Use flex to align the flag and text */
+    align-items: center;
+    width: 100%;
+    text-align: left;
+    padding: 14px 12px;
+    border-radius: var(--radius);
+    transition: background-color 0.2s;
+}
+
+#switch-language-btn:hover {
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+#current-language-indicator {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Space between flag and language name */
+    font-weight: 500;
+}

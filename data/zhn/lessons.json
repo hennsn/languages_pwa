@@ -4,7 +4,7 @@
     "title": "Lesson 001: My Morning Routine",
     "audioFile": "morning_routine.mp3",
     "lessonFile": "morning_routine.json",
-    "path": "lessons/lesson_001/",
-    "thumbnail": "lessons/lesson_001/morning_routine_thumbnail.png"
+    "path": "lesson_001/",
+    "thumbnail": "morning_routine_thumbnail.png"
   }
 ]

@@ -11,7 +11,16 @@ document.addEventListener('DOMContentLoaded', () => {
     const drawerOverlay = document.getElementById('drawer-overlay');
     const lessonList = document.getElementById('lesson-list');
 
+    const languageSelectorOverlay = document.getElementById('language-selector-overlay');
+    const languageListModal = document.getElementById('language-list-modal');
+    const switchLanguageBtn = document.getElementById('switch-language-btn');
+    const currentLanguageIndicator = document.getElementById('current-language-indicator');
+
+    const LANGUAGE_STORAGE_KEY = 'languageLearner-selectedLanguage';
+    let availableLanguages = []; // Will hold data from languages.json
+
     let lessonsData = [];
+    let currentLanguageCode = null; // New state variable
     let currentLessonId = null;
     let isChangingLesson = false; 
     let maxTimeReached = 0;
@@ -20,26 +29,87 @@ document.addEventListener('DOMContentLoaded', () => {
     let currentLessonContent = [];
     let explainedCuesThisSession = new Set();
 
+    // async function init() {
+    //     try {
+    //         await initDB(); 
+            
+    //         const response = await fetch('data/lessons.json');
+    //         lessonsData = await response.json();
+            
+    //         await renderLessonList(lessonsData);
+
+    //         const lessonIdFromUrl = window.location.hash.substring(1);
+    //         if (lessonIdFromUrl && lessonsData.some(l => l.id === lessonIdFromUrl)) {
+    //             loadLesson(lessonIdFromUrl);
+    //         } else {
+    //             loadLesson(lessonsData[0].id);
+    //         }
+    //     } catch (error) {
+    //         console.error("Failed to initialize lessons:", error);
+    //         transcriptContainer.innerHTML = "<p style='padding:20px'>Could not load lessons. Please try again later.</p>";
+    //     }
+    // }
+
+
     async function init() {
         try {
-            await initDB(); 
+            await initDB();
             
-            const response = await fetch('data/lessons.json');
+            // Fetch the master list of available languages
+            const response = await fetch('data/languages.json');
+            availableLanguages = await response.json();
+    
+            // Check if a language is saved in localStorage
+            const savedLanguageCode = localStorage.getItem(LANGUAGE_STORAGE_KEY);
+    
+            if (savedLanguageCode && availableLanguages.some(l => l.code === savedLanguageCode)) {
+                // If a valid language is saved, load it
+                console.log(`Found saved language: ${savedLanguageCode}`);
+                await loadLanguageData(savedLanguageCode);
+            } else {
+                // Otherwise, show the selector for the first-time user
+                console.log('No language selected. Showing selector.');
+                showLanguageSelector();
+            }
+        } catch (error) {
+            console.error("Failed to initialize the app:", error);
+            transcriptContainer.innerHTML = `<p style='padding:20px'>Could not start the application. Please try again later.</p>`;
+        }
+    }
+
+    async function loadLanguageData(langCode) {
+        try {
+            // Show a loading state in the lesson list
+            lessonList.innerHTML = '<li>Loading lessons...</li>';
+            
+            // Set the global state
+            currentLanguageCode = langCode;
+            localStorage.setItem(LANGUAGE_STORAGE_KEY, langCode);
+    
+            // Fetch the specific lesson manifest for the chosen language
+            const response = await fetch(`data/${langCode}/lessons.json`);
             lessonsData = await response.json();
             
             await renderLessonList(lessonsData);
-
-            const lessonIdFromUrl = window.location.hash.substring(1);
-            if (lessonIdFromUrl && lessonsData.some(l => l.id === lessonIdFromUrl)) {
-                loadLesson(lessonIdFromUrl);
-            } else {
+            updateLanguageIndicatorUI(); // Update the button in the nav drawer
+    
+            // Clear any old lesson hash from a different language
+            window.location.hash = '';
+    
+            if (lessonsData.length > 0) {
+                // Load the first lesson of the new language
                 loadLesson(lessonsData[0].id);
+            } else {
+                // Handle case where a language has no lessons yet
+                transcriptContainer.innerHTML = `<p style='padding:20px'>No lessons available for this language yet.</p>`;
+                player.src = '';
             }
         } catch (error) {
-            console.error("Failed to initialize lessons:", error);
-            transcriptContainer.innerHTML = "<p style='padding:20px'>Could not load lessons. Please try again later.</p>";
+            console.error(`Failed to load data for language ${langCode}:`, error);
+            lessonList.innerHTML = '<li>Could not load lessons.</li>';
         }
     }
+
 
     async function renderLessonList(lessons) {
         // Fetch all calculated lesson difficulties from the DB
@@ -81,8 +151,9 @@ document.addEventListener('DOMContentLoaded', () => {
             const lesson = lessonsData.find(l => l.id === lessonId);
             if (!lesson) throw new Error(`Lesson ${lessonId} not found.`);
 
-            const lessonJsonPath = `data/${lesson.path}${lesson.lessonFile}`;
-            const audioPath = `data/${lesson.path}${lesson.audioFile}`;
+            // Prepend the current language code to the path
+            const lessonJsonPath = `data/${currentLanguageCode}/${lesson.path}${lesson.lessonFile}`;
+            const audioPath = `data/${currentLanguageCode}/${lesson.path}${lesson.audioFile}`;
 
             const response = await fetch(lessonJsonPath);
             const lessonContent = await response.json();
@@ -192,8 +263,50 @@ document.addEventListener('DOMContentLoaded', () => {
         drawerOverlay.classList.remove('is-open');
     }
 
+    function showLanguageSelector() {
+        // Clear any previous list items
+        languageListModal.innerHTML = '';
+    
+        // Create a button for each available language
+        availableLanguages.forEach(lang => {
+            const li = document.createElement('li');
+            const button = document.createElement('button');
+            button.dataset.langCode = lang.code;
+            button.innerHTML = `<span>${lang.flag}</span> ${lang.name}`;
+            
+            button.addEventListener('click', () => {
+                // When a language is chosen, load its data and hide the modal
+                handleLanguageSelection(lang.code);
+            });
+            
+            li.appendChild(button);
+            languageListModal.appendChild(li);
+        });
+    
+        languageSelectorOverlay.classList.remove('hidden');
+    }
+
+    function handleLanguageSelection(langCode) {
+        // Hide the modal immediately for a responsive feel
+        languageSelectorOverlay.classList.add('hidden');
+    
+        // Load the data for the newly selected language
+        // This will fetch lessons, render the list, and load the first lesson.
+        loadLanguageData(langCode);
+    }
+    
+    function updateLanguageIndicatorUI() {
+        if (!currentLanguageCode || availableLanguages.length === 0) return;
+    
+        const currentLang = availableLanguages.find(lang => lang.code === currentLanguageCode);
+        if (currentLang) {
+            currentLanguageIndicator.innerHTML = `${currentLang.flag} ${currentLang.name}`;
+        }
+    }
+
     player.addEventListener('timeupdate', updateTranscriptHighlight);
     menuToggle.addEventListener('click', openDrawer);
+    switchLanguageBtn.addEventListener('click', showLanguageSelector);
     drawerOverlay.addEventListener('click', closeDrawer);
 
     player.addEventListener('play', () => {
@@ -250,42 +363,57 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     async function collectAndSaveStats() {
-        console.log('Lesson finished. Collecting and saving stats...');
-
-        // Add these checks at the very top
-        if (sessionStatsSaved || !player.duration) return; // Don't save if already saved or duration is 0
+        // Check if a language is selected. If not, we can't save stats.
+        if (!currentLanguageCode) return;
+    
+        if (sessionStatsSaved || !player.duration) return;
         
-        const listeningThreshold = 0.9; // 90%
+        const listeningThreshold = 0.9;
         if (maxTimeReached < player.duration * listeningThreshold) {
             console.log(`Listen progress (${Math.round(maxTimeReached / player.duration * 100)}%) did not meet threshold of ${listeningThreshold*100}%. Stats not saved.`);
             return;
         }
         
-        sessionStatsSaved = true; // Mark as saved for this session
+        sessionStatsSaved = true;
         console.log('Listen progress met threshold. Collecting and saving stats...');
-
-        if (!currentLessonContent || currentLessonContent.length === 0) return;
-        
+    
+        if (!currentLessonContent || currentLessonContent.length === 0) {
+            console.log('No lesson content to process.');
+            return;
+        }
+    
         const updatePromises = currentLessonContent.map(async (sentence) => {
-            const sentenceId = sentence.id;
-            const wasExplained = explainedCuesThisSession.has(sentenceId);
-            const existingStat = await getSentenceStat(sentenceId);
+            // ====== THE KEY CHANGE IS HERE ======
+            // Create a globally unique ID by prefixing with the language code.
+            const prefixedSentenceId = `${currentLanguageCode}-${sentence.id}`;
+            // ===================================
+    
+            const wasExplained = explainedCuesThisSession.has(sentence.id);
+    
+            // 1. Get the existing stat record using the new prefixed ID
+            const existingStat = await getSentenceStat(prefixedSentenceId);
+    
             if (existingStat) {
+                // 2. If it exists, update it
                 existingStat.times_listened += 1;
-                if (wasExplained) { existingStat.times_explained += 1; }
+                if (wasExplained) {
+                    existingStat.times_explained += 1;
+                }
                 await updateSentenceStat(existingStat);
             } else {
+                // 3. If it doesn't exist, create a new record using the prefixed ID
                 const newStat = {
-                    sentence_id: sentenceId,
+                    sentence_id: prefixedSentenceId, // Use the prefixed ID here
                     times_listened: 1,
                     times_explained: wasExplained ? 1 : 0
                 };
                 await updateSentenceStat(newStat);
             }
         });
+    
         try {
             await Promise.all(updatePromises);
-            console.log('All stats saved successfully!');
+            console.log('All stats saved successfully with language prefixes!');
         } catch (error) {
             console.error('An error occurred while saving stats:', error);
         }

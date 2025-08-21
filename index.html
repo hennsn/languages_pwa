@@ -19,6 +19,14 @@
         <h2>Dashboard</h2>
         <ul id="main-nav-list">
             <li><a href="dashboard.html">View Progress</a></li>
+
+            <li>
+                <!-- Using a <button> is better for JS actions that don't change the URL -->
+                <button id="switch-language-btn">
+                    <span id="current-language-indicator"></span> <!-- Flag and name will go here -->
+                </button>
+            </li>
+
         </ul>
         <hr class="nav-divider"> <!-- Optional: a nice visual separator -->
         <h2>Lessons</h2>
@@ -45,5 +53,23 @@
             });
         }
     </script>
+
+    <!-- This overlay will cover the screen for the language choice -->
+    <div id="language-selector-overlay" class="language-selector-overlay hidden">
+        <div class="language-selector-panel glass-panel">
+            <h2>Choose a Language</h2>
+            <ul id="language-list-modal">
+                <!-- Language buttons will be dynamically inserted here by JS -->
+                <!-- Example structure:
+                <li>
+                    <button data-lang-code="fr">
+                        <span>🇫🇷</span> French
+                    </button>
+                </li>
+                -->
+            </ul>
+        </div>
+    </div>
+
 </body>
 </html>
