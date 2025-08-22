@@ -571,3 +571,41 @@ audio {
     width: 32px;
     height: 32px;
 }
+
+/* == Lesson List Layout & Offline Indicator == */
+
+/* Update the main <li> to handle the new internal structure */
+#lesson-list li {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+/* Container for the lesson title, allows it to grow and shrink */
+.lesson-title-container {
+    flex-grow: 1; /* This makes it take up all available space */
+    /* The next two lines prevent long titles from breaking the layout */
+    min-width: 0; 
+}
+
+.lesson-title {
+    /* These properties handle text that is too long by adding '...' */
+    display: block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* Container for all status icons, aligned to the right */
+.lesson-icons-container {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-shrink: 0; /* Prevents the icon container from shrinking */
+}
+
+/* Styling for the offline icon */
+.offline-icon {
+    font-size: 0.9em;
+    opacity: 0.7;
+}

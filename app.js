@@ -1,7 +1,7 @@
 // app.js
 
 // 1. UPDATE IMPORT: Add 'getAllLessonProgress' to the list.
-import { initDB, getSentenceStat, updateSentenceStat, getAllLessonProgress } from './db.js';
+import { initDB, getSentenceStat, updateSentenceStat, getAllLessonProgress, getAllDownloadedPacks } from './db.js';
 
 document.addEventListener('DOMContentLoaded', () => {
     const player = document.getElementById('media-player');
@@ -29,28 +29,6 @@ document.addEventListener('DOMContentLoaded', () => {
     let currentLessonContent = [];
     let explainedCuesThisSession = new Set();
 
-    // async function init() {
-    //     try {
-    //         await initDB(); 
-            
-    //         const response = await fetch('data/lessons.json');
-    //         lessonsData = await response.json();
-            
-    //         await renderLessonList(lessonsData);
-
-    //         const lessonIdFromUrl = window.location.hash.substring(1);
-    //         if (lessonIdFromUrl && lessonsData.some(l => l.id === lessonIdFromUrl)) {
-    //             loadLesson(lessonIdFromUrl);
-    //         } else {
-    //             loadLesson(lessonsData[0].id);
-    //         }
-    //     } catch (error) {
-    //         console.error("Failed to initialize lessons:", error);
-    //         transcriptContainer.innerHTML = "<p style='padding:20px'>Could not load lessons. Please try again later.</p>";
-    //     }
-    // }
-
-
     async function init() {
         try {
             await initDB();
@@ -77,34 +55,96 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
+    // async function loadLanguageData(langCode) {
+    //     try {
+    //         // Show a loading state in the lesson list
+    //         lessonList.innerHTML = '<li>Loading lessons...</li>';
+            
+    //         // Set the global state
+    //         currentLanguageCode = langCode;
+    //         localStorage.setItem(LANGUAGE_STORAGE_KEY, langCode);
+    
+    //         // Fetch the specific lesson manifest for the chosen language
+    //         const response = await fetch(`data/${langCode}/lessons.json`);
+    //         lessonsData = await response.json();
+            
+    //         await renderLessonList(lessonsData);
+    //         updateLanguageIndicatorUI(); // Update the button in the nav drawer
+    
+    //         // Clear any old lesson hash from a different language
+    //         window.location.hash = '';
+    
+    //         if (lessonsData.length > 0) {
+    //             // Load the first lesson of the new language
+    //             loadLesson(lessonsData[0].id);
+    //         } else {
+    //             // Handle case where a language has no lessons yet
+    //             transcriptContainer.innerHTML = `<p style='padding:20px'>No lessons available for this language yet.</p>`;
+    //             player.src = '';
+    //         }
+    //     } catch (error) {
+    //         console.error(`Failed to load data for language ${langCode}:`, error);
+    //         lessonList.innerHTML = '<li>Could not load lessons.</li>';
+    //     }
+    // }
+
     async function loadLanguageData(langCode) {
         try {
-            // Show a loading state in the lesson list
             lessonList.innerHTML = '<li>Loading lessons...</li>';
             
-            // Set the global state
             currentLanguageCode = langCode;
             localStorage.setItem(LANGUAGE_STORAGE_KEY, langCode);
     
-            // Fetch the specific lesson manifest for the chosen language
-            const response = await fetch(`data/${langCode}/lessons.json`);
-            lessonsData = await response.json();
+            // 1. Fetch all necessary data sources in parallel
+            const [packs, allLessons, downloadedPacks] = await Promise.all([
+                fetch(`data/${langCode}/packs.json`).then(res => res.json()),
+                fetch(`data/${langCode}/lessons.json`).then(res => res.json()),
+                getAllDownloadedPacks() // From db.js
+            ]);
             
-            await renderLessonList(lessonsData);
-            updateLanguageIndicatorUI(); // Update the button in the nav drawer
+            // 2. Determine which lessons should be visible
+            const visibleLessonIds = new Set();
     
-            // Clear any old lesson hash from a different language
-            window.location.hash = '';
+            // Add lessons from the first (free) pack by default
+            if (packs.length > 0 && packs[0].lessons) {
+                packs[0].lessons.forEach(id => visibleLessonIds.add(id));
+            }
+    
+            // Add lessons from all downloaded packs for the current language
+            downloadedPacks.forEach(pack => {
+                if (pack.id.startsWith(langCode)) {
+                    pack.lessons.forEach(id => visibleLessonIds.add(id));
+                }
+            });
+    
+            // 3. Filter the master lesson list based on the visible IDs
+            const lessonsToShow = allLessons.filter(lesson => visibleLessonIds.has(lesson.id));
+            
+            // Store the correctly filtered list in our global variable
+            lessonsData = lessonsToShow;
+    
+            // The rest of the function proceeds as before
+            await renderLessonList(lessonsData);
+            updateLanguageIndicatorUI();
+    
+            // If a lesson from a previous session is no longer in the list, clear the hash
+            const lessonIdFromUrl = window.location.hash.substring(1);
+            if (!visibleLessonIds.has(lessonIdFromUrl)) {
+                 window.location.hash = '';
+            }
     
             if (lessonsData.length > 0) {
-                // Load the first lesson of the new language
-                loadLesson(lessonsData[0].id);
+                // Load the first lesson if no specific one is in the URL
+                if (!window.location.hash) {
+                    loadLesson(lessonsData[0].id);
+                }
             } else {
-                // Handle case where a language has no lessons yet
-                transcriptContainer.innerHTML = `<p style='padding:20px'>No lessons available for this language yet.</p>`;
+                transcriptContainer.innerHTML = `<p style='padding:20px'>No lessons available. Visit the Library to get started.</p>`;
+                lessonList.innerHTML = '<li>No lessons found.</li>';
                 player.src = '';
             }
-        } catch (error) {
+        } catch (error)
+        {
             console.error(`Failed to load data for language ${langCode}:`, error);
             lessonList.innerHTML = '<li>Could not load lessons.</li>';
         }
@@ -112,26 +152,64 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
     async function renderLessonList(lessons) {
-        // Fetch all calculated lesson difficulties from the DB
-        const allProgress = await getAllLessonProgress();
-        // Convert the array into a Map for fast lookups (lessonId -> 'easy'/'medium'/'hard')
-        const progressMap = new Map(allProgress.map(p => [p.lessonId, p.difficulty]));
+        // We will fetch all necessary data in parallel for better performance
+        const [allProgress, downloadedPacks] = await Promise.all([
+            getAllLessonProgress(),
+            getAllDownloadedPacks()
+        ]);
+    
+        // Create a Map for fast lookups of lesson difficulty
+        const progressMap = new Map(allProgress.map(p => [p.lessonId.split('-')[1], p.difficulty]));
+        
+        // Create a Set for very fast lookups of downloaded lesson IDs
+        const downloadedLessonIds = new Set();
+        downloadedPacks.forEach(pack => {
+            // We only care about packs for the current language
+            if (pack.id.startsWith(currentLanguageCode)) {
+                pack.lessons.forEach(lessonId => downloadedLessonIds.add(lessonId));
+            }
+        });
     
         lessonList.innerHTML = '';
         lessons.forEach(lesson => {
             const li = document.createElement('li');
-            li.textContent = lesson.title;
             li.dataset.lessonId = lesson.id;
+    
+            // --- Create a container for the text and icons ---
+            const titleContainer = document.createElement('div');
+            titleContainer.className = 'lesson-title-container';
+    
+            const titleSpan = document.createElement('span');
+            titleSpan.className = 'lesson-title';
+            titleSpan.textContent = lesson.title;
+            titleContainer.appendChild(titleSpan);
+    
+            // --- Create a container for the status icons ---
+            const iconsContainer = document.createElement('div');
+            iconsContainer.className = 'lesson-icons-container';
+    
+            // Check if this lesson is downloaded
+            if (downloadedLessonIds.has(lesson.id)) {
+                const offlineIcon = document.createElement('span');
+                offlineIcon.className = 'status-icon offline-icon';
+                offlineIcon.title = 'Available Offline'; // Tooltip for desktop users
+                offlineIcon.innerHTML = '📥'; // The download icon
+                iconsContainer.appendChild(offlineIcon);
+            }
     
             // Check our map for this lesson's difficulty
             const difficulty = progressMap.get(lesson.id);
             if (difficulty) {
-                // If found, create the indicator dot and add it to the list item
                 const indicator = document.createElement('span');
                 indicator.classList.add('difficulty-indicator', difficulty);
-                // Prepend adds the dot before the text, which looks nice.
+                indicator.title = `Difficulty: ${difficulty.charAt(0).toUpperCase() + difficulty.slice(1)}`;
+                // Prepend the difficulty dot so it appears first
                 li.prepend(indicator);
+    
             }
+            
+            li.appendChild(titleContainer);
+            li.appendChild(iconsContainer);
             
             li.addEventListener('click', () => {
                 loadLesson(lesson.id);
@@ -322,6 +400,19 @@ document.addEventListener('DOMContentLoaded', () => {
     player.addEventListener('pause', () => { navigator.mediaSession.playbackState = 'paused'; });
     player.addEventListener('ended', collectAndSaveStats);
     window.addEventListener('pagehide', collectAndSaveStats);
+
+    /**
+     * Handles automatic refreshing of content when the user returns to the tab.
+     * This ensures the lesson list is up-to-date after a download.
+     */
+    document.addEventListener('visibilitychange', () => {
+        // 'visible' means the user has switched back to this tab
+        if (document.visibilityState === 'visible' && currentLanguageCode) {
+            console.log("Tab is visible again. Refreshing language data.");
+            // Re-run the data loading process to show newly downloaded lessons
+            loadLanguageData(currentLanguageCode);
+        }
+    });
 
     function updateMediaSession(lesson) {
         if (!('mediaSession' in navigator)) return;

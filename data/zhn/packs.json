@@ -1,0 +1,20 @@
+[
+    {
+      "id": "zhn-pack-1",
+      "title": "Beginner Conversations 1-10",
+      "description": "Master common greetings, introductions, and essential phrases for everyday situations.",
+      "price": 0,
+      "lessons": [
+        "lesson_001"
+      ]
+    },
+    {
+      "id": "zhn-pack-2",
+      "title": "At the Restaurant 11-20",
+      "description": "Learn how to order food, ask for the check, and handle conversations at a French restaurant.",
+      "price": 1.99,
+      "lessons": [
+        "lesson_002"
+      ]
+    }
+  ]

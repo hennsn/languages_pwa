@@ -1,12 +1,10 @@
 // db.js
 
 const DB_NAME = 'languageLearnerStats';
-// 1. UPDATE VERSION: Increment the version number from 1 to 2.
-// This is the essential trigger for the 'onupgradeneeded' event to run.
-const DB_VERSION = 2;
+const DB_VERSION = 3;
 const STORE_NAME = 'sentenceStats';
-// 2. NEW CONSTANT: Define the name for our new object store.
 const LESSON_PROGRESS_STORE = 'lessonProgress';
+const DOWNLOADED_PACKS_STORE = 'downloadedPacks';
 
 let db; // This variable will hold the database connection.
 
@@ -28,17 +26,20 @@ function initDB() {
             const dbInstance = event.target.result;
             console.log('[DB] Upgrade needed. Creating/updating object stores...');
 
-            // Keep the existing logic for the sentenceStats store
             if (!dbInstance.objectStoreNames.contains(STORE_NAME)) {
                 dbInstance.createObjectStore(STORE_NAME, { keyPath: 'sentence_id' });
             }
             
-            // 3. NEW LOGIC: Add the new object store for lesson progress.
-            // This code only runs because we incremented DB_VERSION.
             if (!dbInstance.objectStoreNames.contains(LESSON_PROGRESS_STORE)) {
                 // We use 'lessonId' as the unique key for this store.
                 dbInstance.createObjectStore(LESSON_PROGRESS_STORE, { keyPath: 'lessonId' });
             }
+
+            if (!dbInstance.objectStoreNames.contains(DOWNLOADED_PACKS_STORE)) {
+                // We'll use the unique pack 'id' as the key.
+                dbInstance.createObjectStore(DOWNLOADED_PACKS_STORE, { keyPath: 'id' });
+            }
+
         };
 
         request.onerror = (event) => {
@@ -125,12 +126,62 @@ function getAllLessonProgress() {
     });
 }
 
-// 5. UPDATE EXPORTS: Add the new functions to the export list.
+/**
+ * Saves a record of a downloaded pack.
+ * @param {object} packData The pack object to save (e.g., { id: 'fr-pack-1', ... }).
+ * @returns {Promise<string>}
+ */
+function saveDownloadedPack(packData) {
+    return new Promise((resolve, reject) => {
+        if (!db) return reject('Database not initialized.');
+        const transaction = db.transaction([DOWNLOADED_PACKS_STORE], 'readwrite');
+        const store = transaction.objectStore(DOWNLOADED_PACKS_STORE);
+        const request = store.put(packData);
+        request.onsuccess = () => resolve(request.result);
+        request.onerror = (event) => reject('Error saving pack: ' + event.target.error);
+    });
+}
+
+/**
+ * Retrieves all records of downloaded packs.
+ * @returns {Promise<Array<object>>}
+ */
+function getAllDownloadedPacks() {
+    return new Promise((resolve, reject) => {
+        if (!db) return reject('Database not initialized.');
+        const transaction = db.transaction([DOWNLOADED_PACKS_STORE], 'readonly');
+        const store = transaction.objectStore(DOWNLOADED_PACKS_STORE);
+        const request = store.getAll();
+        request.onsuccess = () => resolve(request.result);
+        request.onerror = (event) => reject('Error fetching all packs: ' + event.target.error);
+    });
+}
+
+/**
+ * Deletes a record of a downloaded pack.
+ * @param {string} packId The ID of the pack to delete.
+ * @returns {Promise<void>}
+ */
+function deleteDownloadedPack(packId) {
+    return new Promise((resolve, reject) => {
+        if (!db) return reject('Database not initialized.');
+        const transaction = db.transaction([DOWNLOADED_PACKS_STORE], 'readwrite');
+        const store = transaction.objectStore(DOWNLOADED_PACKS_STORE);
+        const request = store.delete(packId);
+        request.onsuccess = () => resolve();
+        request.onerror = (event) => reject('Error deleting pack: ' + event.target.error);
+    });
+}
+
+
 export {
     initDB,
     getSentenceStat,
     updateSentenceStat,
     getAllStats,
     updateLessonProgress,
-    getAllLessonProgress
+    getAllLessonProgress,
+    saveDownloadedPack,     
+    getAllDownloadedPacks,  
+    deleteDownloadedPack    
 };

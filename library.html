@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library - Language Learner</title>
+    <link rel="stylesheet" href="library.css">
+</head>
+<body>
+
+    <header class="library-header">
+        <a href="index.html" class="back-link">&larr; Back to Lessons</a>
+        <h1>Library</h1>
+    </header>
+
+    <main class="library-container">
+        <!-- The lesson pack cards will be dynamically inserted here by library.js -->
+        <div id="packs-container" class="packs-container">
+            <!-- Example of a card structure (for reference):
+            <div class="pack-card glass-panel">
+                <div class="card-content">
+                    <h3>Beginner Conversations 1-10</h3>
+                    <p class="card-description">Master common greetings...</p>
+                    <p class="card-info">10 Lessons</p>
+                </div>
+                <div class="card-action">
+                    <button class="action-btn download">
+                        <span class="btn-text">Download</span>
+                        <span class="btn-icon">📥</span>
+                    </button>
+                </div>
+            </div>
+            -->
+        </div>
+        <div id="loading-indicator" class="loading-indicator">
+            <div class="spinner"></div>
+        </div>
+    </main>
+
+    <script src="db.js" type="module"></script>
+    <script src="library.js" type="module"></script>
+
+</body>
+</html>

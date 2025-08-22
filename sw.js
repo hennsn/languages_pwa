@@ -136,3 +136,128 @@ self.addEventListener('fetch', event => {
     })
   );
 });
+
+
+/**
+ * Handles the download and caching of a lesson pack.
+ * Reports progress back to the client.
+ * @param {object} payload - The message payload.
+ * @param {string} payload.packId - The ID of the pack being downloaded.
+ * @param {Array<string>} payload.urls - The list of file URLs to download.
+ * @param {string} clientId - The ID of the client window to send messages back to.
+ */
+async function handleDownloadPack(payload, clientId) {
+  // Get a reference to the specific browser tab that sent the message
+  const client = await self.clients.get(clientId);
+  if (!client) return; // Exit if the client tab is no longer open
+
+  const { packId, urls } = payload;
+
+  try {
+    console.log(`[SW] Starting download for pack: ${packId}`);
+    const cache = await caches.open(CACHE_NAME);
+    const totalFiles = urls.length;
+
+    for (let i = 0; i < totalFiles; i++) {
+      const url = urls[i];
+      
+      // Check if the file is already in the cache to avoid re-downloading
+      const cachedResponse = await cache.match(url);
+      if (!cachedResponse) {
+        await cache.add(url);
+      }
+      
+      // Calculate and report progress after each file
+      const progress = Math.round(((i + 1) / totalFiles) * 100);
+      client.postMessage({
+        type: 'DOWNLOAD_PROGRESS',
+        payload: { packId, progress }
+      });
+    }
+
+    // Report completion
+    client.postMessage({
+      type: 'DOWNLOAD_COMPLETE',
+      payload: { packId }
+    });
+    console.log(`[SW] Successfully downloaded all files for pack: ${packId}`);
+
+  } catch (error) {
+    console.error(`[SW] Error downloading pack ${packId}:`, error);
+    // Report the error
+    client.postMessage({
+      type: 'DOWNLOAD_ERROR',
+      payload: { packId, message: error.message }
+    });
+  }
+}
+
+/**
+ * Handles the deletion of a cached lesson pack.
+ * Reports completion back to the client.
+ * @param {object} payload - The message payload.
+ * @param {string} payload.packId - The ID of the pack being deleted.
+ * @param {Array<string>} payload.urls - The list of file URLs to delete from the cache.
+ * @param {string} clientId - The ID of the client window to send messages back to.
+ */
+async function handleDeletePack(payload, clientId) {
+  const client = await self.clients.get(clientId);
+  if (!client) return;
+
+  const { packId, urls } = payload;
+
+  try {
+    console.log(`[SW] Starting deletion for pack: ${packId}`);
+    const cache = await caches.open(CACHE_NAME);
+
+    // Loop through each URL and delete it from the cache
+    for (const url of urls) {
+      await cache.delete(url);
+    }
+
+    // Report successful deletion
+    client.postMessage({
+      type: 'DELETE_COMPLETE',
+      payload: { packId }
+    });
+    console.log(`[SW] Successfully deleted all files for pack: ${packId}`);
+
+  } catch (error) {
+    console.error(`[SW] Error deleting pack ${packId}:`, error);
+    // Report the error (optional, but good practice)
+    client.postMessage({
+      type: 'DELETE_ERROR',
+      payload: { packId, message: error.message }
+    });
+  }
+}
+
+// ===================================
+// Message Handler for App Commands
+// ===================================
+
+self.addEventListener('message', event => {
+  if (!event.data || !event.data.type) return;
+
+  const { type, payload } = event.data;
+  // Get the ID of the client (the browser tab) that sent the message
+  const clientId = event.source.id;
+  
+  console.log(`[SW] Received command: ${type}`);
+
+  switch (type) {
+    case 'DOWNLOAD_PACK':
+      // Use event.waitUntil to keep the service worker alive during the download
+      event.waitUntil(handleDownloadPack(payload, clientId));
+      break;
+    
+    case 'DELETE_PACK':
+      console.log('[SW] Delete command received for pack:', payload.packId);
+      event.waitUntil(handleDeletePack(payload, clientId));
+      break;
+      
+    default:
+      console.warn(`[SW] Unknown command received: ${type}`);
+      break;
+  }
+});
