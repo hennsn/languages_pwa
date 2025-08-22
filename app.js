@@ -11,6 +11,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const drawerOverlay = document.getElementById('drawer-overlay');
     const lessonList = document.getElementById('lesson-list');
 
+    const modeToggleCheckbox = document.getElementById('mode-toggle-checkbox');
+
     const languageSelectorOverlay = document.getElementById('language-selector-overlay');
     const languageListModal = document.getElementById('language-list-modal');
     const switchLanguageBtn = document.getElementById('switch-language-btn');
@@ -20,14 +22,15 @@ document.addEventListener('DOMContentLoaded', () => {
     let availableLanguages = []; // Will hold data from languages.json
 
     let lessonsData = [];
-    let currentLanguageCode = null; // New state variable
+    let currentLanguageCode = null; 
     let currentLessonId = null;
     let isChangingLesson = false; 
     let maxTimeReached = 0;
     let sessionStatsSaved = false; 
-
     let currentLessonContent = [];
     let explainedCuesThisSession = new Set();
+
+    let currentMode = 'study'; // Can be 'study' or 'quiz'
 
     async function init() {
         try {
@@ -54,39 +57,6 @@ document.addEventListener('DOMContentLoaded', () => {
             transcriptContainer.innerHTML = `<p style='padding:20px'>Could not start the application. Please try again later.</p>`;
         }
     }
-
-    // async function loadLanguageData(langCode) {
-    //     try {
-    //         // Show a loading state in the lesson list
-    //         lessonList.innerHTML = '<li>Loading lessons...</li>';
-            
-    //         // Set the global state
-    //         currentLanguageCode = langCode;
-    //         localStorage.setItem(LANGUAGE_STORAGE_KEY, langCode);
-    
-    //         // Fetch the specific lesson manifest for the chosen language
-    //         const response = await fetch(`data/${langCode}/lessons.json`);
-    //         lessonsData = await response.json();
-            
-    //         await renderLessonList(lessonsData);
-    //         updateLanguageIndicatorUI(); // Update the button in the nav drawer
-    
-    //         // Clear any old lesson hash from a different language
-    //         window.location.hash = '';
-    
-    //         if (lessonsData.length > 0) {
-    //             // Load the first lesson of the new language
-    //             loadLesson(lessonsData[0].id);
-    //         } else {
-    //             // Handle case where a language has no lessons yet
-    //             transcriptContainer.innerHTML = `<p style='padding:20px'>No lessons available for this language yet.</p>`;
-    //             player.src = '';
-    //         }
-    //     } catch (error) {
-    //         console.error(`Failed to load data for language ${langCode}:`, error);
-    //         lessonList.innerHTML = '<li>Could not load lessons.</li>';
-    //     }
-    // }
 
     async function loadLanguageData(langCode) {
         try {
@@ -223,7 +193,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (currentLessonId === lessonId || isChangingLesson) return; 
 
         isChangingLesson = true; 
-        transcriptContainer.innerHTML = `<p style='padding:20px'>Loading...</p>`;
+        document.getElementById('cue-list-container').innerHTML = `<p style='padding:20px'>Loading...</p>`;
 
         try {
             const lesson = lessonsData.find(l => l.id === lessonId);
@@ -238,6 +208,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
             currentLessonContent = lessonContent;
             resetSessionTrackers();
+
+            // Ensure the transcript container has the correct mode class when a lesson loads
+            const transcriptContainer = document.getElementById('transcript-container');
+            transcriptContainer.classList.add('study-mode');
+            transcriptContainer.classList.remove('quiz-mode');
+            modeToggleCheckbox.checked = false; // Reset toggle to 'Study'
+            currentMode = 'study'; // Reset mode state
 
             player.src = audioPath;
             player.load();
@@ -257,53 +234,150 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    function renderTranscript(transcriptData) {
-        transcriptContainer.innerHTML = '';
+    // function renderTranscript(transcriptData) {
+    //     transcriptContainer.innerHTML = '';
 
+    //     transcriptData.forEach(item => {
+    //         const cueItem = document.createElement('div');
+    //         cueItem.classList.add('cue-item', 'glass-panel');
+
+    //         const cueMain = document.createElement('div');
+    //         cueMain.classList.add('cue-main');
+    //         cueMain.dataset.startTime = item.startTime;
+
+    //         const cueText = document.createElement('p');
+    //         cueText.classList.add('cue-text');
+    //         cueText.textContent = item.text;
+
+    //         const cueToggle = document.createElement('span');
+    //         cueToggle.classList.add('cue-toggle');
+    //         cueToggle.textContent = '▼';
+
+    //         cueMain.append(cueText, cueToggle);
+
+    //         const cueExplanation = document.createElement('div');
+    //         cueExplanation.classList.add('cue-explanation');
+            
+    //         const renderedExplanation = marked.parse(item.explanation);
+    //         cueExplanation.innerHTML = renderedExplanation 
+
+    //         cueItem.append(cueMain, cueExplanation);
+    //         transcriptContainer.appendChild(cueItem);
+
+    //         cueMain.addEventListener('click', () => {
+    //             player.currentTime = item.startTime;
+    //             player.play();
+    //         });
+
+    //         cueToggle.addEventListener('click', (event) => {
+    //             event.stopPropagation();
+    //             explainedCuesThisSession.add(item.id); 
+    //             const isVisible = cueExplanation.classList.contains('visible');
+    //             document.querySelectorAll('.cue-explanation.visible').forEach(panel => {
+    //                 panel.classList.remove('visible');
+    //                 panel.previousElementSibling.querySelector('.cue-toggle').classList.remove('open');
+    //             });
+    //             if (!isVisible) {
+    //                 cueExplanation.classList.add('visible');
+    //                 cueToggle.classList.add('open');
+    //             }
+    //         });
+    //     });
+    // }
+
+    function renderTranscript(transcriptData) {
+        const cueListContainer = document.getElementById('cue-list-container');
+        // Clear only the cue list, leaving the mode toggle intact
+        cueListContainer.innerHTML = '';
+    
+        if (!transcriptData) return;
+    
         transcriptData.forEach(item => {
             const cueItem = document.createElement('div');
             cueItem.classList.add('cue-item', 'glass-panel');
-
+            cueItem.dataset.sentenceId = item.id; 
+    
             const cueMain = document.createElement('div');
             cueMain.classList.add('cue-main');
             cueMain.dataset.startTime = item.startTime;
-
-            const cueText = document.createElement('p');
-            cueText.classList.add('cue-text');
-            cueText.textContent = item.text;
-
+    
+            if (currentMode === 'study') {
+                const cueText = document.createElement('p');
+                cueText.classList.add('cue-text');
+                cueText.textContent = item.text;
+                cueMain.appendChild(cueText);
+            } else { // 'quiz' mode
+                const quizUiContainer = document.createElement('div');
+                quizUiContainer.className = 'quiz-ui';
+    
+                const inputContainer = document.createElement('div');
+                inputContainer.className = 'quiz-input-container';
+    
+                const input = document.createElement('input');
+                input.type = 'text';
+                input.className = 'quiz-input';
+                input.placeholder = 'Type what you hear...';
+                input.autocomplete = 'off';
+                
+                // NO "Check" button is created.
+                // NO "correctAnswerText" element is created.
+    
+                inputContainer.append(input);
+                quizUiContainer.append(inputContainer);
+                cueMain.appendChild(quizUiContainer);
+    
+                // --- NEW EVENT LISTENERS ---
+                // Event listener for when the user clicks away or tabs out
+                input.addEventListener('change', () => {
+                    checkAnswer(input, item.text, cueItem);
+                });
+    
+                // Event listener for when the user presses a key
+                input.addEventListener('keydown', (event) => {
+                    // If the key is Enter, trigger the check immediately
+                    if (event.key === 'Enter') {
+                        event.preventDefault(); // Stop default form submission
+                        checkAnswer(input, item.text, cueItem);
+                    }
+                    // If the user starts typing again in an incorrect field,
+                    // remove the 'incorrect' feedback to show it's a new attempt.
+                    else if (cueItem.classList.contains('incorrect')) {
+                        cueItem.classList.remove('incorrect');
+                    }
+                });
+            }
+    
             const cueToggle = document.createElement('span');
             cueToggle.classList.add('cue-toggle');
             cueToggle.textContent = '▼';
-
-            cueMain.append(cueText, cueToggle);
-
+            cueMain.appendChild(cueToggle);
+    
             const cueExplanation = document.createElement('div');
             cueExplanation.classList.add('cue-explanation');
-            
             const renderedExplanation = marked.parse(item.explanation);
-            cueExplanation.innerHTML = renderedExplanation 
-
+            cueExplanation.innerHTML = renderedExplanation;
+            
             cueItem.append(cueMain, cueExplanation);
-            transcriptContainer.appendChild(cueItem);
-
+            // Append to the correct container
+            cueListContainer.appendChild(cueItem);
+    
             cueMain.addEventListener('click', () => {
                 player.currentTime = item.startTime;
                 player.play();
             });
-
+    
             cueToggle.addEventListener('click', (event) => {
                 event.stopPropagation();
-                explainedCuesThisSession.add(item.id); 
                 const isVisible = cueExplanation.classList.contains('visible');
                 document.querySelectorAll('.cue-explanation.visible').forEach(panel => {
-                    panel.classList.remove('visible');
-                    panel.previousElementSibling.querySelector('.cue-toggle').classList.remove('open');
+                    if (panel !== cueExplanation) {
+                        panel.classList.remove('visible');
+                        panel.previousElementSibling.querySelector('.cue-toggle').classList.remove('open');
+                    }
                 });
-                if (!isVisible) {
-                    cueExplanation.classList.add('visible');
-                    cueToggle.classList.add('open');
-                }
+                cueExplanation.classList.toggle('visible');
+                cueToggle.classList.toggle('open');
+                explainedCuesThisSession.add(item.id);
             });
         });
     }
@@ -330,6 +404,50 @@ document.addEventListener('DOMContentLoaded', () => {
 
             cue.classList.toggle('active', currentTime >= startTime && currentTime < nextStartTime);
         });
+    }
+
+    /**
+     * Compares user input to the correct answer and applies visual feedback.
+     * @param {HTMLInputElement} inputElement - The input field element.
+     * @param {string} correctAnswer - The correct sentence text.
+     * @param {HTMLElement} cueItemElement - The parent .cue-item element.
+     */
+    function checkAnswer(inputElement, correctAnswer, cueItemElement) {
+        const userInput = inputElement.value;
+
+        // Do nothing if the user hasn't typed anything
+        if (userInput.trim() === '') {
+            cueItemElement.classList.remove('correct', 'incorrect');
+            return;
+        }
+
+        // Normalize both strings for a more forgiving comparison
+        const isCorrect = normalizeString(userInput) === normalizeString(correctAnswer);
+
+        // Remove previous feedback states
+        cueItemElement.classList.remove('correct', 'incorrect');
+
+        if (isCorrect) {
+            cueItemElement.classList.add('correct');
+            // Lock the input field once the answer is correct
+            inputElement.disabled = true;
+        } else {
+            cueItemElement.classList.add('incorrect');
+        }
+    }
+
+    /**
+     * Helper function to normalize strings for comparison.
+     * Trims whitespace, converts to lowercase, and removes common punctuation.
+     * @param {string} str
+     * @returns {string}
+     */
+    function normalizeString(str) {
+        return str
+            .trim()
+            .toLowerCase()
+            // This regex removes common punctuation marks. Adjust as needed for your target language.
+            .replace(/[.,¡!¿?]/g, ''); 
     }
 
     function openDrawer() {
@@ -386,7 +504,6 @@ document.addEventListener('DOMContentLoaded', () => {
     menuToggle.addEventListener('click', openDrawer);
     switchLanguageBtn.addEventListener('click', showLanguageSelector);
     drawerOverlay.addEventListener('click', closeDrawer);
-
     player.addEventListener('play', () => {
         // A new listening session starts if the user presses play near the beginning.
         // We use a small threshold (e.g., 1 second) to account for minor delays.
@@ -396,10 +513,27 @@ document.addEventListener('DOMContentLoaded', () => {
         
         navigator.mediaSession.playbackState = 'playing';
     });
-
     player.addEventListener('pause', () => { navigator.mediaSession.playbackState = 'paused'; });
     player.addEventListener('ended', collectAndSaveStats);
     window.addEventListener('pagehide', collectAndSaveStats);
+
+    modeToggleCheckbox.addEventListener('change', () => {
+        // 1. Update the state variable based on whether the checkbox is checked
+        currentMode = modeToggleCheckbox.checked ? 'quiz' : 'study';
+        console.log(`Mode switched to: ${currentMode}`);
+    
+        // 2. Update the parent container's class for CSS targeting
+        // We get a reference to the container here.
+        const transcriptContainer = document.getElementById('transcript-container');
+        transcriptContainer.classList.toggle('quiz-mode', modeToggleCheckbox.checked);
+        transcriptContainer.classList.toggle('study-mode', !modeToggleCheckbox.checked);
+    
+        // 3. Re-render the entire transcript UI to reflect the new mode
+        // currentLessonContent holds the data for the currently loaded lesson
+        if (currentLessonContent.length > 0) {
+            renderTranscript(currentLessonContent);
+        }
+    });
 
     /**
      * Handles automatic refreshing of content when the user returns to the tab.

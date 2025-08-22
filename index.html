@@ -41,7 +41,22 @@
         <div class="media-container glass-panel">
             <video id="media-player" controls></video> 
         </div>
-        <div id="transcript-container" class="transcript-container glass-panel"></div>
+        <div id="transcript-container" class="transcript-container glass-panel">
+            <div class="mode-toggle-container">
+                <span class="mode-label">Study</span>
+                <label class="switch">
+                    <input type="checkbox" id="mode-toggle-checkbox">
+                    <span class="slider"></span>
+                </label>
+                <span class="mode-label">Quiz</span>
+            </div>
+
+            <div id="cue-list-container">
+                <!-- Cue items will now be inserted here -->
+            </div>
+
+            <!-- Cue items will be inserted here by app.js -->
+        </div>
     </main>
 
     <script src="db.js" type="module"></script> 

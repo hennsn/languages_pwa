@@ -609,3 +609,168 @@ audio {
     font-size: 0.9em;
     opacity: 0.7;
 }
+
+/* --- Add this code to the end of your file --- */
+
+/* == Mode Toggle Switch == */
+.mode-toggle-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    padding: 15px;
+    background-color: rgba(255, 255, 255, 0.05);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    position: sticky; /* Makes it stick to the top of the transcript container */
+    top: 0;
+    z-index: 10; /* Ensures it stays above the cue items when scrolling */
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+.mode-label {
+    font-weight: 600;
+    color: var(--text-secondary);
+    user-select: none;
+}
+
+/* The switch container */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 50px;
+    height: 28px;
+}
+
+/* Hide the default HTML checkbox */
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+/* The slider track */
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #333;
+    transition: .4s;
+    border-radius: 28px;
+}
+
+/* The sliding knob */
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 20px;
+    width: 20px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    transition: .4s;
+    border-radius: 50%;
+}
+
+/* When the checkbox is checked, change the background color and move the knob */
+input:checked + .slider {
+    background-color: var(--accent);
+}
+
+input:checked + .slider:before {
+    transform: translateX(22px);
+}
+
+/* == Quiz Mode UI & Feedback Styles == */
+
+/* Use a parent class on the transcript container to control visibility */
+/* By default, hide the quiz UI when in study mode */
+.study-mode .quiz-ui {
+    display: none;
+}
+
+/* Hide the normal sentence text when in quiz mode */
+.quiz-mode .cue-text {
+    display: none;
+}
+
+/* --- Quiz Input and Button --- */
+.quiz-input-container {
+    padding: 10px;
+}
+
+.quiz-input {
+    width: 100%;
+    padding: 12px;
+    font-size: 1rem;
+    font-family: inherit; /* Use the same font as the rest of the app */
+    background-color: rgba(0, 0, 0, 0.2);
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+    color: var(--text-primary);
+    box-sizing: border-box; /* Important for correct sizing */
+    transition: border-color 0.3s ease;
+}
+
+.quiz-input:focus {
+    outline: none;
+    border-color: var(--accent);
+}
+
+.check-btn {
+    display: block;
+    width: 100px;
+    margin: 10px 0 0 auto; /* Aligns the button to the right */
+    padding: 8px 12px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: white;
+    background-color: var(--accent);
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.check-btn:hover {
+    background-color: #0077e6;
+}
+
+.check-btn:disabled {
+    background-color: #555;
+    cursor: not-allowed;
+    opacity: 0.7;
+}
+
+
+/* --- Feedback Styles --- */
+
+/* Initially hide the correct answer text */
+.correct-answer-text {
+    display: none;
+    padding: 0 12px 12px 12px;
+    font-weight: 600;
+}
+
+/* When a cue item is marked as correct */
+.cue-item.correct .quiz-input {
+    border-color: var(--accent-easy); /* Green border */
+    background-color: rgba(0, 199, 190, 0.1);
+}
+.cue-item.correct .check-btn {
+    display: none; /* Hide the check button after a correct answer */
+}
+
+/* When a cue item is marked as incorrect */
+.cue-item.incorrect .quiz-input {
+    border-color: var(--accent-hard); /* Red border */
+    background-color: rgba(233, 79, 67, 0.1);
+}
+/* Show the correct answer text when incorrect */
+.cue-item.incorrect .correct-answer-text {
+    display: block;
+    color: var(--accent-easy);
+}
