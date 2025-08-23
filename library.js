@@ -222,8 +222,8 @@ async function handleDownloadClick(packId) {
     packToDownload.lessons.forEach(lessonId => {
         const lesson = allLessons.find(l => l.id === lessonId);
         if (lesson) {
-            urlsToCache.push(`/data/${currentLanguageCode}/${lesson.path}${lesson.lessonFile}`);
-            urlsToCache.push(`/data/${currentLanguageCode}/${lesson.path}${lesson.audioFile}`);
+            urlsToCache.push(`data/${currentLanguageCode}/${lesson.path}${lesson.lessonFile}`);
+            urlsToCache.push(`data/${currentLanguageCode}/${lesson.path}${lesson.audioFile}`);
         }
     });
 
@@ -276,8 +276,8 @@ async function handleDeleteClick(packId) {
     packToDelete.lessons.forEach(lessonId => {
         const lesson = allLessons.find(l => l.id === lessonId);
         if (lesson) {
-            urlsToDelete.push(`/data/${currentLanguageCode}/${lesson.path}${lesson.lessonFile}`);
-            urlsToDelete.push(`/data/${currentLanguageCode}/${lesson.path}${lesson.audioFile}`);
+            urlsToDelete.push(`data/${currentLanguageCode}/${lesson.path}${lesson.lessonFile}`);
+            urlsToDelete.push(`data/${currentLanguageCode}/${lesson.path}${lesson.audioFile}`);
         }
     });
 
