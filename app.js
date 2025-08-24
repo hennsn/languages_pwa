@@ -234,57 +234,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    // function renderTranscript(transcriptData) {
-    //     transcriptContainer.innerHTML = '';
-
-    //     transcriptData.forEach(item => {
-    //         const cueItem = document.createElement('div');
-    //         cueItem.classList.add('cue-item', 'glass-panel');
-
-    //         const cueMain = document.createElement('div');
-    //         cueMain.classList.add('cue-main');
-    //         cueMain.dataset.startTime = item.startTime;
-
-    //         const cueText = document.createElement('p');
-    //         cueText.classList.add('cue-text');
-    //         cueText.textContent = item.text;
-
-    //         const cueToggle = document.createElement('span');
-    //         cueToggle.classList.add('cue-toggle');
-    //         cueToggle.textContent = '▼';
-
-    //         cueMain.append(cueText, cueToggle);
-
-    //         const cueExplanation = document.createElement('div');
-    //         cueExplanation.classList.add('cue-explanation');
-            
-    //         const renderedExplanation = marked.parse(item.explanation);
-    //         cueExplanation.innerHTML = renderedExplanation 
-
-    //         cueItem.append(cueMain, cueExplanation);
-    //         transcriptContainer.appendChild(cueItem);
-
-    //         cueMain.addEventListener('click', () => {
-    //             player.currentTime = item.startTime;
-    //             player.play();
-    //         });
-
-    //         cueToggle.addEventListener('click', (event) => {
-    //             event.stopPropagation();
-    //             explainedCuesThisSession.add(item.id); 
-    //             const isVisible = cueExplanation.classList.contains('visible');
-    //             document.querySelectorAll('.cue-explanation.visible').forEach(panel => {
-    //                 panel.classList.remove('visible');
-    //                 panel.previousElementSibling.querySelector('.cue-toggle').classList.remove('open');
-    //             });
-    //             if (!isVisible) {
-    //                 cueExplanation.classList.add('visible');
-    //                 cueToggle.classList.add('open');
-    //             }
-    //         });
-    //     });
-    // }
-
     function renderTranscript(transcriptData) {
         const cueListContainer = document.getElementById('cue-list-container');
         // Clear only the cue list, leaving the mode toggle intact
@@ -345,6 +294,12 @@ document.addEventListener('DOMContentLoaded', () => {
                         cueItem.classList.remove('incorrect');
                     }
                 });
+
+                // Stop the click event on the input from bubbling up to cueMain
+                input.addEventListener('click', (event) => {
+                    event.stopPropagation();
+                });
+
             }
     
             const cueToggle = document.createElement('span');
@@ -620,10 +575,18 @@ document.addEventListener('DOMContentLoaded', () => {
     
             if (existingStat) {
                 // 2. If it exists, update it
-                existingStat.times_listened += 1;
+                
+                // Option A: use a simple boolean 1-0 system 
+                existingStat.times_listened = 1;
                 if (wasExplained) {
-                    existingStat.times_explained += 1;
+                    existingStat.times_explained = 1;
                 }
+
+                // Option B: use a rolling average that aggregates over all listening times and explanations. 
+                //existingStat.times_listened += 1;
+                //if (wasExplained) {
+                //    existingStat.times_explained += 1;
+                //}
                 await updateSentenceStat(existingStat);
             } else {
                 // 3. If it doesn't exist, create a new record using the prefixed ID

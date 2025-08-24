@@ -35,12 +35,6 @@ const APP_SHELL = [
   `${basePath}images/icon-192x192.png`,
   `${basePath}images/icon-512x512.png`,
   `${basePath}data/languages.json`
-  //`${basePath}data/zhn/lessons.json`,
-  //`${basePath}data/zhn/packs.json`,
-  //`${basePath}data/zhn/lesson_001/morning_routine.json`,
-  //`${basePath}data/zhn/lesson_001/morning_routine.mp3`,
-  //`${basePath}data/zhn/lesson_002/making_breakfast.json`,
-  //`${basePath}data/zhn/lesson_002/making_breakfast.mp3`
 ];
 
 //console.log('[SW] App shell files:', APP_SHELL);
@@ -143,6 +137,8 @@ self.addEventListener('activate', event => {
 //   );
 // });
 
+const DEBUG = true;
+
 self.addEventListener('fetch', event => {
   // Only handle GET requests
   if (event.request.method !== 'GET') return;
@@ -150,6 +146,33 @@ self.addEventListener('fetch', event => {
   // Ignore non-http(s) schemes
   const url = new URL(event.request.url);
   if (url.protocol !== 'http:' && url.protocol !== 'https:') return;
+
+  // log the request
+  console.log(`[SW] Fetching ${event.request.url}`);
+
+  // log the content of the cache at this point
+  if (DEBUG) {
+    // Keep the worker alive while we list the caches
+    event.waitUntil((async () => {
+      try {
+        // If you only want a specific cache:
+        // const cache = await caches.open(CACHE_NAME);
+        // const keys = await cache.keys();
+
+        // To list *all* caches and their entries:
+        const cacheNames = await caches.keys();
+        for (const name of cacheNames) {
+          const cache = await caches.open(name);
+          const requests = await cache.keys(); // returns Request[]
+          const files = requests.map(r => new URL(r.url).pathname);
+          console.log(`[SW][cache:${name}] ${files.length} entries:`);
+          console.table(files.map(p => ({ cache: name, pathname: p })));
+        }
+      } catch (err) {
+        console.error('[SW] Error listing cache contents', err);
+      }
+    })());
+  }
 
   // Optional: short-circuit for certain origins or APIs you don't want cached
   // if (url.origin !== self.location.origin) return;
