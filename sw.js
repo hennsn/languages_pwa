@@ -18,7 +18,7 @@ const swPath = self.location.pathname;
 // e.g., '/sw.js' becomes '/'
 const basePath = swPath.substring(0, swPath.lastIndexOf('/') + 1);
 
-//console.log('[SW] Base path:', basePath);
+console.log('[SW] Base path:', basePath);
 
 // App shell files (core UI)
 const APP_SHELL = [
@@ -34,7 +34,13 @@ const APP_SHELL = [
   `${basePath}manifest.json`,
   `${basePath}images/icon-192x192.png`,
   `${basePath}images/icon-512x512.png`,
-  `${basePath}data/languages.json`
+  `${basePath}data/languages.json`,
+  `${basePath}data/zhn/lessons.json`,
+  `${basePath}data/zhn/packs.json`,
+  `${basePath}data/zhn/lesson_001/morning_routine.json`,
+  `${basePath}data/zhn/lesson_001/morning_routine.mp3`,
+  `${basePath}data/zhn/lesson_002/making_breakfast.json`,
+  `${basePath}data/zhn/lesson_002/making_breakfast.mp3`
 ];
 
 //console.log('[SW] App shell files:', APP_SHELL);
