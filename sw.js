@@ -86,61 +86,135 @@ self.addEventListener('activate', event => {
 // -------------------------------
 // Fetch Event - Smart Strategies
 // -------------------------------
+// self.addEventListener('fetch', event => {
+
+//   // --- Add a guard clause to ignore non-HTTP/HTTPS requests ---
+//   const requestUrl = new URL(event.request.url);
+//   if (requestUrl.protocol !== 'http:' && requestUrl.protocol !== 'https:') {
+//     // If the request is for a chrome-extension, blob, etc., do not handle it.
+//     // Let the browser handle it as it normally would.
+//     return; 
+//   }
+
+//   //1. Cache-first for audio and transcripts
+//   if (requestUrl.pathname.endsWith('.mp3') || requestUrl.pathname.endsWith('.json')) {
+//     event.respondWith(
+//       caches.match(event.request).then(cachedResponse => {
+//         if (cachedResponse) {
+//           return cachedResponse;
+//         }
+//         return fetch(event.request).then(networkResponse => {
+//           const isPartial = event.request.headers.has('range');
+//           if (!isPartial && networkResponse.status === 200) {
+//             const responseToCache = networkResponse.clone();
+//             caches.open(CACHE_NAME).then(cache => {
+//               cache.put(event.request, responseToCache);
+//             });
+//           }
+//           return networkResponse;
+//         }).catch(() => {
+//           if (requestUrl.pathname.endsWith('.mp3')) {
+//             return caches.match(FALLBACK_AUDIO);
+//           }
+//         });
+//       })
+//     );
+//     return;
+//   }
+
+//   // 2. Stale-while-revalidate for app shell and static assets
+//   event.respondWith(
+//     caches.match(event.request).then(cachedResponse => {
+//       const fetchPromise = fetch(event.request).then(networkResponse => {
+//         return caches.open(CACHE_NAME).then(cache => {
+//           cache.put(event.request, networkResponse.clone());
+//           return networkResponse;
+//         });
+//       }).catch(() => {
+//         if (event.request.destination === 'document') {
+//           return caches.match(FALLBACK_HTML);
+//         }
+//         if (event.request.destination === 'image') {
+//           return caches.match(FALLBACK_IMAGE);
+//         }
+//       });
+//       return cachedResponse || fetchPromise;
+//     })
+//   );
+// });
+
 self.addEventListener('fetch', event => {
+  // Only handle GET requests
+  if (event.request.method !== 'GET') return;
 
-  // --- Add a guard clause to ignore non-HTTP/HTTPS requests ---
-  const requestUrl = new URL(event.request.url);
-  if (requestUrl.protocol !== 'http:' && requestUrl.protocol !== 'https:') {
-    // If the request is for a chrome-extension, blob, etc., do not handle it.
-    // Let the browser handle it as it normally would.
-    return; 
-  }
+  // Ignore non-http(s) schemes
+  const url = new URL(event.request.url);
+  if (url.protocol !== 'http:' && url.protocol !== 'https:') return;
 
-  // 1. Cache-first for audio and transcripts
-  if (requestUrl.pathname.endsWith('.mp3') || requestUrl.pathname.endsWith('.json')) {
-    event.respondWith(
-      caches.match(event.request).then(cachedResponse => {
-        if (cachedResponse) {
-          return cachedResponse;
+  // Optional: short-circuit for certain origins or APIs you don't want cached
+  // if (url.origin !== self.location.origin) return;
+
+  // Example: cache-first for audio/transcripts (uncomment if you want it)
+  if (url.pathname.endsWith('.mp3') || url.pathname.endsWith('.json')) {
+    event.respondWith((async () => {
+      try {
+        const cached = await caches.match(event.request);
+        if (cached) return cached;
+
+        // Perform fetch; don't cache partial (range) requests. Cache only OK responses.
+        const networkResponse = await fetch(event.request);
+        const isPartial = event.request.headers.has('range');
+        if (!isPartial && networkResponse && networkResponse.ok) {
+          const cache = await caches.open(CACHE_NAME);
+          await cache.put(event.request, networkResponse.clone());
         }
-        return fetch(event.request).then(networkResponse => {
-          const isPartial = event.request.headers.has('range');
-          if (!isPartial && networkResponse.status === 200) {
-            const responseToCache = networkResponse.clone();
-            caches.open(CACHE_NAME).then(cache => {
-              cache.put(event.request, responseToCache);
-            });
-          }
-          return networkResponse;
-        }).catch(() => {
-          if (requestUrl.pathname.endsWith('.mp3')) {
-            return caches.match(FALLBACK_AUDIO);
-          }
-        });
-      })
-    );
+        return networkResponse;
+      } catch (err) {
+        // Network failed — provide audio fallback if requested, otherwise rethrow
+        if (url.pathname.endsWith('.mp3')) {
+          return caches.match(FALLBACK_AUDIO);
+        }
+        throw err;
+      }
+    })());
     return;
   }
 
-  // 2. Stale-while-revalidate for app shell and static assets
-  event.respondWith(
-    caches.match(event.request).then(cachedResponse => {
-      const fetchPromise = fetch(event.request).then(networkResponse => {
-        return caches.open(CACHE_NAME).then(cache => {
-          cache.put(event.request, networkResponse.clone());
-          return networkResponse;
-        });
-      }).catch(() => {
+  // Stale-while-revalidate for other GETs
+  event.respondWith((async () => {
+    const cache = await caches.open(CACHE_NAME);
+    const cachedResponse = await cache.match(event.request);
+    const networkPromise = (async () => {
+      try {
+        const networkResponse = await fetch(event.request);
+        // Only cache successful (200) responses and skip partial/range requests
+        const isPartial = event.request.headers.has('range');
+        if (!isPartial && networkResponse && networkResponse.ok) {
+          // Optionally: skip caching cross-origin opaque responses:
+          if (networkResponse.type !== 'opaque') {
+            await cache.put(event.request, networkResponse.clone());
+          } else {
+            // If you want to cache opaque responses, remove the check above.
+          }
+        }
+        return networkResponse;
+      } catch (err) {
+        // Provide fallbacks for navigation/image when offline
         if (event.request.destination === 'document') {
           return caches.match(FALLBACK_HTML);
         }
         if (event.request.destination === 'image') {
           return caches.match(FALLBACK_IMAGE);
         }
-      });
-      return cachedResponse || fetchPromise;
-    })
-  );
+        // otherwise rethrow to let browser handle error
+        throw err;
+      }
+    })();
+
+    // If cached exists, return immediately and update in background.
+    // If no cached, wait for networkPromise.
+    return cachedResponse || await networkPromise;
+  })());
 });
 
 
