@@ -34,13 +34,13 @@ const APP_SHELL = [
   `${basePath}manifest.json`,
   `${basePath}images/icon-192x192.png`,
   `${basePath}images/icon-512x512.png`,
-  `${basePath}data/languages.json`,
-  `${basePath}data/zhn/lessons.json`,
-  `${basePath}data/zhn/packs.json`,
-  `${basePath}data/zhn/lesson_001/morning_routine.json`,
-  `${basePath}data/zhn/lesson_001/morning_routine.mp3`,
-  `${basePath}data/zhn/lesson_002/making_breakfast.json`,
-  `${basePath}data/zhn/lesson_002/making_breakfast.mp3`
+  `${basePath}data/languages.json`
+  //`${basePath}data/zhn/lessons.json`,
+  //`${basePath}data/zhn/packs.json`,
+  //`${basePath}data/zhn/lesson_001/morning_routine.json`,
+  //`${basePath}data/zhn/lesson_001/morning_routine.mp3`,
+  //`${basePath}data/zhn/lesson_002/making_breakfast.json`,
+  //`${basePath}data/zhn/lesson_002/making_breakfast.mp3`
 ];
 
 //console.log('[SW] App shell files:', APP_SHELL);
