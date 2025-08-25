@@ -31,6 +31,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let explainedCuesThisSession = new Set();
 
     let currentMode = 'study'; // Can be 'study' or 'quiz'
+    let pauseAtTime = null; 
 
     async function init() {
         try {
@@ -267,11 +268,19 @@ document.addEventListener('DOMContentLoaded', () => {
                 input.className = 'quiz-input';
                 input.placeholder = 'Type what you hear...';
                 input.autocomplete = 'off';
-                
-                // NO "Check" button is created.
-                // NO "correctAnswerText" element is created.
-    
-                inputContainer.append(input);
+
+                // ... after creating the 'input' ...
+                const peekAnswer = document.createElement('div');
+                peekAnswer.className = 'peek-answer';
+
+                // The new icon button
+                const peekButton = document.createElement('button');
+                peekButton.className = 'peek-btn';
+                peekButton.innerHTML = '👁️'; // Lightbulb icon. Use 👁️ for an eye.
+                peekButton.setAttribute('aria-label', 'Peek at answer'); // For accessibility
+
+                // Update the container
+                inputContainer.append(peekAnswer, input, peekButton); // Add the button here    
                 quizUiContainer.append(inputContainer);
                 cueMain.appendChild(quizUiContainer);
     
@@ -300,6 +309,27 @@ document.addEventListener('DOMContentLoaded', () => {
                     event.stopPropagation();
                 });
 
+                const showAnswer = () => {
+                    peekAnswer.textContent = item.text;
+                    peekAnswer.style.opacity = '1';
+                };
+                
+                const hideAnswer = () => {
+                    peekAnswer.style.opacity = '0';
+                };
+                
+                // For mouse users (click and hold)
+                peekButton.addEventListener('mousedown', showAnswer);
+                peekButton.addEventListener('mouseup', hideAnswer);
+                peekButton.addEventListener('mouseleave', hideAnswer); // Hide if mouse leaves button
+                
+                // For touch screen users (tap and hold)
+                peekButton.addEventListener('touchstart', (e) => {
+                    e.preventDefault(); // Prevents a "ghost click" from firing
+                    showAnswer();
+                });
+                peekButton.addEventListener('touchend', hideAnswer);
+
             }
     
             const cueToggle = document.createElement('span');
@@ -317,6 +347,19 @@ document.addEventListener('DOMContentLoaded', () => {
             cueListContainer.appendChild(cueItem);
     
             cueMain.addEventListener('click', () => {
+                if (currentMode === 'quiz') {
+                    // Find the start time of the *next* cue to determine our end time
+                    const nextCueItem = cueItem.nextElementSibling;
+                    if (nextCueItem) {
+                        pauseAtTime = parseFloat(nextCueItem.querySelector('.cue-main').dataset.startTime);
+                    } else {
+                        // If it's the last cue, just pause at the end of the audio
+                        pauseAtTime = player.duration;
+                    }
+                } else {
+                    // In study mode, we don't want to auto-pause
+                    pauseAtTime = null;
+                }
                 player.currentTime = item.startTime;
                 player.play();
             });
@@ -344,10 +387,20 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function updateTranscriptHighlight() {
+        // If the player is paused, don't update the highlight.
+        if (player.paused) return;
+
         const currentTime = player.currentTime;
 
         if (currentTime > maxTimeReached) {
             maxTimeReached = currentTime;
+        }
+
+        // Add the new auto-pause logic
+        if (currentMode === 'quiz' && pauseAtTime && player.currentTime >= pauseAtTime) {
+            player.pause();
+            pauseAtTime = null; // Clear the target so it only fires once
+            return;
         }
 
         const cues = transcriptContainer.querySelectorAll('.cue-main');

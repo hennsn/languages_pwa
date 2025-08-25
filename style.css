@@ -774,3 +774,41 @@ input:checked + .slider:before {
     display: block;
     color: var(--accent-easy);
 }
+
+/* style.css */
+
+/* Add styles for the new button */
+.peek-btn {
+    display: none; /* Hidden by default */
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    font-size: 1.5rem; /* Make the icon large and tappable */
+    cursor: pointer;
+    opacity: 0.6;
+    transition: opacity 0.2s, transform 0.2s;
+    padding: 5px; /* Increase tappable area */
+}
+.peek-btn:hover {
+    opacity: 1;
+    transform: translateY(-50%) scale(1.1);
+}
+
+/* Show the button only when an answer is incorrect */
+.cue-item.incorrect .peek-btn {
+    display: block;
+}
+
+/* We still need the input container to be relative */
+.quiz-input-container {
+    position: relative;
+}
+
+/* Adjust the input padding so text doesn't go under the icon */
+.quiz-input {
+    padding-right: 50px; /* Add space on the right for the icon */
+}
+
