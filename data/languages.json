@@ -8,6 +8,11 @@
       "code": "de",
       "name": "German",
       "image": "images/flags/de.svg"
+    },
+    {
+      "code": "en",
+      "name": "English",
+      "image": "images/flags/en.svg"
     }
   ]
 

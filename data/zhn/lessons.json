@@ -14,5 +14,53 @@
     "lessonFile": "making_breakfast.json",
     "path": "lesson_002/",
     "thumbnail": "making_breakfast_thumbnail.png"
+  },
+  {
+    "id": "lesson_003",
+    "title": "Lesson 003: Cleaning My Room",
+    "audioFile": "cleaning_room.mp3",
+    "lessonFile": "cleaning_room.json",
+    "path": "lesson_003/",
+    "thumbnail": "cleaning_room_thumbnail.png"
+  },
+  {
+    "id": "lesson_004",
+    "title": "Lesson 004: A Family Dinner",
+    "audioFile": "family_dinner.mp3",
+    "lessonFile": "family_dinner.json",
+    "path": "lesson_004/",
+    "thumbnail": "family_dinner_thumbnail.png"
+  },
+  {
+    "id": "lesson_005",
+    "title": "Lesson 005: Doing the Laundry",
+    "audioFile": "doing_laundry.mp3",
+    "lessonFile": "doing_laundry.json",
+    "path": "lesson_005/",
+    "thumbnail": "doing_laundry_thumbnail.png"
+  },
+  {
+    "id": "lesson_006",
+    "title": "Lesson 006: Getting Ready for Bed",
+    "audioFile": "getting_ready_for_bed.mp3",
+    "lessonFile": "getting_ready_for_bed.json",
+    "path": "lesson_006/",
+    "thumbnail": "getting_ready_for_bed_thumbnail.png"
+  },
+  {
+    "id": "lesson_007",
+    "title": "Lesson 007: A Trip to the Supermarket",
+    "audioFile": "supermarket_trip.mp3",
+    "lessonFile": "supermarket_trip.json",
+    "path": "lesson_007/",
+    "thumbnail": "supermarket_trip_thumbnail.png"
+  },
+  {
+    "id": "lesson_008",
+    "title": "Lesson 008: Riding the Bus",
+    "audioFile": "riding_bus.mp3",
+    "lessonFile": "riding_bus.json",
+    "path": "lesson_008/",
+    "thumbnail": "riding_bus_thumbnail.png"
   }
 ]
