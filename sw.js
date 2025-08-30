@@ -80,63 +80,6 @@ self.addEventListener('activate', event => {
 // -------------------------------
 // Fetch Event - Smart Strategies
 // -------------------------------
-// self.addEventListener('fetch', event => {
-
-//   // --- Add a guard clause to ignore non-HTTP/HTTPS requests ---
-//   const requestUrl = new URL(event.request.url);
-//   if (requestUrl.protocol !== 'http:' && requestUrl.protocol !== 'https:') {
-//     // If the request is for a chrome-extension, blob, etc., do not handle it.
-//     // Let the browser handle it as it normally would.
-//     return; 
-//   }
-
-//   //1. Cache-first for audio and transcripts
-//   if (requestUrl.pathname.endsWith('.mp3') || requestUrl.pathname.endsWith('.json')) {
-//     event.respondWith(
-//       caches.match(event.request).then(cachedResponse => {
-//         if (cachedResponse) {
-//           return cachedResponse;
-//         }
-//         return fetch(event.request).then(networkResponse => {
-//           const isPartial = event.request.headers.has('range');
-//           if (!isPartial && networkResponse.status === 200) {
-//             const responseToCache = networkResponse.clone();
-//             caches.open(CACHE_NAME).then(cache => {
-//               cache.put(event.request, responseToCache);
-//             });
-//           }
-//           return networkResponse;
-//         }).catch(() => {
-//           if (requestUrl.pathname.endsWith('.mp3')) {
-//             return caches.match(FALLBACK_AUDIO);
-//           }
-//         });
-//       })
-//     );
-//     return;
-//   }
-
-//   // 2. Stale-while-revalidate for app shell and static assets
-//   event.respondWith(
-//     caches.match(event.request).then(cachedResponse => {
-//       const fetchPromise = fetch(event.request).then(networkResponse => {
-//         return caches.open(CACHE_NAME).then(cache => {
-//           cache.put(event.request, networkResponse.clone());
-//           return networkResponse;
-//         });
-//       }).catch(() => {
-//         if (event.request.destination === 'document') {
-//           return caches.match(FALLBACK_HTML);
-//         }
-//         if (event.request.destination === 'image') {
-//           return caches.match(FALLBACK_IMAGE);
-//         }
-//       });
-//       return cachedResponse || fetchPromise;
-//     })
-//   );
-// });
-
 self.addEventListener('fetch', event => {
   if (event.request.method !== 'GET') return;
 
@@ -145,6 +88,30 @@ self.addEventListener('fetch', event => {
 
   // Debug
   console.log(`[SW] Fetching ${url.href}`);
+
+  // --- STRATEGY 1: Network First for critical manifest files ---
+  // This ensures users always get the latest list of languages, packs, and lessons when online.
+  if (url.pathname.endsWith('languages.json') || 
+      url.pathname.endsWith('packs.json') || 
+      url.pathname.endsWith('lessons.json')) {
+      
+      event.respondWith(
+          fetch(event.request)
+              .then(networkResponse => {
+                  // If we get a response, update the cache and return it
+                  return caches.open(CACHE_NAME).then(cache => {
+                      cache.put(event.request, networkResponse.clone());
+                      return networkResponse;
+                  });
+              })
+              .catch(() => {
+                  // If the network fails, try to get it from the cache
+                  console.log(`[SW] Network failed for ${url.pathname}, serving from cache.`);
+                  return caches.match(event.request);
+              })
+      );
+      return; // End execution here
+  }
 
   // AUDIO & TRANSCRIPTS (cache-first + proper range support)
   if (url.pathname.endsWith('.mp3') || url.pathname.endsWith('.json')) {
@@ -294,8 +261,6 @@ self.addEventListener('fetch', event => {
     return cachedResponse || await networkPromise;
   })());
 });
-
-
 
 /**
  * Handles the download and caching of a lesson pack.

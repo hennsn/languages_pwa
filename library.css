@@ -207,3 +207,26 @@ body {
 @keyframes spin {
     to { transform: rotate(360deg); }
 }
+
+/* library.css */
+.header-main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+}
+.refresh-btn {
+    background: none;
+    border: none;
+    font-size: 1.8rem;
+    color: var(--text-secondary);
+    cursor: pointer;
+    transition: color 0.2s, transform 0.3s;
+    padding: 0;
+}
+.refresh-btn:hover {
+    color: var(--text-primary);
+}
+.refresh-btn:active {
+    transform: rotate(180deg);
+}

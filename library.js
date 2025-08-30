@@ -12,6 +12,7 @@ let allLessons = []; // To store the lesson details from lessons.json
 const packsContainer = document.getElementById('packs-container');
 const loadingIndicator = document.getElementById('loading-indicator');
 const headerTitle = document.querySelector('.library-header h1');
+const refreshBtn = document.getElementById('refresh-btn');
 
 document.addEventListener('DOMContentLoaded', () => {
     initializeLibrary();
@@ -37,6 +38,13 @@ document.addEventListener('DOMContentLoaded', () => {
                 break;
         }
     });
+
+    // Refresh button event listener
+    refreshBtn.addEventListener('click', () => {
+        console.log("User triggered refresh.");
+        initializeLibrary(); // Just re-run the initialization!
+    });
+
 });
 
 /**

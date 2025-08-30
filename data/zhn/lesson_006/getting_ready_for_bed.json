@@ -1,122 +1,156 @@
 [
   {
-    "startTime": 0.0,
-    "endTime": 0.96,
-    "text": "\u7761\u89c9\u4ee5\u524d\u3002",
-    "id": "c9be8d4456923dba8b04c007c7416a47"
+    "startTime": 0.1,
+    "endTime": 0.82,
+    "text": "\u7761\u89c9\u524d\u3002",
+    "explanation": "### English Translation\n\n**Before sleeping.**\n\n---\n\n### Word-by-Word Translation\n\n*   **\u7761\u89c9 (shu\u00ecji\u00e0o)**: to sleep\n*   **\u524d (qi\u00e1n)**: before\n\n### Grammar Notes\n\nThe structure `[Action] + \u524d (qi\u00e1n)` means \"before doing the action.\"",
+    "id": "1fe087bc20464ff5c403f7f16e5b29db"
   },
   {
-    "startTime": 1.39,
-    "endTime": 2.37,
-    "text": "\u6211\u53eb\u738b\u9759\u3002",
-    "id": "0ebf6a6cd4bba4d22569717bae873814"
+    "startTime": 1.25,
+    "endTime": 3.68,
+    "text": "\u6211\u53eb\u738b\u8fdb, \u662f\u4e00\u540d\u5927\u5b66\u751f\u3002",
+    "explanation": "### English Translation\n\n**My name is Wang Jin, I am a university student.**\n\n---\n\n### Word-by-Word Translation\n\n*   **\u6211 (w\u01d2)**: I / me\n*   **\u53eb (ji\u00e0o)**: to be called\n*   **\u738b\u8fdb (W\u00e1ng J\u00ecn)**: Wang Jin (a name)\n*   **\u662f (sh\u00ec)**: to be / am\n*   **\u4e00\u540d (y\u012b m\u00edng)**: one (used with a measure word for people)\n*   **\u5927\u5b66\u751f (d\u00e0xu\u00e9sh\u0113ng)**: university student\n\n### Grammar Notes\n\n`\u662f (sh\u00ec)` is the verb \"to be.\" `\u540d (m\u00edng)` is a measure word used for people, often when stating a profession or identity.",
+    "id": "a89d070ce673a14592c0e384f0de552f"
   },
   {
-    "startTime": 2.87,
-    "endTime": 4.67,
-    "text": "\u73b0\u5728\u662f\u665a\u4e0a10\u70b9\u534a\u4e86\u3002",
-    "id": "7f21601cbafe37d0b17456d37a2d926f"
+    "startTime": 4.19,
+    "endTime": 5.86,
+    "text": "\u73b0\u5728\u662f\u665a\u4e0a10\u70b9\u534a\u3002",
+    "explanation": "### English Translation\n\n**It is now 10:30 at night.**\n\n---\n\n### Word-by-Word Translation\n\n*   **\u73b0\u5728 (xi\u00e0nz\u00e0i)**: now\n*   **\u662f (sh\u00ec)**: is\n*   **\u665a\u4e0a (w\u01censhang)**: evening / night\n*   **\u5341\u70b9 (sh\u00ed di\u01cen)**: 10 o'clock\n*   **\u534a (b\u00e0n)**: half\n\n### Grammar Notes\n\nThe structure for telling time is `[Time of day] + [Number] + \u70b9 (di\u01cen)`. For the half-hour, you add `\u534a (b\u00e0n)`.",
+    "id": "a190c0398ed3f07fed984e27285e1187"
   },
   {
-    "startTime": 5.12,
-    "endTime": 9.22,
-    "text": "\u4eca\u5929\u6211\u5728\u56fe\u4e66\u9986\u5b66\u4e60\u4e86\u5f88\u957f\u65f6\u95f4\uff0c\u73b0\u5728\u6211\u7684\u4f5c\u4e1a\u90fd\u5199\u5b8c\u4e86\u3002",
-    "id": "bed991ad6e9355bcfeadba055e367680"
+    "startTime": 6.38,
+    "endTime": 9.77,
+    "text": "\u4eca\u5929\u6211\u5f88\u5fd9, \u4f46\u662f\u6211\u5f88\u9ad8\u5174, \u56e0\u4e3a\u6211\u505a\u5b8c\u4f5c\u4e1a\u4e86\u3002",
+    "explanation": "### English Translation\n\n**I was very busy today, but I am very happy, because I finished my homework.**\n\n---\n\n### Word-by-Word Translation\n\n*   **\u4eca\u5929 (j\u012bnti\u0101n)**: today\n*   **\u6211 (w\u01d2)**: I\n*   **\u5f88 (h\u011bn)**: very\n*   **\u5fd9 (m\u00e1ng)**: busy\n*   **\u4f46\u662f (d\u00e0nsh\u00ec)**: but / however\n*   **\u6211 (w\u01d2)**: I\n*   **\u5f88 (h\u011bn)**: very\n*   **\u9ad8\u5174 (g\u0101ox\u00ecng)**: happy\n*   **\u56e0\u4e3a (y\u012bnw\u00e8i)**: because\n*   **\u6211 (w\u01d2)**: I\n*   **\u505a\u5b8c (zu\u00f2 w\u00e1n)**: to finish doing\n*   **\u4f5c\u4e1a (zu\u00f2y\u00e8)**: homework\n*   **\u4e86 (le)**: particle indicating completion\n\n### Grammar Notes\n\n`\u505a\u5b8c (zu\u00f2 w\u00e1n)` is a resultative complement, where `\u5b8c (w\u00e1n)` indicates the result \"finished.\" The particle `\u4e86 (le)` at the end of the clause emphasizes that the action is complete.",
+    "id": "2ebab3ff8a947cef0f148fa851f9bc08"
   },
   {
-    "startTime": 9.68,
-    "endTime": 11.69,
-    "text": "\u6211\u89c9\u5f97\u6709\u70b9\u7d2f\uff0c\u60f3\u53bb\u7761\u89c9\u4e86\u3002",
-    "id": "85ed3df433c2e0c0aaac908e672b1605"
+    "startTime": 10.36,
+    "endTime": 14.12,
+    "text": "\u6211\u7684\u4f5c\u4e1a\u662f\u5199\u6c49\u5b57\u548c\u8bfb\u4e2d\u6587\u4e66, \u6211\u89c9\u5f97\u5f88\u6709\u610f\u601d\u3002",
+    "explanation": "### English Translation\n\n**My homework is to write Chinese characters and read Chinese books, I think it's very interesting.**\n\n---\n\n### Word-by-Word Translation\n\n*   **\u6211 (w\u01d2)**: my\n*   **\u7684 (de)**: possessive particle\n*   **\u4f5c\u4e1a (zu\u00f2y\u00e8)**: homework\n*   **\u662f (sh\u00ec)**: is\n*   **\u5199 (xi\u011b)**: to write\n*   **\u6c49\u5b57 (H\u00e0nz\u00ec)**: Chinese characters\n*   **\u548c (h\u00e9)**: and\n*   **\u8bfb (d\u00fa)**: to read\n*   **\u4e2d\u6587\u4e66 (Zh\u014dngw\u00e9n sh\u016b)**: Chinese book\n*   **\u6211 (w\u01d2)**: I\n*   **\u89c9\u5f97 (ju\u00e9de)**: to feel / to think\n*   **\u5f88\u6709\u610f\u601d (h\u011bn y\u01d2u y\u00ecsi)**: very interesting\n\n### Grammar Notes\n\nThe particle `\u7684 (de)` is used after a pronoun or noun to show possession, like 's in English. `\u6211\u7684 (w\u01d2 de)` means \"my.\"",
+    "id": "82b42cbe84051350e459bc250f083e05"
   },
   {
-    "startTime": 12.08,
-    "endTime": 14.7,
-    "text": "\u7761\u89c9\u4ee5\u524d\uff0c\u6211\u6709\u5f88\u591a\u4e8b\u60c5\u8981\u505a\u3002",
-    "id": "a8a18f3a7103a8df0991417d1cce7e4f"
+    "startTime": 14.93,
+    "endTime": 16.14,
+    "text": "\u73b0\u5728\u6211\u51c6\u5907\u7761\u89c9\u4e86\u3002",
+    "explanation": "### English Translation\n\n**Now I am preparing to sleep.**\n\n---\n\n### Word-by-Word Translation\n\n*   **\u73b0\u5728 (xi\u00e0nz\u00e0i)**: now\n*   **\u6211 (w\u01d2)**: I\n*   **\u51c6\u5907 (zh\u01d4nb\u00e8i)**: to prepare\n*   **\u7761\u89c9 (shu\u00ecji\u00e0o)**: to sleep\n*   **\u4e86 (le)**: particle indicating a new situation\n\n### Grammar Notes\n\nIn this sentence, `\u4e86 (le)` indicates a change of state or a new situation. It means that the speaker wasn't preparing to sleep before, but now they are.",
+    "id": "2a23d4c08e015dedb48454e0da8b5ccb"
   },
   {
-    "startTime": 15.23,
-    "endTime": 17.89,
-    "text": "\u6211\u5148\u53bb\u536b\u751f\u95f4\u6d17\u8138\uff0c\u7136\u540e\u5237\u7259\u3002",
-    "id": "17ca8460d0955e01b5b78f497a431657"
+    "startTime": 16.63,
+    "endTime": 18.59,
+    "text": "\u6211\u8d70\u8fdb\u6d17\u624b\u95f4, \u770b\u7740\u955c\u5b50\u3002",
+    "explanation": "### English Translation\n\n**I walk into the bathroom and look at the mirror.**\n\n---\n\n### Word-by-Word Translation\n\n*   **\u6211 (w\u01d2)**: I\n*   **\u8d70\u8fdb (z\u01d2u j\u00ecn)**: to walk into\n*   **\u6d17\u624b\u95f4 (x\u01d0sh\u01d2uji\u0101n)**: bathroom / washroom\n*   **\u770b\u7740 (k\u00e0nzhe)**: looking at\n*   **\u955c\u5b50 (j\u00ecngzi)**: mirror\n\n### Grammar Notes\n\nThe particle `\u7740 (zhe)` is attached to a verb to show that an action is ongoing or in a continuous state. `\u770b\u7740 (k\u00e0nzhe)` means \"is looking\" or \"while looking.\"",
+    "id": "883592547c725dbfb7410dd9b8400cea"
   },
   {
-    "startTime": 18.35,
-    "endTime": 21.37,
-    "text": "\u7136\u540e\uff0c\u6211\u56de\u5230\u6211\u7684\u623f\u95f4\uff0c\u6362\u4e0a\u8212\u670d\u7684\u7761\u8863\u3002",
-    "id": "85072488ec8f08df611d7c781ab86769"
+    "startTime": 19.16,
+    "endTime": 21.57,
+    "text": "\u6211\u7528\u70ed\u6c34\u6d17\u8138, \u7136\u540e\u5237\u7259\u3002",
+    "explanation": "### English Translation\n\n**I use hot water to wash my face, and then brush my teeth.**\n\n---\n\n### Word-by-Word Translation\n\n*   **\u6211 (w\u01d2)**: I\n*   **\u7528 (y\u00f2ng)**: to use\n*   **\u70ed\u6c34 (r\u00e8shu\u01d0)**: hot water\n*   **\u6d17\u8138 (x\u01d0li\u01cen)**: to wash one's face\n*   **\u7136\u540e (r\u00e1nh\u00f2u)**: then / afterwards\n*   **\u5237\u7259 (shu\u0101y\u00e1)**: to brush teeth\n\n### Grammar Notes\n\n`\u7528 (y\u00f2ng)` introduces the tool or method for an action. The structure is `\u7528 + [Tool] + [Verb]`. `\u7136\u540e (r\u00e1nh\u00f2u)` is used to connect two actions that happen one after the other.",
+    "id": "4eb9323eb56a010a648ec504ab93efdf"
   },
   {
-    "startTime": 21.84,
-    "endTime": 25.32,
-    "text": "\u6211\u7684\u7761\u8863\u662f\u767d\u8272\u7684\uff0c\u4e0a\u9762\u6709\u4e00\u53ea\u5f88\u53ef\u7231\u7684\u5c0f\u732b\u3002",
-    "id": "e4814617fd3cb483005905d4fbb86299"
+    "startTime": 22.25,
+    "endTime": 24.81,
+    "text": "\u6211\u7684\u7259\u818f\u662f\u6c34\u679c\u5473\u9053\u7684, \u6211\u5f88\u559c\u6b22\u3002",
+    "explanation": "### English Translation\n\n**My toothpaste is fruit-flavored, I like it a lot.**\n\n---\n\n### Word-by-Word Translation\n\n*   **\u6211 (w\u01d2)**: my\n*   **\u7684 (de)**: possessive particle\n*   **\u7259\u818f (y\u00e1g\u0101o)**: toothpaste\n*   **\u662f (sh\u00ec)**: is\n*   **\u6c34\u679c (shu\u01d0gu\u01d2)**: fruit\n*   **\u5473\u9053 (w\u00e8idao)**: flavor / taste\n*   **\u7684 (de)**: a particle that turns a phrase into a descriptive attribute\n*   **\u6211 (w\u01d2)**: I\n*   **\u5f88 (h\u011bn)**: very\n*   **\u559c\u6b22 (x\u01d0huan)**: to like\n\n### Grammar Notes\n\nThe structure `[Noun] + \u5473\u9053\u7684` means \"[Noun]-flavored.\" The final `\u7684 (de)` is essential for creating this descriptive phrase.",
+    "id": "16a82ae0590a4984fcef49a078e87a53"
   },
   {
-    "startTime": 25.86,
-    "endTime": 28.91,
-    "text": "\u6211\u559c\u6b22\u5728\u7761\u89c9\u524d\u559d\u4e00\u676f\u6e29\u6c34\uff0c\u5bf9\u8eab\u4f53\u5f88\u597d\u3002",
-    "id": "cc4c3396eab155ab1a023ee1c492f820"
+    "startTime": 25.33,
+    "endTime": 27.53,
+    "text": "\u6d17\u5b8c\u8138\u540e, \u6211\u89c9\u5f97\u5f88\u8212\u670d\u3002",
+    "explanation": "### English Translation\n\n**After washing my face, I feel very comfortable.**\n\n---\n\n### Word-by-Word Translation\n\n*   **\u6d17\u5b8c (x\u01d0 w\u00e1n)**: to finish washing\n*   **\u8138 (li\u01cen)**: face\n*   **\u540e (h\u00f2u)**: after\n*   **\u6211 (w\u01d2)**: I\n*   **\u89c9\u5f97 (ju\u00e9de)**: to feel / to think\n*   **\u5f88 (h\u011bn)**: very\n*   **\u8212\u670d (sh\u016bfu)**: comfortable\n\n### Grammar Notes\n\nThe structure `[Action] + \u540e (h\u00f2u)` means \"after [doing the action].\" `\u6d17\u5b8c (x\u01d0 w\u00e1n)` uses the resultative complement `\u5b8c (w\u00e1n)` to mean \"finish washing.\"",
+    "id": "6ba4c27bded424e3aaf923206a69a66f"
   },
   {
-    "startTime": 29.54,
-    "endTime": 31.67,
-    "text": "\u6211\u6700\u559c\u6b22\u7684\u65f6\u95f4\u662f\u770b\u4e66\u7684\u65f6\u95f4\u3002",
-    "id": "8d6c22dc62c02f8def5856d5897b514d"
+    "startTime": 28.16,
+    "endTime": 29.25,
+    "text": "\u6211\u56de\u5230\u6211\u7684\u623f\u95f4\u3002",
+    "explanation": "### English Translation\n\n**I return to my room.**\n\n---\n\n### Word-by-Word Translation\n\n*   **\u6211 (w\u01d2)**: I\n*   **\u56de\u5230 (hu\u00ed d\u00e0o)**: to return to\n*   **\u6211 (w\u01d2)**: my\n*   **\u7684 (de)**: possessive particle\n*   **\u623f\u95f4 (f\u00e1ngji\u0101n)**: room",
+    "id": "2465f0c77e5c6d706d4820bfefd328d3"
   },
   {
-    "startTime": 32.22,
-    "endTime": 34.82,
-    "text": "\u6211\u6253\u5f00\u5e8a\u8fb9\u7684\u5c0f\u706f\uff0c\u5750\u5728\u5e8a\u4e0a\u770b\u4e66\u3002",
-    "id": "6cc980fd389929cb8a32c9d0a0c15986"
+    "startTime": 29.98,
+    "endTime": 31.95,
+    "text": "\u6211\u7684\u623f\u95f4\u4e0d\u5927, \u4f46\u662f\u5f88\u5e72\u51c0\u3002",
+    "explanation": "### English Translation\n\n**My room is not big, but it is very clean.**\n\n---\n\n### Word-by-Word Translation\n\n*   **\u6211 (w\u01d2)**: my\n*   **\u7684 (de)**: possessive particle\n*   **\u623f\u95f4 (f\u00e1ngji\u0101n)**: room\n*   **\u4e0d (b\u00f9)**: not\n*   **\u5927 (d\u00e0)**: big\n*   **\u4f46\u662f (d\u00e0nsh\u00ec)**: but / however\n*   **\u5f88 (h\u011bn)**: very\n*   **\u5e72\u51c0 (g\u0101nj\u00ecng)**: clean\n\n### Grammar Notes\n\n`\u4f46\u662f (d\u00e0nsh\u00ec)` is a conjunction used to show contrast between two clauses, similar to \"but\" in English.",
+    "id": "3e87070787ca091bc2a2c3f502d0569c"
   },
   {
-    "startTime": 35.34,
-    "endTime": 38.65,
-    "text": "\u6211\u5b66\u7684\u662f\u4e2d\u56fd\u6587\u5b66\uff0c\u6240\u4ee5\u6211\u7231\u770b\u4e2d\u56fd\u7684\u4e66\u3002",
-    "id": "643bdce90ccacde8c7a12134149bb65a"
+    "startTime": 32.55,
+    "endTime": 34.62,
+    "text": "\u6211\u6362\u4e0a\u6211\u6700\u559c\u6b22\u7684\u767d\u8272\u7761\u8863\u3002",
+    "explanation": "### English Translation\n\n**I change into my favorite white pajamas.**\n\n---\n\n### Word-by-Word Translation\n\n*   **\u6211 (w\u01d2)**: I\n*   **\u6362\u4e0a (hu\u00e0n sh\u00e0ng)**: to put on / to change into\n*   **\u6211 (w\u01d2)**: my\n*   **\u6700 (zu\u00ec)**: most\n*   **\u559c\u6b22 (x\u01d0huan)**: to like\n*   **\u7684 (de)**: particle linking attribute to noun\n*   **\u767d\u8272 (b\u00e1is\u00e8)**: white color\n*   **\u7761\u8863 (shu\u00ecy\u012b)**: pajamas\n\n### Grammar Notes\n\n`\u6700 (zu\u00ec)` is used before an adjective or verb to mean \"the most,\" forming a superlative. `\u6211\u6700\u559c\u6b22\u7684...` means \"my favorite...\"",
+    "id": "c225b63744d1e7d8beac9430a25d8d1d"
   },
   {
-    "startTime": 39.08,
-    "endTime": 41.34,
-    "text": "\u8fd9\u672c\u4e66\u7684\u6545\u4e8b\u5f88\u6709\u610f\u601d\u3002",
-    "id": "93faca6a8b86271caba2306f420fbced"
+    "startTime": 35.19,
+    "endTime": 36.93,
+    "text": "\u7761\u89c9\u524d, \u6211\u559c\u6b22\u770b\u4e00\u4f1a\u513f\u4e66\u3002",
+    "explanation": "### English Translation\n\n**Before sleeping, I like to read a book for a little while.**\n\n---\n\n### Word-by-Word Translation\n\n*   **\u7761\u89c9 (shu\u00ecji\u00e0o)**: to sleep\n*   **\u524d (qi\u00e1n)**: before\n*   **\u6211 (w\u01d2)**: I\n*   **\u559c\u6b22 (x\u01d0huan)**: to like\n*   **\u770b (k\u00e0n)**: to read / to look at\n*   **\u4e00\u4f1a\u513f (y\u012bhu\u00ecr)**: a little while\n*   **\u4e66 (sh\u016b)**: book\n\n### Grammar Notes\n\nPlacing `\u4e00\u4f1a\u513f (y\u012bhu\u00ecr)` after a verb indicates that the action is done for a short period. `\u770b\u4e00\u4f1a\u513f\u4e66` means \"to read for a bit.\"",
+    "id": "e943ceb93d93b9606bb9b2e0e6a28f94"
   },
   {
-    "startTime": 41.97,
-    "endTime": 44.89,
-    "text": "\u6211\u770b\u4e86\u5927\u698230\u5206\u949f\uff0c\u773c\u775b\u6709\u70b9\u7d2f\u4e86\u3002",
-    "id": "c3ef03a4421bfa6f02fe5ae064aaa9d5"
+    "startTime": 37.52,
+    "endTime": 39.8,
+    "text": "\u6211\u5750\u5728\u5e8a\u4e0a, \u6253\u5f00\u4e00\u672c\u4e2d\u6587\u4e66\u3002",
+    "explanation": "### English Translation\n\n**I sit on the bed and open a Chinese book.**\n\n---\n\n### Word-by-Word Translation\n\n*   **\u6211 (w\u01d2)**: I\n*   **\u5750 (zu\u00f2)**: to sit\n*   **\u5728 (z\u00e0i)**: at / in / on\n*   **\u5e8a (chu\u00e1ng)**: bed\n*   **\u4e0a (sh\u00e0ng)**: on / on top of\n*   **\u6253\u5f00 (d\u01cek\u0101i)**: to open\n*   **\u4e00\u672c (y\u012b b\u011bn)**: one (measure word for books)\n*   **\u4e2d\u6587\u4e66 (Zh\u014dngw\u00e9n sh\u016b)**: Chinese book\n\n### Grammar Notes\n\n`\u5728...\u4e0a (z\u00e0i...sh\u00e0ng)` is a common structure meaning \"on top of...\" `\u672c (b\u011bn)` is the specific measure word used for books.",
+    "id": "288ccbb19141b3f7ddccdf98abaf093d"
   },
   {
-    "startTime": 45.45,
-    "endTime": 48.0,
-    "text": "\u73b0\u5728\u662f\u665a\u4e0a11\u70b9\u4e86\uff0c\u662f\u65f6\u5019\u7761\u89c9\u4e86\u3002",
-    "id": "06348149a78af9382082f21f6a0dc2ec"
+    "startTime": 40.35,
+    "endTime": 42.14,
+    "text": "\u8001\u5e08\u8bf4\u8fd9\u672c\u4e66\u5f88\u597d\u3002",
+    "explanation": "### English Translation\n\n**The teacher said this book is very good.**\n\n---\n\n### Word-by-Word Translation\n\n*   **\u8001\u5e08 (l\u01ceosh\u012b)**: teacher\n*   **\u8bf4 (shu\u014d)**: to say\n*   **\u8fd9 (zh\u00e8)**: this\n*   **\u672c (b\u011bn)**: measure word for books\n*   **\u4e66 (sh\u016b)**: book\n*   **\u5f88 (h\u011bn)**: very\n*   **\u597d (h\u01ceo)**: good\n\n### Grammar Notes\n\nThe structure for identifying a specific object is `[Demonstrative pronoun] + [Measure word] + [Noun]`. Here, `\u8fd9\u672c\u4e66 (zh\u00e8 b\u011bn sh\u016b)` means \"this book.\"",
+    "id": "50b658253e73c8d95cdc7d196d30233b"
   },
   {
-    "startTime": 48.48,
-    "endTime": 49.67,
-    "text": "\u660e\u5929\u8fd8\u6709\u8bfe\u3002",
-    "id": "4960481f5c52bcb1fd15acf744a37602"
+    "startTime": 43.0,
+    "endTime": 45.68,
+    "text": "\u6211\u770b\u4e8615\u5206\u949f, \u773c\u775b\u6709\u70b9\u7d2f\u4e86\u3002",
+    "explanation": "### English Translation\n\n**I read for 15 minutes, my eyes are a little tired.**\n\n---\n\n### Word-by-Word Translation\n\n*   **\u6211 (w\u01d2)**: I\n*   **\u770b (k\u00e0n)**: to read / to look\n*   **\u4e86 (le)**: particle indicating completion\n*   **\u5341\u4e94\u5206\u949f (sh\u00edw\u01d4 f\u0113nzh\u014dng)**: fifteen minutes\n*   **\u773c\u775b (y\u01cenjing)**: eye(s)\n*   **\u6709\u70b9 (y\u01d2udi\u01cen)**: a little bit / somewhat\n*   **\u7d2f (l\u00e8i)**: tired\n*   **\u4e86 (le)**: particle indicating a change of state\n\n### Grammar Notes\n\n`\u6709\u70b9 (y\u01d2udi\u01cen)` is placed before an adjective and often implies a slightly negative or undesirable feeling. The second `\u4e86 (le)` in `\u7d2f\u4e86 (l\u00e8i le)` indicates a change of state from \"not tired\" to \"tired.\"",
+    "id": "db4cb12eed591dfe479797310eb5716d"
   },
   {
-    "startTime": 50.17,
-    "endTime": 52.34,
-    "text": "\u6211\u628a\u4e66\u653e\u5728\u684c\u5b50\u4e0a\uff0c\u5173\u4e0a\u706f\u3002",
-    "id": "aa177ccaf7f44d6e187682b2ad167b32"
+    "startTime": 46.12,
+    "endTime": 47.46,
+    "text": "\u73b0\u5728\u662f\u7761\u89c9\u7684\u65f6\u5019\u4e86\u3002",
+    "explanation": "### English Translation\n\n**Now it's time to sleep.**\n\n---\n\n### Word-by-Word Translation\n\n*   **\u73b0\u5728 (xi\u00e0nz\u00e0i)**: now\n*   **\u662f (sh\u00ec)**: is\n*   **\u7761\u89c9 (shu\u00ecji\u00e0o)**: to sleep\n*   **\u7684 (de)**: modifying particle\n*   **\u65f6\u5019 (sh\u00edhou)**: time / moment\n*   **\u4e86 (le)**: particle indicating a new situation\n\n### Grammar Notes\n\nThe structure `...\u7684\u65f6\u5019 (de sh\u00edhou)` means \"the time to...\" or \"when...\" The final `\u4e86 (le)` emphasizes that this new situation (time for sleep) has arrived.",
+    "id": "e6e0ebe07f14dac92f7ba8f421315abb"
   },
   {
-    "startTime": 52.96,
-    "endTime": 54.74,
-    "text": "\u5e0c\u671b\u4eca\u665a\u80fd\u505a\u4e00\u4e2a\u597d\u68a6\u3002",
-    "id": "c68f566610fba50a6c983e91d9c60c1b"
+    "startTime": 48.06,
+    "endTime": 50.18,
+    "text": "\u6211\u628a\u4e66\u653e\u5728\u684c\u5b50\u4e0a, \u5173\u4e0a\u706f\u3002",
+    "explanation": "### English Translation\n\n**I put the book on the desk and turn off the light.**\n\n---\n\n### Word-by-Word Translation\n\n*   **\u6211 (w\u01d2)**: I\n*   **\u628a (b\u01ce)**: particle to bring the object before the verb\n*   **\u4e66 (sh\u016b)**: book\n*   **\u653e\u5728 (f\u00e0ng z\u00e0i)**: to place at/on\n*   **\u684c\u5b50 (zhu\u014dzi)**: table / desk\n*   **\u4e0a (sh\u00e0ng)**: on\n*   **\u5173\u4e0a (gu\u0101n sh\u00e0ng)**: to close / to turn off\n*   **\u706f (d\u0113ng)**: light / lamp\n\n### Grammar Notes\n\nThe `\u628a (b\u01ce)` construction (`Subject + \u628a + Object + Verb`) is used to emphasize what happens to the object\u2014how it is handled or disposed of.",
+    "id": "3529c597812240461f85613a22d5abd0"
   },
   {
-    "startTime": 55.35,
-    "endTime": 56.18,
-    "text": "\u665a\u5b89\u3002",
-    "id": "ac688463416bec6e56dda0da44f74464"
+    "startTime": 50.81,
+    "endTime": 51.9,
+    "text": "\u623f\u95f4\u91cc\u5f88\u5b89\u9759\u3002",
+    "explanation": "### English Translation\n\n**It's very quiet in the room.**\n\n---\n\n### Word-by-Word Translation\n\n*   **\u623f\u95f4 (f\u00e1ngji\u0101n)**: room\n*   **\u91cc (l\u01d0)**: inside\n*   **\u5f88 (h\u011bn)**: very\n*   **\u5b89\u9759 (\u0101nj\u00ecng)**: quiet / peaceful",
+    "id": "44010ca09e97bda927fa9418113e8cf5"
+  },
+  {
+    "startTime": 52.37,
+    "endTime": 54.7,
+    "text": "\u6211\u5bf9\u81ea\u5df1\u8bf4: \u738b\u8fdb, \u665a\u5b89\u3002",
+    "explanation": "### English Translation\n\n**I say to myself: Wang Jin, good night.**\n\n---\n\n### Word-by-Word Translation\n\n*   **\u6211 (w\u01d2)**: I\n*   **\u5bf9 (du\u00ec)**: to / towards\n*   **\u81ea\u5df1 (z\u00ecj\u01d0)**: oneself\n*   **\u8bf4 (shu\u014d)**: to say\n*   **\u738b\u8fdb (W\u00e1ng J\u00ecn)**: Wang Jin (a name)\n*   **\u665a\u5b89 (w\u01cen'\u0101n)**: good night\n\n### Grammar Notes\n\nThe structure `\u5bf9 (du\u00ec) + [Someone]` means \"to [someone].\" So, `\u5bf9\u81ea\u5df1\u8bf4 (du\u00ec z\u00ecj\u01d0 shu\u014d)` literally means \"say to oneself.\"",
+    "id": "00c733c3a7a1928500ca5dad8f6455fb"
+  },
+  {
+    "startTime": 55.45,
+    "endTime": 56.91,
+    "text": "\u660e\u5929\u53c8\u662f\u65b0\u7684\u4e00\u5929\u3002",
+    "explanation": "### English Translation\n\n**Tomorrow is a new day again.**\n\n---\n\n### Word-by-Word Translation\n\n*   **\u660e\u5929 (m\u00edngti\u0101n)**: tomorrow\n*   **\u53c8 (y\u00f2u)**: again\n*   **\u662f (sh\u00ec)**: is\n*   **\u65b0 (x\u012bn)**: new\n*   **\u7684 (de)**: modifying particle\n*   **\u4e00\u5929 (y\u012b ti\u0101n)**: one day / a day\n\n### Grammar Notes\n\n`\u53c8 (y\u00f2u)` indicates the repetition of something. Here, it adds a sense of \"once again\" or \"another.\" The phrase `\u65b0\u7684\u4e00\u5929 (x\u012bn de y\u012b ti\u0101n)` means \"a new day.\"",
+    "id": "66f5d3de3fb6055e217d7e67954d22e2"
   }
 ]

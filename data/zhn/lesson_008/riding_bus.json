@@ -1,170 +1,233 @@
 [
   {
     "startTime": 0.0,
-    "endTime": 1.25,
-    "text": "\u5750\u516c\u5171\u6c7d\u8f66",
-    "id": "8a354b3443a2c26fa94c1ccc6418436f"
+    "endTime": 1.2,
+    "text": "\u5750\u516c\u5171\u6c7d\u8f66\u3002",
+    "explanation": "### English Translation\n\n**To take the public bus.**\n\n---\n\n### Word-by-Word Translation\n\n* **\u5750 (zu\u00f2)**: to sit / to take (a form of transportation)\n* **\u516c\u5171\u6c7d\u8f66 (g\u014dngg\u00f2ng q\u00ecch\u0113)**: public bus",
+    "id": "8e8bdb80bee17b524bd93fefa0221535"
   },
   {
-    "startTime": 1.62,
-    "endTime": 3.19,
-    "text": "\u738b\u9759\u4eca\u5929\u6ca1\u6709\u8bfe\uff0c",
-    "id": "1477327e6ae3ae3e0fd649ed5e3c58b4"
+    "startTime": 1.6,
+    "endTime": 3.4,
+    "text": "\u738b\u9759\u662f\u4e00\u4e2a\u5927\u5b66\u751f\u3002",
+    "explanation": "### English Translation\n\n**Wang Jing is a university student.**\n\n---\n\n### Word-by-Word Translation\n\n* **\u738b\u9759 (W\u00e1ng J\u00ecng)**: Wang Jing (a name)\n* **\u662f (sh\u00ec)**: is / am / are\n* **\u4e00\u4e2a (y\u012b ge)**: a / an (a common measure word)\n* **\u5927\u5b66\u751f (d\u00e0xu\u00e9sh\u0113ng)**: university student\n\n---\n\n### Grammar Notes\n\nThe structure **A \u662f B** (\"A is B\") is the most basic way to link two nouns.",
+    "id": "92d05dfe1dba479cd2d8d77a8b8de826"
   },
   {
-    "startTime": 3.42,
-    "endTime": 5.86,
-    "text": "\u4ed6\u60f3\u53bb\u57ce\u5e02\u4e2d\u5fc3\u7684\u90a3\u4e2a\u5927\u56fe\u4e66\u9986\u3002",
-    "id": "8329925ba165c5ccb723f13ddc7bbe8e"
+    "startTime": 4.0,
+    "endTime": 6.2,
+    "text": "\u4eca\u5929\u662f\u661f\u671f\u4e00\uff0c\u4ed6\u8981\u53bb\u5b66\u6821\u4e0a\u8bfe\u3002",
+    "explanation": "### English Translation\n\n**Today is Monday, he is going to school for class.**\n\n---\n\n### Word-by-Word Translation\n\n* **\u4eca\u5929 (j\u012bnti\u0101n)**: today\n* **\u662f (sh\u00ec)**: is\n* **\u661f\u671f\u4e00 (x\u012bngq\u012by\u012b)**: Monday\n* **\u4ed6 (t\u0101)**: he\n* **\u8981 (y\u00e0o)**: to be going to / to want to / must\n* **\u53bb (q\u00f9)**: to go\n* **\u5b66\u6821 (xu\u00e9xi\u00e0o)**: school\n* **\u4e0a\u8bfe (sh\u00e0ngk\u00e8)**: to attend class\n\n---\n\n### Grammar Notes\n\n**\u8981\u53bb (y\u00e0o q\u00f9)** indicates a planned future action. The structure **\u53bb + [Place] + [Verb]** (to go somewhere to do something) is very common.",
+    "id": "fdf5eef06bbcc5d98db2bad862e1b29a"
   },
   {
-    "startTime": 6.49,
-    "endTime": 7.78,
-    "text": "\u4ed6\u65e9\u4e0a\u5403\u4e86\u65e9\u996d\uff0c",
-    "id": "64a7c7c04a7c6508a2d6765ecc3bff22"
+    "startTime": 6.8,
+    "endTime": 9.1,
+    "text": "\u4eca\u5929\u5929\u6c14\u5f88\u597d\uff0c\u4e0d\u51b7\u4e5f\u4e0d\u70ed\u3002",
+    "explanation": "### English Translation\n\n**The weather is good today, it's neither cold nor hot.**\n\n---\n\n### Word-by-Word Translation\n\n* **\u4eca\u5929 (j\u012bnti\u0101n)**: today\n* **\u5929\u6c14 (ti\u0101nq\u00ec)**: weather\n* **\u5f88 (h\u011bn)**: very\n* **\u597d (h\u01ceo)**: good\n* **\u4e0d (b\u00f9)**: not\n* **\u51b7 (l\u011bng)**: cold\n* **\u4e5f (y\u011b)**: also\n* **\u4e0d (b\u00f9)**: not\n* **\u70ed (r\u00e8)**: hot\n\n---\n\n### Grammar Notes\n\nThe structure **\u4e0d... \u4e5f\u4e0d... (b\u00f9... y\u011b b\u00f9...)** means \"neither... nor...\"",
+    "id": "1501ce16cfe9ffe580dc9c3f49bbd8df"
   },
   {
-    "startTime": 8.15,
-    "endTime": 8.94,
-    "text": "\u5c31\u51c6\u5907\u51fa\u95e8\u4e86\u3002",
-    "id": "281078a1e70c40d109f035e85092762b"
+    "startTime": 9.5,
+    "endTime": 10.7,
+    "text": "\u738b\u9759\u5f88\u9ad8\u5174\u3002",
+    "explanation": "### English Translation\n\n**Wang Jing is very happy.**\n\n---\n\n### Word-by-Word Translation\n\n* **\u738b\u9759 (W\u00e1ng J\u00ecng)**: Wang Jing\n* **\u5f88 (h\u011bn)**: very\n* **\u9ad8\u5174 (g\u0101ox\u00ecng)**: happy\n\n---\n\n### Grammar Notes\n\nIn Chinese, adjectives are often preceded by **\u5f88 (h\u011bn)** in simple descriptive sentences. It functions like a linking verb and doesn't always mean \"very.\"",
+    "id": "4c706daee070d0698ed8faafd8480c62"
   },
   {
-    "startTime": 9.55,
-    "endTime": 11.83,
-    "text": "\u4ed6\u5bb6\u697c\u4e0b\u5c31\u662f\u4e00\u4e2a\u516c\u5171\u6c7d\u8f66\u7ad9\u3002",
-    "id": "1664a938323288cb5658281747ace375"
+    "startTime": 11.0,
+    "endTime": 13.5,
+    "text": "\u4ed6\u8d70\u51fa\u5bb6\u95e8\uff0c\u53bb\u516c\u5171\u6c7d\u8f66\u7ad9\u3002",
+    "explanation": "### English Translation\n\n**He walked out of his home and went to the bus stop.**\n\n---\n\n### Word-by-Word Translation\n\n* **\u4ed6 (t\u0101)**: he\n* **\u8d70\u51fa (z\u01d2uch\u016b)**: to walk out of\n* **\u5bb6\u95e8 (ji\u0101m\u00e9n)**: door of a house / home\n* **\u53bb (q\u00f9)**: to go\n* **\u516c\u5171\u6c7d\u8f66\u7ad9 (g\u014dngg\u00f2ng q\u00ecch\u0113zh\u00e0n)**: bus stop\n\n---\n\n### Grammar Notes\n\n**\u8d70\u51fa (z\u01d2uch\u016b)** is a verb **\u8d70 (z\u01d2u)** combined with a directional complement **\u51fa (ch\u016b)**, which indicates the direction of the action (outward).",
+    "id": "d6711265b56d6841f925d8b690481439"
   },
   {
-    "startTime": 12.51,
-    "endTime": 16.32,
-    "text": "\u4ed6\u8d70\u5230\u8f66\u7ad9\uff0c\u770b\u4e86\u770b\u7ad9\u724c\uff0c\u53bb\u56fe\u4e66\u9986\u8981\u505a\u5341\u8def\u8f66\u3002",
-    "id": "06dc81d3ef0ca0b4f37884de5e2da575"
+    "startTime": 14.2,
+    "endTime": 15.5,
+    "text": "\u8f66\u7ad9\u79bb\u4ed6\u5bb6\u4e0d\u8fdc\u3002",
+    "explanation": "### English Translation\n\n**The station is not far from his home.**\n\n---\n\n### Word-by-Word Translation\n\n* **\u8f66\u7ad9 (ch\u0113zh\u00e0n)**: station / stop\n* **\u79bb (l\u00ed)**: from (indicating distance)\n* **\u4ed6\u5bb6 (t\u0101 ji\u0101)**: his home\n* **\u4e0d (b\u00f9)**: not\n* **\u8fdc (yu\u01cen)**: far\n\n---\n\n### Grammar Notes\n\nThe structure **A \u79bb B + [adjective of distance]** (e.g., \u8fdc yu\u01cen, \u8fd1 j\u00ecn) is used to describe the distance between two places.",
+    "id": "46f135a867d0332553e2f15665b14dc9"
   },
   {
-    "startTime": 17.06,
-    "endTime": 19.92,
-    "text": "\u4eca\u5929\u7b49\u8f66\u7684\u4eba\u4e0d\u591a\uff0c\u53ea\u6709\u4e09\u3001\u56db\u4e2a\u4eba\u3002",
-    "id": "6eec789958bbf978d9d4657e6f2f57c3"
+    "startTime": 16.0,
+    "endTime": 18.0,
+    "text": "\u8f66\u7ad9\u5df2\u7ecf\u6709\u51e0\u4e2a\u4eba\u5728\u7b49\u8f66\u4e86\u3002",
+    "explanation": "### English Translation\n\n**There were already a few people waiting for the bus at the station.**\n\n---\n\n### Word-by-Word Translation\n\n* **\u8f66\u7ad9 (ch\u0113zh\u00e0n)**: station / stop\n* **\u5df2\u7ecf (y\u01d0j\u012bng)**: already\n* **\u6709 (y\u01d2u)**: to have / there are\n* **\u51e0\u4e2a (j\u01d0 ge)**: a few / several\n* **\u4eba (r\u00e9n)**: people\n* **\u5728 (z\u00e0i)**: in the process of (doing something)\n* **\u7b49\u8f66 (d\u011bng ch\u0113)**: to wait for the bus\n* **\u4e86 (le)**: a particle indicating a new situation\n\n---\n\n### Grammar Notes\n\n**\u5728 + Verb** indicates an action in progress (like the -ing form in English). The pattern **\u5df2\u7ecf...\u4e86 (y\u01d0j\u012bng...le)** means \"already.\"",
+    "id": "02610df944a0344573584117804b55ac"
   },
   {
-    "startTime": 20.61,
-    "endTime": 22.47,
-    "text": "\u5929\u6c14\u5f88\u6674\u6717\uff0c\u98ce\u4e5f\u5f88\u5c0f\u3002",
-    "id": "5a43f84200b3ec364fc838b2e6451632"
+    "startTime": 18.6,
+    "endTime": 19.8,
+    "text": "\u5927\u5bb6\u90fd\u4e0d\u8bf4\u8bdd\u3002",
+    "explanation": "### English Translation\n\n**Everyone was not talking.**\n\n---\n\n### Word-by-Word Translation\n\n* **\u5927\u5bb6 (d\u00e0ji\u0101)**: everyone\n* **\u90fd (d\u014du)**: all\n* **\u4e0d (b\u00f9)**: not\n* **\u8bf4\u8bdd (shu\u014dhu\u00e0)**: to speak / to talk\n\n---\n\n### Grammar Notes\n\n**\u90fd (d\u014du)** is used with plural subjects like **\u5927\u5bb6 (d\u00e0ji\u0101)** to indicate that the verb applies to every member of the group.",
+    "id": "1f13239dc728097fa3ce894d98b1ed2d"
   },
   {
-    "startTime": 23.36,
-    "endTime": 25.82,
-    "text": "\u738b\u9759\u542c\u7740\u97f3\u4e50\uff0c\u5b89\u9759\u5730\u7b49\u8f66\u3002",
-    "id": "3bb66c284aa059197ef9e24323a08b4f"
+    "startTime": 20.2,
+    "endTime": 21.4,
+    "text": "\u738b\u9759\u4e5f\u7b49\u7740\u3002",
+    "explanation": "### English Translation\n\n**Wang Jing was also waiting.**\n\n---\n\n### Word-by-Word Translation\n\n* **\u738b\u9759 (W\u00e1ng J\u00ecng)**: Wang Jing\n* **\u4e5f (y\u011b)**: also / too\n* **\u7b49 (d\u011bng)**: to wait\n* **\u7740 (zhe)**: a particle indicating a continuous state\n\n---\n\n### Grammar Notes\n\nThe particle **\u7740 (zhe)** is placed after a verb to show that the action or state is ongoing.",
+    "id": "d1609a16483de3f5fbdf3fb458856c9c"
   },
   {
-    "startTime": 26.63,
-    "endTime": 29.56,
-    "text": "\u5927\u7ea6\u5341\u5206\u949f\u540e\uff0c\u4e00\u8f86\u7ea2\u8272\u7684\u5341\u8def\u8f66\u6765\u4e86\u3002",
-    "id": "d93d8bd106d11a257e7000e8ee61603f"
+    "startTime": 22.0,
+    "endTime": 23.6,
+    "text": "\u4ed6\u770b\u7740\u624b\u673a\u4e0a\u7684\u65f6\u95f4\u3002",
+    "explanation": "### English Translation\n\n**He was looking at the time on his phone.**\n\n---\n\n### Word-by-Word Translation\n\n* **\u4ed6 (t\u0101)**: he\n* **\u770b\u7740 (k\u00e0nzhe)**: looking at\n* **\u624b\u673a (sh\u01d2uj\u012b)**: mobile phone\n* **\u4e0a (sh\u00e0ng)**: on\n* **\u7684 (de)**: a particle used for description\n* **\u65f6\u95f4 (sh\u00edji\u0101n)**: time\n\n---\n\n### Grammar Notes\n\n**\u624b\u673a\u4e0a\u7684\u65f6\u95f4 (sh\u01d2uj\u012b sh\u00e0ng de sh\u00edji\u0101n)** means \"the time on the phone.\" The particle **\u7684 (de)** connects the description **\u624b\u673a\u4e0a (sh\u01d2uj\u012b sh\u00e0ng)** to the noun **\u65f6\u95f4 (sh\u00edji\u0101n)**.",
+    "id": "add9a9be1f1f177419520ded72298272"
   },
   {
-    "startTime": 30.34,
-    "endTime": 31.79,
+    "startTime": 24.0,
+    "endTime": 25.7,
+    "text": "\u4ed6\u60f3\uff0c\u8f66\u5feb\u6765\u4e86\u5427\u3002",
+    "explanation": "### English Translation\n\n**He thought, \"The bus is coming soon, right?\"**\n\n---\n\n### Word-by-Word Translation\n\n* **\u4ed6 (t\u0101)**: he\n* **\u60f3 (xi\u01ceng)**: to think\n* **\u8f66 (ch\u0113)**: bus / car\n* **\u5feb (ku\u00e0i)**: fast / soon\n* **\u6765 (l\u00e1i)**: to come\n* **\u4e86 (le)**: particle used with '\u5feb'\n* **\u5427 (ba)**: a particle indicating speculation or suggestion\n\n---\n\n### Grammar Notes\n\nThe structure **\u5feb...\u4e86 (ku\u00e0i...le)** means something is about to happen soon. The particle **\u5427 (ba)** at the end softens the tone, turning the statement into a guess.",
+    "id": "7eb2451a6fc19ecfa2385389cb3cca73"
+  },
+  {
+    "startTime": 26.1,
+    "endTime": 29.5,
+    "text": "\u8fc7\u4e86\u4e09\u5206\u949f\uff0c\u4e00\u8f86\u7ea2\u8272\u7684\u516c\u5171\u6c7d\u8f66\u6765\u4e86\u3002",
+    "explanation": "### English Translation\n\n**After three minutes, a red bus came.**\n\n---\n\n### Word-by-Word Translation\n\n* **\u8fc7\u4e86 (gu\u00f2le)**: passed\n* **\u4e09\u5206\u949f (s\u0101n f\u0113nzh\u014dng)**: three minutes\n* **\u4e00 (y\u012b)**: one\n* **\u8f86 (li\u00e0ng)**: a measure word for vehicles\n* **\u7ea2\u8272\u7684 (h\u00f3ngs\u00e8 de)**: red (adjective)\n* **\u516c\u5171\u6c7d\u8f66 (g\u014dngg\u00f2ng q\u00ecch\u0113)**: public bus\n* **\u6765\u4e86 (l\u00e1ile)**: came\n\n---\n\n### Grammar Notes\n\n**\u8f86 (li\u00e0ng)** is the correct measure word to use for vehicles like cars and buses. The particle **\u4e86 (le)** is used twice: once to show the completion of \"passing three minutes,\" and again to show the completion of the bus \"coming.\"",
+    "id": "aa46220b919c20e214950c18946ca9a7"
+  },
+  {
+    "startTime": 30.0,
+    "endTime": 31.4,
     "text": "\u8f66\u505c\u4e86\uff0c\u95e8\u5f00\u4e86\u3002",
+    "explanation": "### English Translation\n\n**The bus stopped, the door opened.**\n\n---\n\n### Word-by-Word Translation\n\n* **\u8f66 (ch\u0113)**: bus / car\n* **\u505c\u4e86 (t\u00edngle)**: stopped\n* **\u95e8 (m\u00e9n)**: door\n* **\u5f00\u4e86 (k\u0101ile)**: opened\n\n---\n\n### Grammar Notes\n\nThe particle **\u4e86 (le)** after a verb indicates that an action has been completed.",
     "id": "29067a3bf981ea7a17ed45c2d6962d3d"
   },
   {
-    "startTime": 32.48,
-    "endTime": 33.63,
-    "text": "\u5927\u5bb6\u6392\u961f\u4e0a\u8f66\u3002",
-    "id": "9b2f69cbc17a99d6b3aca369e6c17469"
+    "startTime": 31.9,
+    "endTime": 33.4,
+    "text": "\u7b49\u8f66\u7684\u4eba\u5f00\u59cb\u4e0a\u8f66\u3002",
+    "explanation": "### English Translation\n\n**The people waiting for the bus started to get on.**\n\n---\n\n### Word-by-Word Translation\n\n* **\u7b49\u8f66 (d\u011bng ch\u0113)**: to wait for the bus\n* **\u7684 (de)**: a particle for description\n* **\u4eba (r\u00e9n)**: people\n* **\u5f00\u59cb (k\u0101ish\u01d0)**: to start / to begin\n* **\u4e0a\u8f66 (sh\u00e0ngch\u0113)**: to get on the bus\n\n---\n\n### Grammar Notes\n\n**\u7b49\u8f66\u7684\u4eba (d\u011bng ch\u0113 de r\u00e9n)** literally means \"waiting-for-the-bus's people.\" The particle **\u7684 (de)** connects the action (\u7b49\u8f66) to the noun (\u4eba) to describe what kind of people they are.",
+    "id": "d9e7c2dde2bfd9cbe538d1225e583e3c"
   },
   {
-    "startTime": 34.39,
-    "endTime": 36.0,
-    "text": "\u738b\u9759\u662f\u6700\u540e\u4e00\u4e2a\u4e0a\u8f66\u7684\u3002",
-    "id": "1cd1e0c77e37c6d8312fa8b07c67dfc2"
+    "startTime": 33.9,
+    "endTime": 35.2,
+    "text": "\u738b\u9759\u4e5f\u8d70\u4e0a\u8f66\u3002",
+    "explanation": "### English Translation\n\n**Wang Jing also walked onto the bus.**\n\n---\n\n### Word-by-Word Translation\n\n* **\u738b\u9759 (W\u00e1ng J\u00ecng)**: Wang Jing\n* **\u4e5f (y\u011b)**: also / too\n* **\u8d70\u4e0a (z\u01d2ush\u00e0ng)**: to walk onto\n* **\u8f66 (ch\u0113)**: bus / car\n\n---\n\n### Grammar Notes\n\n**\u8d70\u4e0a (z\u01d2ush\u00e0ng)** is a verb with a directional complement. **\u8d70 (z\u01d2u)** is \"to walk\" and **\u4e0a (sh\u00e0ng)** indicates the direction \"up\" or \"onto.\"",
+    "id": "ad897a63cd205378a5393bd953a5a7d3"
   },
   {
-    "startTime": 36.56,
-    "endTime": 40.36,
-    "text": "\u4ed6\u62ff\u51fa\u624b\u673a\uff0c\u5bf9\u7740\u673a\u5668\u626b\u4e86\u4e00\u4e0b\uff0c\u5c31\u4e70\u597d\u7968\u4e86\u3002",
-    "id": "dc2f8c7a10105c55262506fdf3e8282e"
+    "startTime": 35.8,
+    "endTime": 38.0,
+    "text": "\u8f66\u4e0a\u7684\u4eba\u4e0d\u591a\uff0c\u8fd8\u6709\u5f88\u591a\u5ea7\u4f4d\u3002",
+    "explanation": "### English Translation\n\n**There were not many people on the bus, and there were still many seats.**\n\n---\n\n### Word-by-Word Translation\n\n* **\u8f66\u4e0a (ch\u0113 sh\u00e0ng)**: on the bus\n* **\u7684 (de)**: a descriptive particle\n* **\u4eba (r\u00e9n)**: people\n* **\u4e0d\u591a (b\u00f9 du\u014d)**: not many\n* **\u8fd8\u6709 (h\u00e1iy\u01d2u)**: also have / in addition there is\n* **\u5f88\u591a (h\u011bn du\u014d)**: many / a lot of\n* **\u5ea7\u4f4d (zu\u00f2w\u00e8i)**: seat",
+    "id": "b34c2dae16bc2e40476abf54e12cf504"
   },
   {
-    "startTime": 40.94,
-    "endTime": 43.19,
-    "text": "\u8f66\u91cc\u5f88\u5e72\u51c0\uff0c\u4e5f\u6709\u4e00\u4e9b\u7a7a\u5ea7\u4f4d\u3002",
-    "id": "95d9f5a1069b712f9ec2aa6ecb7add02"
+    "startTime": 38.6,
+    "endTime": 41.7,
+    "text": "\u738b\u9759\u7528\u624b\u673a\u4e70\u7968\uff0c\u5f88\u65b9\u4fbf\uff0c\u4e5f\u5f88\u5feb\u3002",
+    "explanation": "### English Translation\n\n**Wang Jing used his phone to buy a ticket; it's very convenient and also very fast.**\n\n---\n\n### Word-by-Word Translation\n\n* **\u738b\u9759 (W\u00e1ng J\u00ecng)**: Wang Jing\n* **\u7528 (y\u00f2ng)**: to use\n* **\u624b\u673a (sh\u01d2uj\u012b)**: mobile phone\n* **\u4e70\u7968 (m\u01ceipi\u00e0o)**: to buy a ticket\n* **\u5f88 (h\u011bn)**: very\n* **\u65b9\u4fbf (f\u0101ngbi\u00e0n)**: convenient\n* **\u4e5f (y\u011b)**: also\n* **\u5f88\u5feb (h\u011bn ku\u00e0i)**: very fast\n\n---\n\n### Grammar Notes\n\nThe structure **\u7528 + [Tool] + [Verb]** (\"use [Tool] to do [Action]\") is a common way to describe how an action is performed.",
+    "id": "c153ff89276bdedb4f3869e7b82601ea"
   },
   {
-    "startTime": 43.83,
-    "endTime": 46.9,
-    "text": "\u4ed6\u5f88\u559c\u6b22\u9760\u7a97\u7684\u5ea7\u4f4d\uff0c\u56e0\u4e3a\u53ef\u4ee5\u770b\u5916\u9762\u7684\u98ce\u666f\u3002",
-    "id": "80f22e7df1e648f9c01879e2abe86a7c"
+    "startTime": 42.3,
+    "endTime": 43.7,
+    "text": "\u4ed6\u5411\u8f66\u540e\u9762\u8d70\u3002",
+    "explanation": "### English Translation\n\n**He walked towards the back of the bus.**\n\n---\n\n### Word-by-Word Translation\n\n* **\u4ed6 (t\u0101)**: he\n* **\u5411 (xi\u00e0ng)**: towards\n* **\u8f66\u540e\u9762 (ch\u0113 h\u00f2umi\u00e0n)**: the back of the bus\n* **\u8d70 (z\u01d2u)**: to walk\n\n---\n\n### Grammar Notes\n\nThe structure **\u5411 + [Direction] + [Verb]** is used to indicate the direction of a movement.",
+    "id": "8722b63f6716cf0f52602b7b898a34bb"
   },
   {
-    "startTime": 47.46,
-    "endTime": 50.45,
-    "text": "\u4ed6\u627e\u5230\u4e86\u4e00\u4e2a\u9760\u7a97\u7684\u7a7a\u5ea7\u4f4d\uff0c\u7136\u540e\u5750\u4e0b\u4e86\u3002",
-    "id": "42b2c78fdefc36d577a3b14134734d09"
+    "startTime": 44.0,
+    "endTime": 45.4,
+    "text": "\u4ed6\u627e\u5230\u4e86\u4e00\u4e2a\u597d\u5ea7\u4f4d\u3002",
+    "explanation": "### English Translation\n\n**He found a good seat.**\n\n---\n\n### Word-by-Word Translation\n\n* **\u4ed6 (t\u0101)**: he\n* **\u627e\u5230 (zh\u01ceod\u00e0o)**: to find (successfully)\n* **\u4e86 (le)**: a particle indicating completion\n* **\u4e00\u4e2a (y\u012b ge)**: a / one\n* **\u597d (h\u01ceo)**: good\n* **\u5ea7\u4f4d (zu\u00f2w\u00e8i)**: seat\n\n---\n\n### Grammar Notes\n\n**\u627e\u5230 (zh\u01ceod\u00e0o)** is a verb with a result complement. **\u627e (zh\u01ceo)** means \"to look for,\" and the complement **\u5230 (d\u00e0o)** indicates that the action was successful (he found it).",
+    "id": "0661e4e79bcd3d58f5e13ef21bedf3c0"
   },
   {
-    "startTime": 51.1,
-    "endTime": 53.03,
-    "text": "\u516c\u5171\u6c7d\u8f66\u6162\u6162\u5730\u5f00\u52a8\u4e86\u3002",
-    "id": "acdf877f518c9dcfa014e4b9fa3a99ad"
+    "startTime": 45.6,
+    "endTime": 47.1,
+    "text": "\u4ed6\u53ef\u4ee5\u4ece\u8fd9\u91cc\u770b\u5916\u9762\u3002",
+    "explanation": "### English Translation\n\n**He could see outside from here.**\n\n---\n\n### Word-by-Word Translation\n\n* **\u4ed6 (t\u0101)**: he\n* **\u53ef\u4ee5 (k\u011by\u01d0)**: can / may\n* **\u4ece (c\u00f3ng)**: from\n* **\u8fd9\u91cc (zh\u00e8l\u01d0)**: here\n* **\u770b (k\u00e0n)**: to look / to see\n* **\u5916\u9762 (w\u00e0imi\u00e0n)**: outside\n\n---\n\n### Grammar Notes\n\nThe structure **\u4ece + [Place] + [Verb]** means \"to do [Action] from [Place].\"",
+    "id": "3b67cf310850010b52765ae8ed8dba03"
   },
   {
-    "startTime": 53.86,
-    "endTime": 55.43,
-    "text": "\u738b\u9759\u628a\u4e66\u5305\u653e\u5728\u65c1\u8fb9\u3002",
-    "id": "d76c8102215516da563d16c024dc2fa5"
+    "startTime": 47.5,
+    "endTime": 48.4,
+    "text": "\u4ed6\u5750\u4e0b\u4e86\u3002",
+    "explanation": "### English Translation\n\n**He sat down.**\n\n---\n\n### Word-by-Word Translation\n\n* **\u4ed6 (t\u0101)**: he\n* **\u5750\u4e0b (zu\u00f2xi\u00e0)**: to sit down\n* **\u4e86 (le)**: a particle indicating completion\n\n---\n\n### Grammar Notes\n\n**\u5750\u4e0b (zu\u00f2xi\u00e0)** is a verb with a directional complement, **\u4e0b (xi\u00e0)**, meaning \"down.\" The particle **\u4e86 (le)** marks the action as completed.",
+    "id": "9df2437d7ed3cb3bb1e2d9bdbd8999fa"
   },
   {
-    "startTime": 55.99,
-    "endTime": 58.11,
-    "text": "\u4ed6\u770b\u7740\u7a97\u5916\uff0c\u8857\u4e0a\u975e\u5e38\u70ed\u95f9\u3002",
-    "id": "f929fc00371504b9505cd0a27628d075"
+    "startTime": 48.9,
+    "endTime": 50.1,
+    "text": "\u516c\u5171\u6c7d\u8f66\u5f00\u4e86\u3002",
+    "explanation": "### English Translation\n\n**The bus started moving.**\n\n---\n\n### Word-by-Word Translation\n\n* **\u516c\u5171\u6c7d\u8f66 (g\u014dngg\u00f2ng q\u00ecch\u0113)**: public bus\n* **\u5f00\u4e86 (k\u0101ile)**: started moving / departed\n\n---\n\n### Grammar Notes\n\nIn this context, **\u5f00 (k\u0101i)** means \"to drive\" or \"to start moving.\" The particle **\u4e86 (le)** shows that this action has now happened.",
+    "id": "b0d44bdd859361c9a2cef0759788989d"
   },
   {
-    "startTime": 58.82,
-    "endTime": 63.21,
-    "text": "\u6709\u5f88\u591a\u9ad8\u5927\u7684\u697c\uff0c\u6f02\u4eae\u7684\u5546\u5e97\uff0c\u8fd8\u6709\u5f88\u591a\u884c\u4eba\u548c\u81ea\u884c\u8f66\u3002",
-    "id": "dbfeb03114ee9a012eafa6f9c9f8d068"
+    "startTime": 50.7,
+    "endTime": 51.8,
+    "text": "\u738b\u9759\u770b\u7740\u5916\u9762\u3002",
+    "explanation": "### English Translation\n\n**Wang Jing was looking outside.**\n\n---\n\n### Word-by-Word Translation\n\n* **\u738b\u9759 (W\u00e1ng J\u00ecng)**: Wang Jing\n* **\u770b\u7740 (k\u00e0nzhe)**: looking at\n* **\u5916\u9762 (w\u00e0imi\u00e0n)**: outside\n\n---\n\n### Grammar Notes\n\n**Verb + \u7740 (zhe)** indicates that an action is in a continuous state. He is in the middle of the action of looking.",
+    "id": "340a9544fe67fb46b869b4cf23b596f4"
   },
   {
-    "startTime": 63.77,
-    "endTime": 66.51,
-    "text": "\u4ed6\u770b\u89c1\u4e00\u4e2a\u5b69\u5b50\u5728\u5403\u51b0\u6dc7\u6dcb\uff0c\u4ed6\u7b11\u4e86\u7b11\u3002",
-    "id": "858c0a8fd7ecd47cb00f0f0af956cd25"
+    "startTime": 52.3,
+    "endTime": 53.7,
+    "text": "\u8def\u4e0a\u6709\u5f88\u591a\u5546\u5e97\u3002",
+    "explanation": "### English Translation\n\n**There are many shops on the road.**\n\n---\n\n### Word-by-Word Translation\n\n* **\u8def\u4e0a (l\u00f9shang)**: on the road / along the way\n* **\u6709 (y\u01d2u)**: there are / to have\n* **\u5f88\u591a (h\u011bn du\u014d)**: many / a lot of\n* **\u5546\u5e97 (sh\u0101ngdi\u00e0n)**: shop / store\n\n---\n\n### Grammar Notes\n\nThe structure **[Place] + \u6709 + [Object]** is a common way to say \"There is/are [Object] in/at [Place].\"",
+    "id": "17eeb7e29f15c1286232c48b670f0f2a"
   },
   {
-    "startTime": 67.19,
-    "endTime": 71.02,
-    "text": "\u4ed6\u60f3\uff0c\u56fe\u4e66\u9986\u91cc\u6709\u5f88\u591a\u4ed6\u559c\u6b22\u7684\u65b0\u4e66\u5728\u7b49\u4ed6\u3002",
-    "id": "b7ec4c41ccec06afe898d23c1ab7c7b3"
+    "startTime": 54.0,
+    "endTime": 55.4,
+    "text": "\u5546\u5e97\u91cc\u6709\u5f88\u591a\u4e1c\u897f\u3002",
+    "explanation": "### English Translation\n\n**There are many things in the shops.**\n\n---\n\n### Word-by-Word Translation\n\n* **\u5546\u5e97\u91cc (sh\u0101ngdi\u00e0n l\u01d0)**: inside the shops\n* **\u6709 (y\u01d2u)**: there are / to have\n* **\u5f88\u591a (h\u011bn du\u014d)**: many\n* **\u4e1c\u897f (d\u014dngxi)**: things / stuff",
+    "id": "eebb8812f6bbfe7c319b6a0e768fc861"
   },
   {
-    "startTime": 71.6,
-    "endTime": 73.97,
-    "text": "\u5750\u8f66\u7684\u65f6\u95f4\u4e0d\u957f\uff0c\u5927\u7ea620\u5206\u949f\u3002",
-    "id": "279c52fadee46327385f3956dcd0b55e"
+    "startTime": 55.8,
+    "endTime": 57.7,
+    "text": "\u8def\u4e0a\u8fd8\u6709\u5f88\u591a\u4eba\u548c\u5f88\u591a\u8f66\u3002",
+    "explanation": "### English Translation\n\n**On the road, there were also many people and many cars.**\n\n---\n\n### Word-by-Word Translation\n\n* **\u8def\u4e0a (l\u00f9shang)**: on the road\n* **\u8fd8\u6709 (h\u00e1iy\u01d2u)**: also have / in addition there is\n* **\u5f88\u591a (h\u011bn du\u014d)**: many\n* **\u4eba (r\u00e9n)**: people\n* **\u548c (h\u00e9)**: and\n* **\u5f88\u591a (h\u011bn du\u014d)**: many\n* **\u8f66 (ch\u0113)**: cars\n\n---\n\n### Grammar Notes\n\n**\u548c (h\u00e9)** is used to connect two nouns or noun phrases.",
+    "id": "3f275973e398aff096d94187da11c979"
   },
   {
-    "startTime": 74.86,
-    "endTime": 78.23,
-    "text": "\u5f88\u5feb\uff0c\u4ed6\u542c\u89c1\u62a5\u7ad9\u8bf4\uff0c\u56fe\u4e66\u9986\u7ad9\u5230\u4e86\u3002",
-    "id": "46970b7ef153b5c75ec46bc1a9c8a0b6"
+    "startTime": 58.1,
+    "endTime": 61.3,
+    "text": "\u4ed6\u89c9\u5f97\uff0c\u5317\u4eac\u65e9\u4e0a\u5f88\u5fd9\uff0c\u4e5f\u5f88\u6709\u610f\u601d\u3002",
+    "explanation": "### English Translation\n\n**He felt that mornings in Beijing are very busy and also very interesting.**\n\n---\n\n### Word-by-Word Translation\n\n* **\u4ed6 (t\u0101)**: he\n* **\u89c9\u5f97 (ju\u00e9de)**: to feel / to think\n* **\u5317\u4eac (B\u011bij\u012bng)**: Beijing\n* **\u65e9\u4e0a (z\u01ceoshang)**: morning\n* **\u5f88 (h\u011bn)**: very\n* **\u5fd9 (m\u00e1ng)**: busy\n* **\u4e5f (y\u011b)**: also\n* **\u5f88 (h\u011bn)**: very\n* **\u6709\u610f\u601d (y\u01d2u y\u00ecsi)**: interesting",
+    "id": "f15bace13ef446cb402f5d9893dadc20"
   },
   {
-    "startTime": 78.91,
-    "endTime": 81.32,
-    "text": "\u738b\u9759\u51c6\u5907\u597d\u4e1c\u897f\uff0c\u51c6\u5907\u4e0b\u8f66\u3002",
-    "id": "fe19170eba52bb7d6e044a6f2b98bdfe"
+    "startTime": 61.7,
+    "endTime": 64.7,
+    "text": "\u8fc7\u4e86\u4e8c\u5341\u5206\u949f\uff0c\u8f66\u5230\u4e86\u5b66\u6821\u524d\u9762\u7684\u8f66\u7ad9\u3002",
+    "explanation": "### English Translation\n\n**After twenty minutes, the bus arrived at the stop in front of the school.**\n\n---\n\n### Word-by-Word Translation\n\n* **\u8fc7\u4e86 (gu\u00f2le)**: passed\n* **\u4e8c\u5341\u5206\u949f (\u00e8rsh\u00ed f\u0113nzh\u014dng)**: twenty minutes\n* **\u8f66 (ch\u0113)**: bus\n* **\u5230\u4e86 (d\u00e0ole)**: arrived\n* **\u5b66\u6821\u524d\u9762 (xu\u00e9xi\u00e0o qi\u00e1nmi\u00e0n)**: in front of the school\n* **\u7684 (de)**: a descriptive particle\n* **\u8f66\u7ad9 (ch\u0113zh\u00e0n)**: station / stop\n\n---\n\n### Grammar Notes\n\n**\u5b66\u6821\u524d\u9762\u7684\u8f66\u7ad9 (xu\u00e9xi\u00e0o qi\u00e1nmi\u00e0n de ch\u0113zh\u00e0n)** means \"the stop that is in front of the school.\" The particle **\u7684 (de)** connects the location description to the noun.",
+    "id": "d97b2f7ae63890b3018d1aa53d02f513"
   },
   {
-    "startTime": 81.9,
-    "endTime": 83.41,
-    "text": "\u4eca\u5929\u4f1a\u662f\u5feb\u4e50\u7684\u4e00\u5929\u3002",
-    "id": "5fda8c5ac69f13e68b4a7f2fe410b4fb"
+    "startTime": 65.2,
+    "endTime": 66.6,
+    "text": "\u738b\u9759\u51c6\u5907\u4e0b\u8f66\u3002",
+    "explanation": "### English Translation\n\n**Wang Jing prepared to get off the bus.**\n\n---\n\n### Word-by-Word Translation\n\n* **\u738b\u9759 (W\u00e1ng J\u00ecng)**: Wang Jing\n* **\u51c6\u5907 (zh\u01d4nb\u00e8i)**: to prepare\n* **\u4e0b\u8f66 (xi\u00e0ch\u0113)**: to get off the bus/car",
+    "id": "ae0c41c42460325bd2a34302ff81b633"
+  },
+  {
+    "startTime": 67.1,
+    "endTime": 69.1,
+    "text": "\u4e0b\u4e86\u8f66\uff0c\u4ed6\u5411\u5b66\u6821\u8d70\u53bb\u3002",
+    "explanation": "### English Translation\n\n**After getting off the bus, he walked towards the school.**\n\n---\n\n### Word-by-Word Translation\n\n* **\u4e0b\u4e86\u8f66 (xi\u00e0le ch\u0113)**: got off the bus\n* **\u4ed6 (t\u0101)**: he\n* **\u5411 (xi\u00e0ng)**: towards\n* **\u5b66\u6821 (xu\u00e9xi\u00e0o)**: school\n* **\u8d70\u53bb (z\u01d2uq\u00f9)**: to walk towards\n\n---\n\n### Grammar Notes\n\n**\u4e0b\u4e86\u8f66** is a time clause indicating that one action (getting off the bus) is completed before the next one (walking towards school) begins.",
+    "id": "e5056d96f1bc3f53caabc95112f4c049"
+  },
+  {
+    "startTime": 69.6,
+    "endTime": 71.9,
+    "text": "\u4ed6\u60f3\uff0c\u4eca\u5929\u4f1a\u662f\u5feb\u4e50\u7684\u4e00\u5929\u3002",
+    "explanation": "### English Translation\n\n**He thought, \"Today will be a happy day.\"**\n\n---\n\n### Word-by-Word Translation\n\n* **\u4ed6 (t\u0101)**: he\n* **\u60f3 (xi\u01ceng)**: to think\n* **\u4eca\u5929 (j\u012bnti\u0101n)**: today\n* **\u4f1a (hu\u00ec)**: will (indicates future possibility)\n* **\u662f (sh\u00ec)**: to be\n* **\u5feb\u4e50\u7684 (ku\u00e0il\u00e8 de)**: happy (adjective)\n* **\u4e00\u5929 (y\u012b ti\u0101n)**: a day\n\n---\n\n### Grammar Notes\n\n**\u4f1a (hu\u00ec)** is often used to express a prediction or possibility about the future.",
+    "id": "a2fac6b73d8e77dd7b9ce79d0057f8c1"
+  },
+  {
+    "startTime": 72.6,
+    "endTime": 74.0,
+    "text": "\u65b0\u7684\u4e00\u5929\u5f00\u59cb\u4e86\u3002",
+    "explanation": "### English Translation\n\n**A new day has begun.**\n\n---\n\n### Word-by-Word Translation\n\n* **\u65b0\u7684 (x\u012bn de)**: new\n* **\u4e00\u5929 (y\u012b ti\u0101n)**: a day\n* **\u5f00\u59cb\u4e86 (k\u0101ish\u01d0le)**: has begun / started\n\n---\n\n### Grammar Notes\n\nThe particle **\u4e86 (le)** at the end of the sentence indicates a change of state: before, the day hadn't started, but now it has.",
+    "id": "835e309186f9e3156bd13ba482a2036d"
   }
 ]
