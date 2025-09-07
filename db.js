@@ -112,6 +112,22 @@ function updateLessonProgress(progressObject) {
 }
 
 /**
+ * Deletes a single sentence statistic from the database.
+ * @param {string} sentenceId The ID of the sentence stat to delete.
+ * @returns {Promise<void>}
+ */
+function deleteSentenceStat(sentenceId) {
+    return new Promise((resolve, reject) => {
+        if (!db) return reject('Database not initialized.');
+        const transaction = db.transaction([STORE_NAME], 'readwrite');
+        const store = transaction.objectStore(STORE_NAME);
+        const request = store.delete(sentenceId);
+        request.onsuccess = () => resolve();
+        request.onerror = (event) => reject('Error deleting sentence stat: ' + event.target.error);
+    });
+}
+
+/**
  * Retrieves all lesson progress records.
  * @returns {Promise<Array<object>>}
  */
@@ -173,7 +189,6 @@ function deleteDownloadedPack(packId) {
     });
 }
 
-
 export {
     initDB,
     getSentenceStat,
@@ -183,5 +198,6 @@ export {
     getAllLessonProgress,
     saveDownloadedPack,     
     getAllDownloadedPacks,  
-    deleteDownloadedPack    
+    deleteDownloadedPack,
+    deleteSentenceStat    
 };

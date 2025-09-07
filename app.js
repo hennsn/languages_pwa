@@ -1,7 +1,7 @@
 // app.js
 
 // 1. UPDATE IMPORT: Add 'getAllLessonProgress' to the list.
-import { initDB, getSentenceStat, updateSentenceStat, getAllLessonProgress, getAllDownloadedPacks } from './db.js';
+import { initDB, getSentenceStat, updateSentenceStat, getAllLessonProgress, getAllDownloadedPacks, deleteSentenceStat } from './db.js';
 
 document.addEventListener('DOMContentLoaded', () => {
     const player = document.getElementById('media-player');
@@ -595,66 +595,127 @@ document.addEventListener('DOMContentLoaded', () => {
         navigator.mediaSession.setActionHandler('seekforward', (details) => { player.currentTime = Math.min(player.currentTime + (details.seekOffset || 10), player.duration); });
     }
 
-    async function collectAndSaveStats() {
-        // Check if a language is selected. If not, we can't save stats.
-        if (!currentLanguageCode) return;
+    // async function collectAndSaveStats() {
+    //     // Check if a language is selected. If not, we can't save stats.
+    //     if (!currentLanguageCode) return;
+    //     if (sessionStatsSaved || !player.duration) return;
+        
+    //     const listeningThreshold = 0.9;
+    //     if (maxTimeReached < player.duration * listeningThreshold) {
+    //         console.log(`Listen progress (${Math.round(maxTimeReached / player.duration * 100)}%) did not meet threshold of ${listeningThreshold*100}%. Stats not saved.`);
+    //         return;
+    //     }
+        
+    //     sessionStatsSaved = true;
+    //     console.log('Listen progress met threshold. Collecting and saving stats...');
     
+    //     if (!currentLessonContent || currentLessonContent.length === 0) {
+    //         console.log('No lesson content to process.');
+    //         return;
+    //     }
+    
+    //     const updatePromises = currentLessonContent.map(async (sentence) => {
+    //         // ====== THE KEY CHANGE IS HERE ======
+    //         // Create a globally unique ID by prefixing with the language code.
+    //         const prefixedSentenceId = `${currentLanguageCode}-${sentence.id}`;
+    //         // ===================================
+    
+    //         const wasExplained = explainedCuesThisSession.has(sentence.id);
+    
+    //         // 1. Get the existing stat record using the new prefixed ID
+    //         const existingStat = await getSentenceStat(prefixedSentenceId);
+    
+    //         if (existingStat) {
+    //             // 2. If it exists, update it
+                
+    //             // Option A: use a simple boolean 1-0 system 
+    //             existingStat.times_listened = 1;
+    //             if (wasExplained) {
+    //                 existingStat.times_explained = 1;
+    //             }
+
+    //             // Option B: use a rolling average that aggregates over all listening times and explanations. 
+    //             //existingStat.times_listened += 1;
+    //             //if (wasExplained) {
+    //             //    existingStat.times_explained += 1;
+    //             //}
+    //             await updateSentenceStat(existingStat);
+    //         } else {
+    //             // 3. If it doesn't exist, create a new record using the prefixed ID
+    //             const newStat = {
+    //                 sentence_id: prefixedSentenceId, // Use the prefixed ID here
+    //                 times_listened: 1,
+    //                 times_explained: wasExplained ? 1 : 0
+    //             };
+    //             await updateSentenceStat(newStat);
+    //         }
+    //     });
+    
+    //     try {
+    //         await Promise.all(updatePromises);
+    //         console.log('All stats saved successfully with language prefixes!');
+    //     } catch (error) {
+    //         console.error('An error occurred while saving stats:', error);
+    //     }
+    // }
+
+    async function collectAndSaveStats() {
+        if (!currentLanguageCode) return;
         if (sessionStatsSaved || !player.duration) return;
         
         const listeningThreshold = 0.9;
         if (maxTimeReached < player.duration * listeningThreshold) {
-            console.log(`Listen progress (${Math.round(maxTimeReached / player.duration * 100)}%) did not meet threshold of ${listeningThreshold*100}%. Stats not saved.`);
+            console.log(`Listen progress did not meet threshold. Stats not saved.`);
             return;
         }
         
         sessionStatsSaved = true;
-        console.log('Listen progress met threshold. Collecting and saving stats...');
+        console.log('Listen progress met threshold. Saving stats for this session.');
     
         if (!currentLessonContent || currentLessonContent.length === 0) {
-            console.log('No lesson content to process.');
             return;
         }
     
-        const updatePromises = currentLessonContent.map(async (sentence) => {
-            // ====== THE KEY CHANGE IS HERE ======
-            // Create a globally unique ID by prefixing with the language code.
-            const prefixedSentenceId = `${currentLanguageCode}-${sentence.id}`;
-            // ===================================
-    
-            const wasExplained = explainedCuesThisSession.has(sentence.id);
-    
-            // 1. Get the existing stat record using the new prefixed ID
-            const existingStat = await getSentenceStat(prefixedSentenceId);
-    
-            if (existingStat) {
-                // 2. If it exists, update it
-                
-                // Option A: use a simple boolean 1-0 system 
-                existingStat.times_listened = 1;
-                if (wasExplained) {
-                    existingStat.times_explained = 1;
-                }
-
-                // Option B: use a rolling average that aggregates over all listening times and explanations. 
-                //existingStat.times_listened += 1;
-                //if (wasExplained) {
-                //    existingStat.times_explained += 1;
-                //}
-                await updateSentenceStat(existingStat);
-            } else {
-                // 3. If it doesn't exist, create a new record using the prefixed ID
-                const newStat = {
-                    sentence_id: prefixedSentenceId, // Use the prefixed ID here
-                    times_listened: 1,
-                    times_explained: wasExplained ? 1 : 0
-                };
-                await updateSentenceStat(newStat);
-            }
-        });
-    
         try {
+            // --- THE KEY CHANGE: RESET STEP ---
+            // Before saving new stats, delete all existing stats for this lesson.
+            console.log('Resetting previous stats for this lesson...');
+            const deletePromises = currentLessonContent.map(sentence => {
+                const prefixedSentenceId = `${currentLanguageCode}-${sentence.id}`;
+                return deleteSentenceStat(prefixedSentenceId);
+            });
+            // Wait for all deletions to complete.
+            await Promise.all(deletePromises);
+            console.log('Previous stats cleared.');
+            // --- END OF KEY CHANGE ---
+    
+    
+            // --- SAVE STEP (This logic remains the same as before) ---
+            const updatePromises = currentLessonContent.map(async (sentence) => {
+                const prefixedSentenceId = `${currentLanguageCode}-${sentence.id}`;
+                const wasExplained = explainedCuesThisSession.has(sentence.id);
+    
+                // Since we just deleted old stats, 'existingStat' will always be null,
+                // so this logic will always create a fresh record.
+                const existingStat = await getSentenceStat(prefixedSentenceId);
+    
+                if (existingStat) { // This block will likely never run, but is safe to keep
+                    existingStat.times_listened += 1;
+                    if (wasExplained) { existingStat.times_explained += 1; }
+                    await updateSentenceStat(existingStat);
+                } else {
+                    const newStat = {
+                        sentence_id: prefixedSentenceId,
+                        times_listened: 1, // Always starts at 1 now
+                        times_explained: wasExplained ? 1 : 0 // Always 0 or 1
+                    };
+                    await updateSentenceStat(newStat);
+                }
+            });
+    
             await Promise.all(updatePromises);
-            console.log('All stats saved successfully with language prefixes!');
+            console.log('New session stats saved successfully!');
+    
         } catch (error) {
             console.error('An error occurred while saving stats:', error);
         }

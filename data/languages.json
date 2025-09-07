@@ -13,6 +13,11 @@
       "code": "en",
       "name": "English",
       "image": "images/flags/gb.svg"
+    },
+    {
+      "code": "e",
+      "name": "Spanish",
+      "image": "images/flags/es.svg"
     }
   ]
 

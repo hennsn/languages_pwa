@@ -62,5 +62,13 @@
     "lessonFile": "riding_bus.json",
     "path": "lesson_008/",
     "thumbnail": "riding_bus_thumbnail.png"
+  },
+  {
+    "id": "lesson_009",
+    "title": "Lesson 009: Ordering Coffee at a Caf\u00e9",
+    "audioFile": "ordering_coffee.mp3",
+    "lessonFile": "ordering_coffee.json",
+    "path": "lesson_009/",
+    "thumbnail": "ordering_coffee_thumbnail.png"
   }
 ]
