@@ -70,5 +70,29 @@
     "lessonFile": "ordering_coffee.json",
     "path": "lesson_009/",
     "thumbnail": "ordering_coffee_thumbnail.png"
+  },
+  {
+    "id": "lesson_010",
+    "title": "Lesson 010: Shopping for New Clothes",
+    "audioFile": "shopping_clothes.mp3",
+    "lessonFile": "shopping_clothes.json",
+    "path": "lesson_010/",
+    "thumbnail": "shopping_clothes_thumbnail.png"
+  },
+  {
+    "id": "lesson_011",
+    "title": "Lesson 011: A Visit to the Library",
+    "audioFile": "library_visit.mp3",
+    "lessonFile": "library_visit.json",
+    "path": "lesson_011/",
+    "thumbnail": "library_visit_thumbnail.png"
+  },
+  {
+    "id": "lesson_012",
+    "title": "Lesson 012: Mailing a Package at the Post Office",
+    "audioFile": "post_office.mp3",
+    "lessonFile": "post_office.json",
+    "path": "lesson_012/",
+    "thumbnail": "post_office_thumbnail.png"
   }
 ]
