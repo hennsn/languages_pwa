@@ -94,5 +94,37 @@
     "lessonFile": "post_office.json",
     "path": "lesson_012/",
     "thumbnail": "post_office_thumbnail.png"
+  },
+  {
+    "id": "lesson_013",
+    "title": "Lesson 013: Withdrawing Money from an ATM",
+    "audioFile": "atm_withdrawal.mp3",
+    "lessonFile": "atm_withdrawal.json",
+    "path": "lesson_013/",
+    "thumbnail": "atm_withdrawal_thumbnail.png"
+  },
+  {
+    "id": "lesson_014",
+    "title": "Lesson 014: A Walk in the Park",
+    "audioFile": "park_walk.mp3",
+    "lessonFile": "park_walk.json",
+    "path": "lesson_014/",
+    "thumbnail": "park_walk_thumbnail.png"
+  },
+  {
+    "id": "lesson_015",
+    "title": "Lesson 015: Going to the Doctor",
+    "audioFile": "doctor_visit.mp3",
+    "lessonFile": "doctor_visit.json",
+    "path": "lesson_015/",
+    "thumbnail": "doctor_visit_thumbnail.png"
+  },
+  {
+    "id": "lesson_016",
+    "title": "Lesson 016: A Visit to the Pharmacy",
+    "audioFile": "pharmacy_visit.mp3",
+    "lessonFile": "pharmacy_visit.json",
+    "path": "lesson_016/",
+    "thumbnail": "pharmacy_visit_thumbnail.png"
   }
 ]
