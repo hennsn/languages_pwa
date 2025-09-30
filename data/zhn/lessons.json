@@ -126,5 +126,37 @@
     "lessonFile": "pharmacy_visit.json",
     "path": "lesson_016/",
     "thumbnail": "pharmacy_visit_thumbnail.png"
+  },
+  {
+    "id": "lesson_017",
+    "title": "Lesson 017: Exercising at the Gym",
+    "audioFile": "gym_exercise.mp3",
+    "lessonFile": "gym_exercise.json",
+    "path": "lesson_017/",
+    "thumbnail": "gym_exercise_thumbnail.png"
+  },
+  {
+    "id": "lesson_018",
+    "title": "Lesson 018: Meeting a Friend for Lunch",
+    "audioFile": "lunch_with_friend.mp3",
+    "lessonFile": "lunch_with_friend.json",
+    "path": "lesson_018/",
+    "thumbnail": "lunch_with_friend_thumbnail.png"
+  },
+  {
+    "id": "lesson_019",
+    "title": "Lesson 019: Attending a Birthday Party",
+    "audioFile": "birthday_party.mp3",
+    "lessonFile": "birthday_party.json",
+    "path": "lesson_019/",
+    "thumbnail": "birthday_party_thumbnail.png"
+  },
+  {
+    "id": "lesson_020",
+    "title": "Lesson 020: My Favorite Hobby",
+    "audioFile": "favorite_hobby.mp3",
+    "lessonFile": "favorite_hobby.json",
+    "path": "lesson_020/",
+    "thumbnail": "favorite_hobby_thumbnail.png"
   }
 ]
