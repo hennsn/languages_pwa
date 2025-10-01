@@ -158,5 +158,29 @@
     "lessonFile": "favorite_hobby.json",
     "path": "lesson_020/",
     "thumbnail": "favorite_hobby_thumbnail.png"
+  },
+  {
+    "id": "lesson_021",
+    "title": "Lesson 021: Cooking a Meal for a Friend",
+    "audioFile": "cooking_for_friend.mp3",
+    "lessonFile": "cooking_for_friend.json",
+    "path": "lesson_021/",
+    "thumbnail": "cooking_for_friend_thumbnail.png"
+  },
+  {
+    "id": "lesson_022",
+    "title": "Lesson 022: A Day at the Beach",
+    "audioFile": "day_at_beach.mp3",
+    "lessonFile": "day_at_beach.json",
+    "path": "lesson_022/",
+    "thumbnail": "day_at_beach_thumbnail.png"
+  },
+  {
+    "id": "lesson_023",
+    "title": "Lesson 023: Visiting a Museum",
+    "audioFile": "museum_visit.mp3",
+    "lessonFile": "museum_visit.json",
+    "path": "lesson_023/",
+    "thumbnail": "museum_visit_thumbnail.png"
   }
 ]
