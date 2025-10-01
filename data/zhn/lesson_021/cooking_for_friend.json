@@ -1,37 +1,261 @@
 [
   {
-    "startTime": 0.38,
-    "endTime": 3.78,
-    "text": "\u5c0f\u660e\u548c\u5c0f\u7ea2\u662f\u4e24\u4e2a\u975e\u5e38\u8981\u597d\u7684\u670b\u53cb\u3002",
-    "explanation": "### English Translation\n\n**Xiao Ming and Xiao Hong are two very good friends.**\n\n---\n\n### Word-by-Word Translation\n\n*   **\u5c0f\u660e (Xi\u01ceom\u00edng)**: Xiao Ming (a common Chinese name)\n*   **\u548c (h\u00e9)**: and\n*   **\u5c0f\u7ea2 (Xi\u01ceoh\u00f3ng)**: Xiao Hong (a common Chinese name)\n*   **\u662f (sh\u00ec)**: to be (am, is, are)\n*   **\u4e24 (li\u01ceng)**: two (used with measure words)\n*   **\u4e2a (ge)**: a common measure word for people or objects\n*   **\u975e\u5e38 (f\u0113ich\u00e1ng)**: very / extremely\n*   **\u8981\u597d (y\u00e0oh\u01ceo)**: to be close friends / on good terms\n*   **\u7684 (de)**: a particle used to connect an adjective to a noun\n*   **\u670b\u53cb (p\u00e9ngyou)**: friend\n\n### Grammar Notes\n\n*   **\u4e24 (li\u01ceng) vs. \u4e8c (\u00e8r):** When counting things with a measure word (like **\u4e2a**), the word for \"two\" is **\u4e24 (li\u01ceng)**, not **\u4e8c (\u00e8r)**. For example, \"two friends\" is **\u4e24\u4e2a\u670b\u53cb (li\u01ceng ge p\u00e9ngyou)**.\n*   **\u7684 (de):** This particle connects the description **\u975e\u5e38\u8981\u597d (f\u0113ich\u00e1ng y\u00e0oh\u01ceo)** to the noun **\u670b\u53cb (p\u00e9ngyou)**, creating the phrase \"very good friends\".",
-    "id": "051c5eeb120dc277b0fff25a8aaa7339"
+    "startTime": 0.0,
+    "endTime": 1.4,
+    "text": "\u738b\u78ca\u505a\u996d\uff0c",
+    "explanation": "### English Translation\n\n**Wang Lei is cooking,**\n\n---\n\n### Word-by-Word Translation\n\n*   **\u738b\u78ca (W\u00e1ng L\u011bi)**: Wang Lei (a name)\n*   **\u505a\u996d (zu\u00f2f\u00e0n)**: to cook / to prepare a meal",
+    "id": "b6453ea59d505138623826e3846be00a"
   },
   {
-    "startTime": 4.38,
-    "endTime": 7.46,
-    "text": "\u4ed6\u4eec\u90fd\u559c\u6b22\u770b\u7535\u5f71\uff0c\u7279\u522b\u662f\u79d1\u5e7b\u7535\u5f71\u3002",
-    "explanation": "### English Translation\n\n**They both like to watch movies, especially science fiction movies.**\n\n---\n\n### Word-by-Word Translation\n\n*   **\u4ed6\u4eec (t\u0101men)**: they / them\n*   **\u90fd (d\u014du)**: both / all\n*   **\u559c\u6b22 (x\u01d0hu\u0101n)**: to like\n*   **\u770b (k\u00e0n)**: to watch / to see / to look at\n*   **\u7535\u5f71 (di\u00e0ny\u01d0ng)**: movie\n*   **\u7279\u522b (t\u00e8bi\u00e9)**: especially / particularly\n*   **\u662f (sh\u00ec)**: is / to be\n*   **\u79d1\u5e7b (k\u0113hu\u00e0n)**: science fiction (sci-fi)\n*   **\u7535\u5f71 (di\u00e0ny\u01d0ng)**: movie\n\n### Grammar Notes\n\n*   **\u90fd (d\u014du):** This adverb means \"all\" or \"both.\" It is placed before the verb to show that the action applies to everyone mentioned in the subject (in this case, **\u4ed6\u4eec**, \"they\").\n*   **\u7279\u522b\u662f (t\u00e8bi\u00e9 sh\u00ec):** This is a common phrase used to mean \"especially\" or \"in particular,\" used to emphasize something.",
-    "id": "2a1a3c00fca639b97afe427a7a71e407"
+    "startTime": 1.8,
+    "endTime": 3.7,
+    "text": "\u4eca\u5929\u5929\u6c14\u5f88\u597d\uff0c",
+    "explanation": "### English Translation\n\n**The weather is very good today,**\n\n---\n\n### Word-by-Word Translation\n\n*   **\u4eca\u5929 (j\u012bnti\u0101n)**: today\n*   **\u5929\u6c14 (ti\u0101nq\u00ec)**: weather\n*   **\u5f88 (h\u011bn)**: very\n*   **\u597d (h\u01ceo)**: good\n\n---\n\n### Grammar Notes\n\n*   **\u5f88 (h\u011bn)**: While it means \"very,\" it is often used to link a noun (\u5929\u6c14) with an adjective (\u597d) and acts like the verb \"is.\" In this context, \"\u5929\u6c14\u5f88\u597d\" simply means \"the weather is good.\"",
+    "id": "3dc9bd836a68116e13cabd9087f61d5c"
   },
   {
-    "startTime": 8.16,
-    "endTime": 12.0,
-    "text": "\u4e00\u4e2a\u661f\u671f\u516d\u7684\u4e0b\u5348\uff0c\u4ed6\u4eec\u51b3\u5b9a\u4e00\u8d77\u53bb\u7535\u5f71\u9662\u3002",
-    "explanation": "### English Translation\n\n**On a Saturday afternoon, they decided to go to the movie theater together.**\n\n---\n\n### Word-by-Word Translation\n\n*   **\u4e00\u4e2a (y\u012bge)**: one / a\n*   **\u661f\u671f\u516d (x\u012bngq\u012bli\u00f9)**: Saturday\n*   **\u7684 (de)**: a particle, here it links the day with the time of day\n*   **\u4e0b\u5348 (xi\u00e0w\u01d4)**: afternoon\n*   **\u4ed6\u4eec (t\u0101men)**: they / them\n*   **\u51b3\u5b9a (ju\u00e9d\u00ecng)**: to decide\n*   **\u4e00\u8d77 (y\u012bq\u01d0)**: together\n*   **\u53bb (q\u00f9)**: to go\n*   **\u7535\u5f71\u9662 (di\u00e0ny\u01d0ngyu\u00e0n)**: movie theater / cinema\n\n### Grammar Notes\n\n*   **Time Phrases:** In Chinese, time phrases like **\u4e00\u4e2a\u661f\u671f\u516d\u7684\u4e0b\u5348 (y\u012bge x\u012bngq\u012bli\u00f9 de xi\u00e0w\u01d4)** usually come at the beginning of a sentence, before the subject.",
-    "id": "205524b435a11fc6d7782e0de069484c"
+    "startTime": 4.0,
+    "endTime": 5.6,
+    "text": "\u738b\u78ca\u4e5f\u5f88\u9ad8\u5174\u3002",
+    "explanation": "### English Translation\n\n**Wang Lei is also very happy.**\n\n---\n\n### Word-by-Word Translation\n\n*   **\u738b\u78ca (W\u00e1ng L\u011bi)**: Wang Lei (a name)\n*   **\u4e5f (y\u011b)**: also / too\n*   **\u5f88 (h\u011bn)**: very\n*   **\u9ad8\u5174 (g\u0101ox\u00ecng)**: happy / pleased",
+    "id": "022408c46af6ba51873245f3a936544e"
   },
   {
-    "startTime": 12.6,
-    "endTime": 15.68,
-    "text": "\u4ed6\u4eec\u4e70\u4e86\u4e24\u5f20\u6700\u65b0\u4e0a\u6620\u7684\u79d1\u5e7b\u5927\u7247\u7684\u7968\u3002",
-    "explanation": "### English Translation\n\n**They bought two tickets for the latest sci-fi blockbuster.**\n\n---\n\n### Word-by-Word Translation\n\n*   **\u4ed6\u4eec (t\u0101men)**: they / them\n*   **\u4e70 (m\u01cei)**: to buy\n*   **\u4e86 (le)**: a particle indicating a completed action\n*   **\u4e24 (li\u01ceng)**: two\n*   **\u5f20 (zh\u0101ng)**: a measure word for flat objects like tickets or paper\n*   **\u6700\u65b0 (zu\u00ecx\u012bn)**: newest / latest\n*   **\u4e0a\u6620 (sh\u00e0ngy\u00ecng)**: to be released (of a film)\n*   **\u7684 (de)**: a particle connecting a description to a noun\n*   **\u79d1\u5e7b (k\u0113hu\u00e0n)**: science fiction\n*   **\u5927\u7247 (d\u00e0pi\u00e0n)**: blockbuster / epic movie\n*   **\u7684 (de)**: a particle indicating possession ('s)\n*   **\u7968 (pi\u00e0o)**: ticket\n\n### Grammar Notes\n\n*   **\u4e86 (le):** Placed after the verb **\u4e70 (m\u01cei)**, it indicates that the action of buying is complete.\n*   **Measure Word \u5f20 (zh\u0101ng):** This is the correct measure word for tickets. You say **\u4e24\u5f20\u7968 (li\u01ceng zh\u0101ng pi\u00e0o)** for \"two tickets.\"\n*   **\u7684 (de):** The long phrase **\u6700\u65b0\u4e0a\u6620\u7684\u79d1\u5e7b\u5927\u7247 (zu\u00ecx\u012bn sh\u00e0ngy\u00ecng de k\u0113hu\u00e0n d\u00e0pi\u00e0n)** acts as a single adjective describing **\u7968 (pi\u00e0o)**, the tickets.",
-    "id": "fbec9d3f64e1a681e7302d6811fd2b8f"
+    "startTime": 6.1,
+    "endTime": 9.9,
+    "text": "\u4ed6\u7684\u597d\u670b\u53cb\u9648\u4f1f\u8981\u6765\u4ed6\u5bb6\u5403\u5348\u996d\u3002",
+    "explanation": "### English Translation\n\n**His good friend Chen Wei is coming to his house for lunch.**\n\n---\n\n### Word-by-Word Translation\n\n*   **\u4ed6 (t\u0101)**: he / his\n*   **\u7684 (de)**: a particle indicating possession\n*   **\u597d\u670b\u53cb (h\u01ceo p\u00e9ngyou)**: good friend\n*   **\u9648\u4f1f (Ch\u00e9n W\u011bi)**: Chen Wei (a name)\n*   **\u8981 (y\u00e0o)**: to be going to / will\n*   **\u6765 (l\u00e1i)**: to come\n*   **\u4ed6\u5bb6 (t\u0101 ji\u0101)**: his house / his home\n*   **\u5403 (ch\u012b)**: to eat\n*   **\u5348\u996d (w\u01d4f\u00e0n)**: lunch\n\n---\n\n### Grammar Notes\n\n*   **\u7684 (de)**: This particle shows possession. \u4ed6\u7684 (t\u0101 de) means \"his.\"\n*   **\u8981 (y\u00e0o)**: Indicates a future action, similar to \"is going to\" or \"will.\"",
+    "id": "52159d3db97b77ff00786ee769d5ba0f"
   },
   {
-    "startTime": 16.32,
-    "endTime": 19.34,
-    "text": "\u7535\u5f71\u7684\u540d\u5b57\u53eb\u300a\u661f\u9645\u7a7f\u8d8a\u300b\u3002",
-    "explanation": "### English Translation\n\n**The movie's name is \"Interstellar.\"**\n\n---\n\n### Word-by-Word Translation\n\n*   **\u7535\u5f71 (di\u00e0ny\u01d0ng)**: movie\n*   **\u7684 (de)**: a possessive particle (like 's)\n*   **\u540d\u5b57 (m\u00edngzi)**: name\n*   **\u53eb (ji\u00e0o)**: to be called\n*   **\u300a\u661f\u9645\u7a7f\u8d8a\u300b (X\u012bngj\u00ec Chu\u0101nyu\u00e8)**: \"Interstellar\" (Literally: Interstellar Crossing)\n\n### Grammar Notes\n\n*   **\u7684 (de):** This particle shows possession. **\u7535\u5f71\u7684\u540d\u5b57 (di\u00e0ny\u01d0ng de m\u00edngzi)** means \"the movie's name.\"\n*   **\u300a...\u300b (sh\u016bm\u00edngh\u00e0o):** These are title marks, used in Chinese writing to enclose the titles of books, films, songs, etc.",
-    "id": "c30c6001a86713df876d1159b5e138db"
+    "startTime": 10.7,
+    "endTime": 14.2,
+    "text": "\u738b\u78ca\u60f3\u7ed9\u9648\u4f1f\u505a\u4e00\u4e2a\u7279\u522b\u7684\u83dc\uff0c",
+    "explanation": "### English Translation\n\n**Wang Lei wants to make a special dish for Chen Wei,**\n\n---\n\n### Word-by-Word Translation\n\n*   **\u738b\u78ca (W\u00e1ng L\u011bi)**: Wang Lei\n*   **\u60f3 (xi\u01ceng)**: to want to / to think of\n*   **\u7ed9 (g\u011bi)**: for\n*   **\u9648\u4f1f (Ch\u00e9n W\u011bi)**: Chen Wei\n*   **\u505a (zu\u00f2)**: to do / to make\n*   **\u4e00\u4e2a (y\u012b ge)**: a / one (ge is a common measure word)\n*   **\u7279\u522b\u7684 (t\u00e8bi\u00e9 de)**: special\n*   **\u83dc (c\u00e0i)**: dish / cuisine\n\n---\n\n### Grammar Notes\n\n*   **\u7ed9 (g\u011bi)**: Here it means \"for.\" The structure is \"\u7ed9 [person] \u505a [something],\" meaning \"to do something for [person].\"\n*   **\u7684 (de)**: Connects the adjective \u7279\u522b (t\u00e8bi\u00e9) to the noun \u83dc (c\u00e0i) to mean \"a special dish.\"",
+    "id": "3d6eee91166df050b92e54482d5fae36"
+  },
+  {
+    "startTime": 14.5,
+    "endTime": 17.9,
+    "text": "\u662f\u4ed6\u5988\u5988\u6559\u4ed6\u7684\u897f\u7ea2\u67ff\u7092\u9e21\u86cb\u3002",
+    "explanation": "### English Translation\n\n**It's the stir-fried tomatoes and eggs that his mom taught him.**\n\n---\n\n### Word-by-Word Translation\n\n*   **\u662f (sh\u00ec)**: is / am / are\n*   **\u4ed6\u5988\u5988 (t\u0101 m\u0101ma)**: his mom\n*   **\u6559 (ji\u0101o)**: to teach\n*   **\u4ed6 (t\u0101)**: him\n*   **\u7684 (de)**: a particle used with \u662f to emphasize information\n*   **\u897f\u7ea2\u67ff (x\u012bh\u00f3ngsh\u00ec)**: tomato\n*   **\u7092 (ch\u01ceo)**: to stir-fry\n*   **\u9e21\u86cb (j\u012bd\u00e0n)**: egg\n\n---\n\n### Grammar Notes\n\n*   **\u662f...\u7684 (sh\u00ec...de)**: This structure is used to emphasize the details of a past event. Here, it emphasizes that it was *his mom* who taught him.",
+    "id": "5c5b4b6bc341ddbb67c4c8987d77c1e2"
+  },
+  {
+    "startTime": 18.6,
+    "endTime": 20.1,
+    "text": "\u4e2d\u534812\u70b9\uff0c",
+    "explanation": "### English Translation\n\n**At 12:00 noon,**\n\n---\n\n### Word-by-Word Translation\n\n*   **\u4e2d\u5348 (zh\u014dngw\u01d4)**: noon\n*   **\u5341\u4e8c\u70b9 (sh\u00ed'\u00e8r di\u01cen)**: 12 o'clock",
+    "id": "a889872b337d6b024ba0cbcd09a592e9"
+  },
+  {
+    "startTime": 20.6,
+    "endTime": 21.6,
+    "text": "\u9648\u4f1f\u6765\u4e86\u3002",
+    "explanation": "### English Translation\n\n**Chen Wei arrived.**\n\n---\n\n### Word-by-Word Translation\n\n*   **\u9648\u4f1f (Ch\u00e9n W\u011bi)**: Chen Wei\n*   **\u6765 (l\u00e1i)**: to come\n*   **\u4e86 (le)**: a particle indicating a completed action\n\n---\n\n### Grammar Notes\n\n*   **\u4e86 (le)**: When placed after a verb, this particle usually indicates that the action is completed. \u6765\u4e86 (l\u00e1i le) means \"(has) come\" or \"arrived.\"",
+    "id": "991cc012297bb33c5e87566d0b93496e"
+  },
+  {
+    "startTime": 22.1,
+    "endTime": 24.1,
+    "text": "\u4ed6\u4e00\u8fdb\u95e8\u5c31\u5927\u58f0\u8bf4\uff1a",
+    "explanation": "### English Translation\n\n**As soon as he entered the door, he said loudly:**\n\n---\n\n### Word-by-Word Translation\n\n*   **\u4ed6 (t\u0101)**: he\n*   **\u4e00 (y\u012b)**: as soon as\n*   **\u8fdb\u95e8 (j\u00ecnm\u00e9n)**: to enter the door\n*   **\u5c31 (ji\u00f9)**: then / right away\n*   **\u5927\u58f0 (d\u00e0sh\u0113ng)**: loudly\n*   **\u8bf4 (shu\u014d)**: to say\n\n---\n\n### Grammar Notes\n\n*   **\u4e00...\u5c31... (y\u012b...ji\u00f9...)**: This is a very common structure that means \"as soon as [action 1], then [action 2].\" It connects two actions that happen in quick succession.",
+    "id": "39289af0d18fc74f43d8cecc6253dcf7"
+  },
+  {
+    "startTime": 24.5,
+    "endTime": 28.6,
+    "text": "\u738b\u78ca\uff0c\u6211\u592a\u997f\u4e86\uff0c\u6709\u4ec0\u4e48\u597d\u5403\u7684\uff1f",
+    "explanation": "### English Translation\n\n**\"Wang Lei, I'm so hungry, is there anything good to eat?\"**\n\n---\n\n### Word-by-Word Translation\n\n*   **\u738b\u78ca (W\u00e1ng L\u011bi)**: Wang Lei\n*   **\u6211 (w\u01d2)**: I / me\n*   **\u592a (t\u00e0i)**: too / so\n*   **\u997f (\u00e8)**: hungry\n*   **\u4e86 (le)**: a particle used for emphasis\n*   **\u6709 (y\u01d2u)**: to have / there is\n*   **\u4ec0\u4e48 (sh\u00e9nme)**: what\n*   **\u597d\u5403\u7684 (h\u01ceoch\u012b de)**: something delicious\n\n---\n\n### Grammar Notes\n\n*   **\u592a...\u4e86 (t\u00e0i...le)**: This structure expresses \"too...\" or \"so...\". For example, \u592a\u597d\u4e86 (t\u00e0i h\u01ceo le) means \"great!\" or \"so good!\".\n*   **\u597d\u5403\u7684 (h\u01ceoch\u012b de)**: The adjective \u597d\u5403 (h\u01ceoch\u012b, delicious) is followed by \u7684 (de) to create a noun phrase meaning \"delicious things\" or \"something delicious.\"",
+    "id": "28cd888f0f3449df80b19fb5c01bbc95"
+  },
+  {
+    "startTime": 29.3,
+    "endTime": 31.0,
+    "text": "\u95fb\u8d77\u6765\u5f88\u9999\u554a\u3002",
+    "explanation": "### English Translation\n\n**\"It smells so fragrant!\"**\n\n---\n\n### Word-by-Word Translation\n\n*   **\u95fb\u8d77\u6765 (w\u00e9n q\u01d0l\u00e1i)**: to smell (like)\n*   **\u5f88 (h\u011bn)**: very\n*   **\u9999 (xi\u0101ng)**: fragrant / delicious-smelling\n*   **\u554a (a)**: a sentence-final particle expressing enthusiasm or exclamation\n\n---\n\n### Grammar Notes\n\n*   **[Verb] + \u8d77\u6765 (q\u01d0l\u00e1i)**: This structure describes an impression gained through a sensory action. \u95fb\u8d77\u6765 (w\u00e9n q\u01d0l\u00e1i) means \"it smells like...\"; \u770b\u8d77\u6765 (k\u00e0n q\u01d0l\u00e1i) means \"it looks like...\"; \u542c\u8d77\u6765 (t\u012bng q\u01d0l\u00e1i) means \"it sounds like...\"",
+    "id": "c705b6f214112e267d899276c03421a6"
+  },
+  {
+    "startTime": 31.6,
+    "endTime": 33.6,
+    "text": "\u738b\u78ca\u6b63\u5728\u53a8\u623f\u91cc\u5fd9\u3002",
+    "explanation": "### English Translation\n\n**Wang Lei was busy in the kitchen.**\n\n---\n\n### Word-by-Word Translation\n\n*   **\u738b\u78ca (W\u00e1ng L\u011bi)**: Wang Lei\n*   **\u6b63\u5728 (zh\u00e8ngz\u00e0i)**: in the process of / right now\n*   **\u53a8\u623f (ch\u00faf\u00e1ng)**: kitchen\n*   **\u91cc (l\u01d0)**: inside\n*   **\u5fd9 (m\u00e1ng)**: busy\n\n---\n\n### Grammar Notes\n\n*   **\u6b63\u5728 (zh\u00e8ngz\u00e0i)**: This adverb is used before a verb to indicate that an action is currently in progress, similar to the \"-ing\" form in English.",
+    "id": "8883097304eb61d84fe0201c4da3b7bb"
+  },
+  {
+    "startTime": 34.3,
+    "endTime": 34.9,
+    "text": "\u4ed6\u8bf4\uff1a",
+    "explanation": "### English Translation\n\n**He said:**\n\n---\n\n### Word-by-Word Translation\n\n*   **\u4ed6 (t\u0101)**: he\n*   **\u8bf4 (shu\u014d)**: to say",
+    "id": "3621061c6c9d25c4041bfb216e7765d4"
+  },
+  {
+    "startTime": 35.3,
+    "endTime": 38.0,
+    "text": "\u522b\u7740\u6025\uff0c\u996d\u9a6c\u4e0a\u5c31\u597d\uff0c",
+    "explanation": "### English Translation\n\n**\"Don't worry, the food will be ready right away,\"**\n\n---\n\n### Word-by-Word Translation\n\n*   **\u522b (bi\u00e9)**: don't\n*   **\u7740\u6025 (zh\u0101oj\u00ed)**: to worry / to be anxious\n*   **\u996d (f\u00e0n)**: meal / cooked rice\n*   **\u9a6c\u4e0a (m\u01cesh\u00e0ng)**: immediately / right away\n*   **\u5c31 (ji\u00f9)**: then (used for emphasis)\n*   **\u597d (h\u01ceo)**: good / ready\n*   **\u4e86 (le)**: a particle indicating a change of state\n\n---\n\n### Grammar Notes\n\n*   **\u522b (bi\u00e9)**: Used to form a negative command, telling someone not to do something.\n*   **\u9a6c\u4e0a\u5c31...\u4e86 (m\u01cesh\u00e0ng ji\u00f9...le)**: A common phrase meaning something will happen very soon.",
+    "id": "66e486913c0777548d3d96bc31ab17f8"
+  },
+  {
+    "startTime": 38.6,
+    "endTime": 41.2,
+    "text": "\u4f60\u5148\u5750\u4e00\u4e0b\uff0c\u559d\u676f\u8336\u3002",
+    "explanation": "### English Translation\n\n**\"You sit for a moment first, and have a cup of tea.\"**\n\n---\n\n### Word-by-Word Translation\n\n*   **\u4f60 (n\u01d0)**: you\n*   **\u5148 (xi\u0101n)**: first\n*   **\u5750 (zu\u00f2)**: to sit\n*   **\u4e00\u4e0b (y\u012bxi\u00e0)**: for a moment / a bit\n*   **\u559d (h\u0113)**: to drink\n*   **\u676f (b\u0113i)**: a measure word for cup/glass\n*   **\u8336 (ch\u00e1)**: tea\n\n---\n\n### Grammar Notes\n\n*   **[Verb] + \u4e00\u4e0b (y\u012bxi\u00e0)**: This pattern softens the tone of a command or suggestion, indicating the action is brief. It's more polite than just saying the verb alone.",
+    "id": "ac8535752c620d6bba967a71892a6b6d"
+  },
+  {
+    "startTime": 41.9,
+    "endTime": 46.4,
+    "text": "\u684c\u5b50\u4e0a\u653e\u7740\u7ea2\u8272\u7684\u897f\u7ea2\u67ff\u548c\u9ec4\u8272\u7684\u9e21\u86cb\u3002",
+    "explanation": "### English Translation\n\n**On the table were red tomatoes and yellow eggs.**\n\n---\n\n### Word-by-Word Translation\n\n*   **\u684c\u5b50 (zhu\u014dzi)**: table\n*   **\u4e0a (sh\u00e0ng)**: on / on top of\n*   **\u653e\u7740 (f\u00e0ngzhe)**: are placed\n*   **\u7ea2\u8272\u7684 (h\u00f3ngs\u00e8 de)**: red (colored)\n*   **\u897f\u7ea2\u67ff (x\u012bh\u00f3ngsh\u00ec)**: tomato\n*   **\u548c (h\u00e9)**: and\n*   **\u9ec4\u8272\u7684 (hu\u00e1ngs\u00e8 de)**: yellow (colored)\n*   **\u9e21\u86cb (j\u012bd\u00e0n)**: egg\n\n---\n\n### Grammar Notes\n\n*   **[Verb] + \u7740 (zhe)**: This particle indicates a continuous state that resulted from an action. \u653e\u7740 (f\u00e0ngzhe) means the action of \"placing\" has occurred, and now the items \"are placed\" and remain there.",
+    "id": "8985d0d2190b35018a0047e862045e3e"
+  },
+  {
+    "startTime": 47.1,
+    "endTime": 49.8,
+    "text": "\u738b\u78ca\u5148\u628a\u9e21\u86cb\u6253\u5728\u7897\u91cc\uff0c",
+    "explanation": "### English Translation\n\n**Wang Lei first cracked the eggs into a bowl,**\n\n---\n\n### Word-by-Word Translation\n\n*   **\u738b\u78ca (W\u00e1ng L\u011bi)**: Wang Lei\n*   **\u5148 (xi\u0101n)**: first\n*   **\u628a (b\u01ce)**: a particle to bring the object before the verb\n*   **\u9e21\u86cb (j\u012bd\u00e0n)**: egg\n*   **\u6253 (d\u01ce)**: to beat / to crack\n*   **\u5728 (z\u00e0i)**: in / at\n*   **\u7897\u91cc (w\u01cen l\u01d0)**: inside the bowl\n\n---\n\n### Grammar Notes\n\n*   **\u628a (b\u01ce) sentence**: The structure is **Subject + \u628a + Object + Verb**. It is used to emphasize what happens to the object. Here, it focuses on what Wang Lei did *to the eggs*.",
+    "id": "36a2186c8caa6f61ba3045d890829f24"
+  },
+  {
+    "startTime": 50.3,
+    "endTime": 52.3,
+    "text": "\u53c8\u628a\u897f\u7ea2\u67ff\u6d17\u5e72\u51c0\uff0c",
+    "explanation": "### English Translation\n\n**and then washed the tomatoes clean,**\n\n---\n\n### Word-by-Word Translation\n\n*   **\u53c8 (y\u00f2u)**: again / then (in a sequence)\n*   **\u628a (b\u01ce)**: particle to bring the object before the verb\n*   **\u897f\u7ea2\u67ff (x\u012bh\u00f3ngsh\u00ec)**: tomato\n*   **\u6d17\u5e72\u51c0 (x\u01d0 g\u0101nj\u00ecng)**: to wash clean\n\n---\n\n### Grammar Notes\n\n*   **\u6d17\u5e72\u51c0 (x\u01d0 g\u0101nj\u00ecng)**: This is a resultative complement. \u6d17 (x\u01d0) is the action (to wash), and \u5e72\u51c0 (g\u0101nj\u00ecng) is the result (clean). It means \"to wash until clean.\"",
+    "id": "ffcfdff05c92c89e12fa5ad1e04c4dfc"
+  },
+  {
+    "startTime": 53.2,
+    "endTime": 53.8,
+    "text": "\u5207\u597d\u3002",
+    "explanation": "### English Translation\n\n**and cut them up.**\n\n---\n\n### Word-by-Word Translation\n\n*   **\u5207\u597d (qi\u0113 h\u01ceo)**: to cut well / to finish cutting\n\n---\n\n### Grammar Notes\n\n*   **\u5207\u597d (qi\u0113 h\u01ceo)**: This is another resultative complement. \u5207 (qi\u0113) is the action (to cut), and \u597d (h\u01ceo) is the result (done well, or completed). It means the cutting is finished.",
+    "id": "ba35a84f6b63afa6658e24d39c9c2674"
+  },
+  {
+    "startTime": 54.3,
+    "endTime": 56.0,
+    "text": "\u9648\u4f1f\u8d70\u8fdb\u53a8\u623f\uff0c",
+    "explanation": "### English Translation\n\n**Chen Wei walked into the kitchen,**\n\n---\n\n### Word-by-Word Translation\n\n*   **\u9648\u4f1f (Ch\u00e9n W\u011bi)**: Chen Wei\n*   **\u8d70\u8fdb (z\u01d2uj\u00ecn)**: to walk into\n*   **\u53a8\u623f (ch\u00faf\u00e1ng)**: kitchen",
+    "id": "1866088bb656c1f6e3bf0a494063314f"
+  },
+  {
+    "startTime": 56.6,
+    "endTime": 57.3,
+    "text": "\u770b\u7740\u95ee\uff1a",
+    "explanation": "### English Translation\n\n**watched and asked:**\n\n---\n\n### Word-by-Word Translation\n\n*   **\u770b\u7740 (k\u00e0nzhe)**: watching\n*   **\u95ee (w\u00e8n)**: to ask\n\n---\n\n### Grammar Notes\n\n*   **[Verb 1] + \u7740 (zhe) + [Verb 2]**: This structure indicates that Verb 2 happens while Verb 1 is in progress. He \"asked\" while \"watching.\"",
+    "id": "91eb9c803047119b071558558bca1e23"
+  },
+  {
+    "startTime": 57.8,
+    "endTime": 59.4,
+    "text": "\u8fd9\u4e2a\u83dc\u96be\u505a\u5417\uff1f",
+    "explanation": "### English Translation\n\n**\"Is this dish difficult to make?\"**\n\n---\n\n### Word-by-Word Translation\n\n*   **\u8fd9\u4e2a (zh\u00e8ge)**: this\n*   **\u83dc (c\u00e0i)**: dish\n*   **\u96be (n\u00e1n)**: difficult\n*   **\u505a (zu\u00f2)**: to do / to make\n*   **\u5417 (ma)**: a particle that turns a statement into a yes/no question\n\n---\n\n### Grammar Notes\n\n*   **\u5417 (ma)**: Adding \u5417 to the end of a statement is the simplest way to form a yes-no question.",
+    "id": "f78249f02f22875787aee8acb573d290"
+  },
+  {
+    "startTime": 60.2,
+    "endTime": 61.5,
+    "text": "\u9700\u8981\u6211\u5e2e\u5fd9\u5417\uff1f",
+    "explanation": "### English Translation\n\n**\"Do you need my help?\"**\n\n---\n\n### Word-by-Word Translation\n\n*   **\u9700\u8981 (x\u016by\u00e0o)**: to need\n*   **\u6211 (w\u01d2)**: I / me\n*   **\u5e2e\u5fd9 (b\u0101ngm\u00e1ng)**: to help\n*   **\u5417 (ma)**: question particle",
+    "id": "e1c4761975aafe30d7269385f6506f1a"
+  },
+  {
+    "startTime": 62.0,
+    "endTime": 63.3,
+    "text": "\u738b\u78ca\u7b11\u7740\u8bf4\uff1a",
+    "explanation": "### English Translation\n\n**Wang Lei said with a smile:**\n\n---\n\n### Word-by-Word Translation\n\n*   **\u738b\u78ca (W\u00e1ng L\u011bi)**: Wang Lei\n*   **\u7b11\u7740 (xi\u00e0ozhe)**: smiling\n*   **\u8bf4 (shu\u014d)**: to say\n\n---\n\n### Grammar Notes\n\n*   **[Verb 1] + \u7740 (zhe) + [Verb 2]**: He \"said\" while \"smiling.\"",
+    "id": "9050547b8fb612c0bbd829e0be02f9ca"
+  },
+  {
+    "startTime": 63.8,
+    "endTime": 69.3,
+    "text": "\u4e0d\u96be\uff0c\u4f46\u662f\u4f60\u522b\u5e2e\u5fd9\uff0c\u4f60\u592a\u997f\u4e86\uff0c\u5750\u7740\u7b49\u5427\u3002",
+    "explanation": "### English Translation\n\n**\"Not difficult, but don't help. You're too hungry, just sit and wait.\"**\n\n---\n\n### Word-by-Word Translation\n\n*   **\u4e0d\u96be (b\u00f9 n\u00e1n)**: not difficult\n*   **\u4f46\u662f (d\u00e0nsh\u00ec)**: but / however\n*   **\u4f60 (n\u01d0)**: you\n*   **\u522b (bi\u00e9)**: don't\n*   **\u5e2e\u5fd9 (b\u0101ngm\u00e1ng)**: to help\n*   **\u4f60\u592a\u997f\u4e86 (n\u01d0 t\u00e0i \u00e8 le)**: you are too hungry\n*   **\u5750\u7740\u7b49 (zu\u00f2zhe d\u011bng)**: sit and wait\n*   **\u5427 (ba)**: a particle used to make a suggestion\n\n---\n\n### Grammar Notes\n\n*   **\u5427 (ba)**: Adding this particle to the end of a command softens the tone, making it sound like a friendly suggestion.",
+    "id": "b4eb3f3106fe13e39325622da0c35300"
+  },
+  {
+    "startTime": 69.7,
+    "endTime": 71.8,
+    "text": "\u5f88\u5feb\uff0c\u83dc\u505a\u597d\u4e86\u3002",
+    "explanation": "### English Translation\n\n**Very soon, the dish was ready.**\n\n---\n\n### Word-by-Word Translation\n\n*   **\u5f88\u5feb (h\u011bn ku\u00e0i)**: very soon / quickly\n*   **\u83dc (c\u00e0i)**: dish\n*   **\u505a\u597d\u4e86 (zu\u00f2 h\u01ceo le)**: is finished being made / is ready\n\n---\n\n### Grammar Notes\n\n*   **\u505a\u597d\u4e86 (zu\u00f2 h\u01ceo le)**: The resultative complement \u505a\u597d (zu\u00f2 h\u01ceo, to finish making) is combined with the particle \u4e86 (le) to strongly indicate that the action is complete and a new state (the dish is ready) has begun.",
+    "id": "e16833c2e72f73d33ed0c0fa47c0f46b"
+  },
+  {
+    "startTime": 72.3,
+    "endTime": 78.1,
+    "text": "\u738b\u78ca\u628a\u70ed\u70ed\u7684\u897f\u7ea2\u67ff\u7092\u9e21\u86cb\u548c\u4e24\u7897\u7c73\u996d\u653e\u5728\u684c\u5b50\u4e0a\u3002",
+    "explanation": "### English Translation\n\n**Wang Lei put the hot stir-fried tomatoes and eggs and two bowls of rice on the table.**\n\n---\n\n### Word-by-Word Translation\n\n*   **\u738b\u78ca (W\u00e1ng L\u011bi)**: Wang Lei\n*   **\u628a (b\u01ce)**: particle to bring the object before the verb\n*   **\u70ed\u70ed\u7684 (r\u00e8r\u00e8 de)**: hot\n*   **\u897f\u7ea2\u67ff\u7092\u9e21\u86cb (x\u012bh\u00f3ngsh\u00ec ch\u01ceo j\u012bd\u00e0n)**: stir-fried tomatoes and eggs\n*   **\u548c (h\u00e9)**: and\n*   **\u4e24 (li\u01ceng)**: two\n*   **\u7897 (w\u01cen)**: bowl (measure word)\n*   **\u7c73\u996d (m\u01d0f\u00e0n)**: cooked rice\n*   **\u653e\u5728 (f\u00e0ng z\u00e0i)**: to put on/at\n*   **\u684c\u5b50\u4e0a (zhu\u014dzi sh\u00e0ng)**: on the table\n\n---\n\n### Grammar Notes\n\n*   **\u4e24 (li\u01ceng)**: Use \u4e24 (li\u01ceng) instead of \u4e8c (\u00e8r) when counting things with a measure word (e.g., \u4e24\u7897 li\u01ceng w\u01cen, not \u4e8c\u7897 \u00e8r w\u01cen).",
+    "id": "28b391a3065f99b18d60356eb728cdf9"
+  },
+  {
+    "startTime": 79.0,
+    "endTime": 80.8,
+    "text": "\u83dc\u7684\u989c\u8272\u5f88\u597d\u770b\uff0c",
+    "explanation": "### English Translation\n\n**The color of the dish was very nice,**\n\n---\n\n### Word-by-Word Translation\n\n*   **\u83dc\u7684 (c\u00e0i de)**: the dish's\n*   **\u989c\u8272 (y\u00e1ns\u00e8)**: color\n*   **\u5f88 (h\u011bn)**: very\n*   **\u597d\u770b (h\u01ceok\u00e0n)**: good-looking / pretty",
+    "id": "47efe0842e79726834062741f4e9b7ce"
+  },
+  {
+    "startTime": 81.6,
+    "endTime": 83.5,
+    "text": "\u95fb\u8d77\u6765\u975e\u5e38\u9999\u3002",
+    "explanation": "### English Translation\n\n**it smelled extremely fragrant.**\n\n---\n\n### Word-by-Word Translation\n\n*   **\u95fb\u8d77\u6765 (w\u00e9n q\u01d0l\u00e1i)**: to smell (like)\n*   **\u975e\u5e38 (f\u0113ich\u00e1ng)**: extremely / very\n*   **\u9999 (xi\u0101ng)**: fragrant",
+    "id": "236928d119b52b15ee4e77fca3572b91"
+  },
+  {
+    "startTime": 83.8,
+    "endTime": 87.4,
+    "text": "\u9648\u4f1f\u62ff\u8d77\u7b77\u5b50\u5403\u4e86\u4e00\u5927\u53e3\uff0c\u8bf4\uff1a",
+    "explanation": "### English Translation\n\n**Chen Wei picked up his chopsticks, took a big bite, and said:**\n\n---\n\n### Word-by-Word Translation\n\n*   **\u9648\u4f1f (Ch\u00e9n W\u011bi)**: Chen Wei\n*   **\u62ff\u8d77 (n\u00e1q\u01d0)**: to pick up\n*   **\u7b77\u5b50 (ku\u00e0izi)**: chopsticks\n*   **\u5403\u4e86 (ch\u012b le)**: ate\n*   **\u4e00\u5927\u53e3 (y\u012b d\u00e0 k\u01d2u)**: a big mouthful\n*   **\u8bf4 (shu\u014d)**: to say\n\n---\n\n### Grammar Notes\n\n*   **\u4e86 (le)**: This particle after the verb \u5403 (ch\u012b) indicates that the action of eating a mouthful is complete.",
+    "id": "0469b82abf2fe05b274d7e67d3dfa405"
+  },
+  {
+    "startTime": 87.8,
+    "endTime": 90.0,
+    "text": "\u54c7\uff0c\u592a\u597d\u5403\u4e86\uff01",
+    "explanation": "### English Translation\n\n**\"Wow, it's so delicious!\"**\n\n---\n\n### Word-by-Word Translation\n\n*   **\u54c7 (wa)**: wow (an interjection)\n*   **\u592a\u597d\u5403\u4e86 (t\u00e0i h\u01ceoch\u012b le)**: so delicious!\n\n---\n\n### Grammar Notes\n\n*   **\u592a...\u4e86 (t\u00e0i...le)**: This structure expresses a high degree of the adjective in between, often with a sense of exclamation. \"So delicious!\"",
+    "id": "140da6842a4fafb85a605360648d29e4"
+  },
+  {
+    "startTime": 90.5,
+    "endTime": 92.6,
+    "text": "\u738b\u78ca\uff0c\u4f60\u771f\u68d2\u3002",
+    "explanation": "### English Translation\n\n**\"Wang Lei, you're really great.\"**\n\n---\n\n### Word-by-Word Translation\n\n*   **\u738b\u78ca (W\u00e1ng L\u011bi)**: Wang Lei\n*   **\u4f60 (n\u01d0)**: you\n*   **\u771f (zh\u0113n)**: really / truly\n*   **\u68d2 (b\u00e0ng)**: great / awesome",
+    "id": "b253f9a6fe6f454d8d5f949090fbf171"
+  },
+  {
+    "startTime": 93.1,
+    "endTime": 96.1,
+    "text": "\u738b\u78ca\u542c\u4e86\uff0c\u5fc3\u91cc\u975e\u5e38\u9ad8\u5174\u3002",
+    "explanation": "### English Translation\n\n**After hearing this, Wang Lei felt very happy.**\n\n---\n\n### Word-by-Word Translation\n\n*   **\u738b\u78ca (W\u00e1ng L\u011bi)**: Wang Lei\n*   **\u542c\u4e86 (t\u012bng le)**: after hearing\n*   **\u5fc3\u91cc (x\u012bnl\u01d0)**: in one's heart / mind\n*   **\u975e\u5e38 (f\u0113ich\u00e1ng)**: very / extremely\n*   **\u9ad8\u5174 (g\u0101ox\u00ecng)**: happy\n\n---\n\n### Grammar Notes\n\n*   **\u542c\u4e86 (t\u012bng le)**: Using a verb + \u4e86 at the beginning of a clause often means \"After doing [the action]...\"",
+    "id": "06eb8bda8782e45fb9ef2f3ad1240845"
+  },
+  {
+    "startTime": 96.5,
+    "endTime": 97.0,
+    "text": "\u4ed6\u8bf4\uff1a",
+    "explanation": "### English Translation\n\n**He said:**\n\n---\n\n### Word-by-Word Translation\n\n*   **\u4ed6 (t\u0101)**: he\n*   **\u8bf4 (shu\u014d)**: to say",
+    "id": "3621061c6c9d25c4041bfb216e7765d4"
+  },
+  {
+    "startTime": 97.7,
+    "endTime": 99.5,
+    "text": "\u559c\u6b22\u5c31\u591a\u5403\u70b9\u3002",
+    "explanation": "### English Translation\n\n**\"If you like it, then eat more.\"**\n\n---\n\n### Word-by-Word Translation\n\n*   **\u559c\u6b22 (x\u01d0huan)**: to like\n*   **\u5c31 (ji\u00f9)**: then\n*   **\u591a (du\u014d)**: more\n*   **\u5403\u70b9 (ch\u012b di\u01cen)**: eat a little\n\n---\n\n### Grammar Notes\n\n*   **[Condition], \u5c31 [Result]**: This structure is like an \"if...then...\" statement where the \"if\" (\u5982\u679c r\u00fagu\u01d2) is often omitted. \"(If you) like it, then (you should) eat more.\"",
+    "id": "c7e7334fe395400ac5f9a060c755b2c2"
+  },
+  {
+    "startTime": 100.2,
+    "endTime": 102.6,
+    "text": "\u4ed6\u4eec\u4e00\u8fb9\u5403\u996d\u4e00\u8fb9\u804a\u5929\uff0c",
+    "explanation": "### English Translation\n\n**They ate and chatted at the same time,**\n\n---\n\n### Word-by-Word Translation\n\n*   **\u4ed6\u4eec (t\u0101men)**: they\n*   **\u4e00\u8fb9 (y\u012bbi\u0101n)**: at the same time\n*   **\u5403\u996d (ch\u012bf\u00e0n)**: to eat a meal\n*   **\u4e00\u8fb9 (y\u012bbi\u0101n)**: at the same time\n*   **\u804a\u5929 (li\u00e1oti\u0101n)**: to chat\n\n---\n\n### Grammar Notes\n\n*   **\u4e00\u8fb9...\u4e00\u8fb9... (y\u012bbi\u0101n...y\u012bbi\u0101n...)**: This structure is used to describe two actions happening simultaneously.",
+    "id": "2b4e956a41c02916b67effe1a7e5b73a"
+  },
+  {
+    "startTime": 103.2,
+    "endTime": 105.6,
+    "text": "\u5ea6\u8fc7\u4e86\u4e00\u4e2a\u5feb\u4e50\u7684\u4e0b\u5348\u3002",
+    "explanation": "### English Translation\n\n**and spent a happy afternoon.**\n\n---\n\n### Word-by-Word Translation\n\n*   **\u5ea6\u8fc7\u4e86 (d\u00f9gu\u00f2 le)**: spent / passed\n*   **\u4e00\u4e2a (y\u012b ge)**: a / one\n*   **\u5feb\u4e50\u7684 (ku\u00e0il\u00e8 de)**: happy\n*   **\u4e0b\u5348 (xi\u00e0w\u01d4)**: afternoon\n\n---\n\n### Grammar Notes\n\n*   **\u4e86 (le)**: Indicates that the action of \"spending\" the afternoon is completed.\n*   **\u7684 (de)**: Connects the adjective \u5feb\u4e50 (ku\u00e0il\u00e8) to the noun \u4e0b\u5348 (xi\u00e0w\u01d4).",
+    "id": "deb3e85623e2382cf25c23e4494c29af"
   }
 ]

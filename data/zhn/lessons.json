@@ -182,5 +182,53 @@
     "lessonFile": "museum_visit.json",
     "path": "lesson_023/",
     "thumbnail": "museum_visit_thumbnail.png"
+  },
+  {
+    "id": "lesson_024",
+    "title": "Lesson 024: My First Day at a New Job",
+    "audioFile": "first_day_job.mp3",
+    "lessonFile": "first_day_job.json",
+    "path": "lesson_024/",
+    "thumbnail": "first_day_job_thumbnail.png"
+  },
+  {
+    "id": "lesson_025",
+    "title": "Lesson 025: Studying for a Test",
+    "audioFile": "studying_for_test.mp3",
+    "lessonFile": "studying_for_test.json",
+    "path": "lesson_025/",
+    "thumbnail": "studying_for_test_thumbnail.png"
+  },
+  {
+    "id": "lesson_026",
+    "title": "Lesson 026: A Visit to the Farmers' Market",
+    "audioFile": "farmers_market.mp3",
+    "lessonFile": "farmers_market.json",
+    "path": "lesson_026/",
+    "thumbnail": "farmers_market_thumbnail.png"
+  },
+  {
+    "id": "lesson_027",
+    "title": "Lesson 027: Getting a Haircut",
+    "audioFile": "getting_haircut.mp3",
+    "lessonFile": "getting_haircut.json",
+    "path": "lesson_027/",
+    "thumbnail": "getting_haircut_thumbnail.png"
+  },
+  {
+    "id": "lesson_028",
+    "title": "Lesson 028: Planning a Weekend Trip",
+    "audioFile": "planning_trip.mp3",
+    "lessonFile": "planning_trip.json",
+    "path": "lesson_028/",
+    "thumbnail": "planning_trip_thumbnail.png"
+  },
+  {
+    "id": "lesson_029",
+    "title": "Lesson 029: A Rainy Day at Home",
+    "audioFile": "rainy_day_home.mp3",
+    "lessonFile": "rainy_day_home.json",
+    "path": "lesson_029/",
+    "thumbnail": "rainy_day_home_thumbnail.png"
   }
 ]

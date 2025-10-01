@@ -1,0 +1,134 @@
+[
+  {
+    "startTime": 0.0,
+    "endTime": 1.25,
+    "text": "\u65b0\u5de5\u4f5c\u7684\u7b2c\u4e00\u5929\u3002",
+    "id": "1aea1019ebc8f5dbbfd45020c1914bd6"
+  },
+  {
+    "startTime": 1.84,
+    "endTime": 4.67,
+    "text": "\u4eca\u5929\u662f\u738b\u78ca\u7b2c\u4e00\u5929\u53bb\u65b0\u516c\u53f8\u5de5\u4f5c\u3002",
+    "id": "75f2f382dfe8b5fc32efe486cf1e784d"
+  },
+  {
+    "startTime": 5.1,
+    "endTime": 8.35,
+    "text": "\u4ed6\u65e9\u4e0a\u4e03\u70b9\u5c31\u8d77\u5e8a\u4e86\uff0c\u5fc3\u91cc\u6709\u70b9\u7d27\u5f20\u3002",
+    "id": "05034e5a01b26cd2615594788b53fd91"
+  },
+  {
+    "startTime": 8.68,
+    "endTime": 11.51,
+    "text": "\u4ed6\u7a7f\u4e0a\u65b0\u886c\u886b\uff0c\u5750\u5730\u94c1\u53bb\u516c\u53f8\u3002",
+    "id": "b737df26d80878c511e1689963a244e9"
+  },
+  {
+    "startTime": 12.01,
+    "endTime": 14.61,
+    "text": "\u516c\u53f8\u5f88\u9ad8\uff0c\u529e\u516c\u5ba4\u53c8\u5927\u53c8\u4eae\u3002",
+    "id": "185f033ce46f674b30d3c68cef369462"
+  },
+  {
+    "startTime": 15.01,
+    "endTime": 18.66,
+    "text": "\u4ed6\u8d70\u8fdb\u529e\u516c\u5ba4\uff0c\u770b\u5230\u5f88\u591a\u4eba\u90fd\u5728\u8ba4\u771f\u5de5\u4f5c\u3002",
+    "id": "626c4d7e5119ba89867c4904cbe613ba"
+  },
+  {
+    "startTime": 18.9,
+    "endTime": 21.43,
+    "text": "\u4e00\u4e2a\u5973\u4eba\u770b\u5230\u4ed6\uff0c\u7b11\u7740\u8d70\u8fc7\u6765\u3002",
+    "id": "5f7664f22efd6c961615250f408cbc8d"
+  },
+  {
+    "startTime": 21.93,
+    "endTime": 25.26,
+    "text": "\u5979\u8bf4\uff0c\u4f60\u597d\uff0c\u6b22\u8fce\u4f60\u6765\u6211\u4eec\u516c\u53f8\u3002",
+    "id": "803c35047ed4b89269b46907c6fa368f"
+  },
+  {
+    "startTime": 25.68,
+    "endTime": 27.56,
+    "text": "\u738b\u78ca\u4e5f\u7b11\u7740\u8bf4\uff0c\u4f60\u597d\u3002",
+    "id": "b3cca76dc1d683172ca1e8ad9cde9aa3"
+  },
+  {
+    "startTime": 28.09,
+    "endTime": 31.39,
+    "text": "\u5973\u4eba\u95ee\uff0c\u8bf7\u95ee\uff0c\u4f60\u662f\u65b0\u6765\u7684\u738b\u78ca\u5417\uff1f",
+    "id": "d0b5670047865b31b00dcef66a2a89a4"
+  },
+  {
+    "startTime": 31.81,
+    "endTime": 34.52,
+    "text": "\u738b\u78ca\u70b9\u5934\u8bf4\uff0c\u662f\u7684\uff0c\u6211\u53eb\u738b\u78ca\u3002",
+    "id": "29cb0a3421fbbcd10f9f9421711212fe"
+  },
+  {
+    "startTime": 34.88,
+    "endTime": 36.75,
+    "text": "\u5973\u4eba\u8bf4\uff0c\u6211\u53eb\u5f20\u654f\u3002",
+    "id": "3f77c4af1e52154136857bfeeef320fa"
+  },
+  {
+    "startTime": 37.28,
+    "endTime": 40.52,
+    "text": "\u6211\u662f\u4f60\u7684\u540c\u4e8b\uff0c\u4ee5\u540e\u6211\u4eec\u4e00\u8d77\u5de5\u4f5c\u3002",
+    "id": "6b8f23975a16645c8914e5242a123307"
+  },
+  {
+    "startTime": 40.82,
+    "endTime": 44.0,
+    "text": "\u8bf7\u8ddf\u6211\u6765\uff0c\u6211\u5e26\u4f60\u53bb\u770b\u4f60\u7684\u5ea7\u4f4d\u3002",
+    "id": "d1744faccdd3be2075c8262d05956f79"
+  },
+  {
+    "startTime": 44.62,
+    "endTime": 46.06,
+    "text": "\u738b\u78ca\u8ddf\u7740\u5f20\u654f\u8d70\u3002",
+    "id": "57e0547ca10b031dca21ea3b5e048494"
+  },
+  {
+    "startTime": 46.57,
+    "endTime": 49.0,
+    "text": "\u4ed6\u7684\u5ea7\u4f4d\u5f88\u5e72\u51c0\uff0c\u65c1\u8fb9\u6709\u7a97\u6237\u3002",
+    "id": "7232bf45f7677900025016fa810119f0"
+  },
+  {
+    "startTime": 49.57,
+    "endTime": 52.83,
+    "text": "\u684c\u5b50\u4e0a\u6709\u4e00\u53f0\u65b0\u7535\u8111\u548c\u4e00\u628a\u5f88\u8212\u670d\u7684\u6905\u5b50\u3002",
+    "id": "7dad07eb910be79e6b6a98dc9de92b21"
+  },
+  {
+    "startTime": 53.25,
+    "endTime": 55.83,
+    "text": "\u5f20\u654f\u5bf9\u4ed6\u8bf4\uff0c\u8fd9\u662f\u4f60\u7684\u5730\u65b9\u3002",
+    "id": "b7042d6a33d71ede1bc9596ed594aa4e"
+  },
+  {
+    "startTime": 56.4,
+    "endTime": 59.39,
+    "text": "\u5de5\u4f5c\u4e0a\u6709\u4ec0\u4e48\u95ee\u9898\uff0c\u90fd\u53ef\u4ee5\u6765\u95ee\u6211\u3002",
+    "id": "4631314b522d22977b28af48f008ad88"
+  },
+  {
+    "startTime": 59.95,
+    "endTime": 64.25,
+    "text": "\u738b\u78ca\u975e\u5e38\u9ad8\u5174\uff0c\u8bf4\uff0c\u597d\u7684\uff0c\u592a\u8c22\u8c22\u4f60\u4e86\uff0c\u5f20\u654f\u3002",
+    "id": "8658dae0545a375ffaa740b45d8bd739"
+  },
+  {
+    "startTime": 64.75,
+    "endTime": 68.5,
+    "text": "\u4ed6\u89c9\u5f97\u4ed6\u7684\u65b0\u540c\u4e8b\u4eba\u5f88\u597d\uff0c\u73b0\u5728\u4ed6\u4e0d\u90a3\u4e48\u7d27\u5f20\u4e86\u3002",
+    "id": "ff69f1baa338b7de311da13fa56b6906"
+  },
+  {
+    "startTime": 69.0,
+    "endTime": 71.5,
+    "text": "\u4ed6\u60f3\u4ed6\u4e00\u5b9a\u4f1a\u559c\u6b22\u8fd9\u4e2a\u65b0\u5de5\u4f5c\u3002",
+    "id": "1f2421abea12de4b4effcc8119fbaa07"
+  }
+]
